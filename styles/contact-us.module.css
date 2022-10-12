@@ -1,0 +1,262 @@
+.contactHead {
+  display: flex;
+  flex-flow: column;
+}
+.topInfo {
+  display: flex;
+  flex-flow: column;
+
+  margin: 30px 0px;
+
+  padding: 30px 100px;
+  background-color: #f6fdff;
+}
+.pTop {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 0px;
+  color: #0487d9;
+}
+.contactHead h4 {
+  font-size: 37px;
+  margin: 0;
+}
+.infoWrap {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.info {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+}
+
+.info:nth-child(1),
+.info:nth-child(3) {
+  box-shadow: -14px 0px 40px -14px rgba(13, 74, 155, 0.25);
+  border-radius: 12px;
+  padding: 20px;
+  border-left: 4px solid #0487d9;
+}
+.info:nth-child(2) {
+  box-shadow: -14px 0px 40px -14px rgba(242, 136, 32, 0.25);
+  border-radius: 12px;
+  padding: 20px;
+  border-left: 4px solid #f28705;
+}
+.infoRightSide h5 {
+  font-size: 20px;
+  color: #0487d9;
+  margin: 0;
+}
+.info:nth-child(2) .infoRightSide h5 {
+  color: #f28705;
+}
+.infoRightSide p {
+  margin: 0;
+  margin-top: 10px;
+}
+.Contact {
+  margin-top: 70px;
+  padding: 40px 100px 0px 100px;
+}
+.Opacity {
+  opacity: 0;
+}
+.HomeIcon {
+  font-size: 60px;
+  color: #f7f7f7;
+  margin-right: 10px;
+  background-color: #0487d9;
+  border-radius: 50%;
+  padding: 10px;
+}
+.MailIcon {
+  font-size: 60px;
+  margin-right: 10px;
+  background-color: #f28705;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 10px;
+}
+.PhoneIcon {
+  font-size: 60px;
+  margin-right: 10px;
+  background-color: #0487d9;
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+}
+.formSection {
+  display: grid;
+  grid-template-columns: 45% 54%;
+  gap: 40px;
+}
+.leftFromSection {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+}
+.leftFromSection h4 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.formW {
+  width: 90%;
+  height: 100%;
+  margin-right: 50px;
+  margin-left: 30px;
+  padding: 40px 40px;
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 30px 5px rgba(4, 135, 217, 0.1);
+}
+.rightFromSection {
+  display: flex;
+  align-items: center;
+}
+.ourOffice {
+  display: flex;
+  flex-flow: column;
+
+  padding: 0px 100px;
+}
+.ourOffice h6 {
+  font-size: 36px;
+  margin: 0;
+}
+.officeLocation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.LocationBox {
+  width: 27%;
+
+  background: #ffffff;
+  border-bottom: 5px solid #0487d9;
+  box-shadow: 12px 12px 24px -1px rgba(4, 135, 217, 0.1);
+  border-radius: 25px;
+}
+.LocationBox:nth-child(2) {
+  border-bottom: 5px solid #f28705;
+  box-shadow: 12px 12px 24px -1px rgba(242, 135, 5, 0.1);
+  border-radius: 25px;
+}
+.LocationBox:nth-child(2) .top {
+  background-color: #fef9f4;
+}
+
+.top {
+  background-color: #f2f9fd;
+  height: 150px;
+  border-radius: 25px 25px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+}
+.bottom h5 {
+  font-size: 22px;
+  margin: 0;
+  color: #0487d9;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #0487d967;
+}
+.bottom p {
+  text-align: center;
+}
+.IconPara {
+  cursor: pointer;
+}
+.IconPara:hover {
+  color: #f28705;
+}
+.LocationBox:nth-child(2) .bottom h5 {
+  color: #f28705;
+  border-bottom: 3px solid #f2870546;
+}
+@media (max-width: 1281px) {
+  .Contact {
+    padding: 40px;
+  }
+  .topInfo {
+    padding: 40px 20px;
+  }
+  .infoWrap {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .infoWrap {
+    width: 100%;
+  }
+  .ourOffice {
+    padding: 40px 20px;
+  }
+  .officeLocation {
+    gap: 20px;
+  }
+  .LocationBox {
+    width: 31%;
+  }
+}
+@media (max-width: 961px) {
+  .contactHead h4 {
+    font-size: 27px;
+    text-align: center;
+  }
+}
+@media (max-width: 801px) {
+  .formSection {
+    display: flex;
+    flex-flow: column;
+  }
+  .infoWrap {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .info {
+    width: 70%;
+  }
+  .LocationBox {
+    width: 47%;
+  }
+}
+@media (max-width: 481px) {
+  .Contact {
+    padding: 20px 10px;
+  }
+  .formW {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .LocationBox {
+    width: 99%;
+  }
+}

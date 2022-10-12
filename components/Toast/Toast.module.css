@@ -1,0 +1,96 @@
+.Toast {
+  bottom: 20px;
+
+  margin-left: auto;
+  margin-right: auto;
+  left: 45%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  animation: pulse 6000ms;
+}
+.toastInner {
+  background-color: #eaf7ee;
+  border-radius: 10px;
+  padding: 2px 5px;
+  border: 1px solid #a2c8ad;
+  width: max-content;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
+  -webkit-box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
+  -moz-box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
+}
+.toastInnerF {
+  background-color: #ffdfd8;
+  border-radius: 10px;
+  padding: 2px 5px;
+  border: 1px solid #ffa289;
+  width: max-content;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+  -webkit-box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+  -moz-box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+}
+.IconBack {
+  cursor: pointer;
+  background-color: #3ebe62;
+  border-radius: 15px;
+  padding: 5px 8px;
+  box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
+  -webkit-box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
+  -moz-box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
+}
+.IconBackF {
+  cursor: pointer;
+  background-color: #ff0000;
+  border-radius: 15px;
+  padding: 5px 8px;
+  box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+  -webkit-box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+  -moz-box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+}
+.icon {
+  cursor: pointer;
+  font-size: 30px;
+  margin-bottom: -3px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+.iconF {
+  cursor: pointer;
+  font-size: 30px;
+  margin-bottom: -3px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    height: 200px;
+  }
+
+  10% {
+    height: 225px;
+    opacity: 0;
+  }
+
+  90% {
+    height: 275px;
+    opacity: 0;
+  }
+
+  100% {
+    height: 200px;
+  }
+}

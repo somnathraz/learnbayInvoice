@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            margin-top: 5rem;
+        }
+
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        .infoGrid {
+            display: grid;
+            width: 100%;
+            max-width: 100%;
+            grid-template-columns: 57% 39%;
+            justify-content: space-between;
+            gap: 40px;
+
+        }
+
+        .footer {
+            display: flex;
+            width: 100%;
+            margin-top: 60px;
+            justify-content: space-between;
+        }
+
+        .infoRow {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .invoice-box {
+            width: 700px;
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /** RTL **/
+        .rtl {
+            direction: rtl;
+            font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .rtl table {
+            text-align: right;
+        }
+
+        .rtl table tr td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico"
+                                    alt="skillslash" />
+                            </td>
+
+                            <td>
+                                Invoice #: {{invoiceId}}<br>
+                                Invoice Date: {{invoiceDate}}<br>
+                                Payment Date: {{paymentDate}}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr class="information">
+                <td colspan="2">
+                    <div class="infoGrid">
+
+                        <div>
+                            <h2>Skillslash Pvt Ltd.</h2>
+                            <h3>Business name : Skillslash</h3>
+                            <b>Address:</b>
+                            <p>Skillslash Pvt Ltd, Level 8, Umiya Business Bay, Tower 1, Cessna Business Bay,
+                                Marathahalli ORR, Bengaluru, 560103</p><br />
+                            <div class="infoRow"><b>GST :</b>
+                                <p>29AADCL9947P1ZF</p><br />
+                            </div>
+                            <div class="infoRow">
+                                <b>MOB:</b>
+                                <p><a href="tel:7349222263">+91 7349222263</a></p>
+                            </div>
+                            <div class="infoRow">
+                                <b> Website :</b>
+                                <p><a href="https://skillslash.com/">www.skillslash.com</a> </p>
+                            </div>
+                            <div class="infoRow">
+                                <b> Email:</b>
+                                <p><a href="mail:info@skillsash.com">info@skillsash.com</a> </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="infoRow">
+                                <b>TO:</b>
+                                <p> {{customerName}}</p>
+                            </div>
+                            <div class="infoRow">
+                                <b>Email:</b>
+                                <p>{{customerEmail}}</p>
+                            </div>
+                            <div class="infoRow">
+                                <b>phone:</b>
+                                <p>{{customerPhone}}</p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+
+
+
+            <tr class="heading">
+                <td>
+                    Item
+                </td>
+
+                <td>
+                    Price
+                </td>
+            </tr>
+
+            <tr class="item">
+                <td>
+                    {{courseName}}
+                </td>
+
+                <td>
+                    Actual Price: ₹{{coursePrice}}<br />
+                    GST:+₹{{GST}}<br />
+                    Discount: -₹{{DiscountPrice}}<br />
+
+                </td>
+            </tr>
+
+
+
+
+            <tr class="total">
+                <td></td>
+
+                <td>
+                    Total: {{TotalPrice}}
+                </td>
+            </tr>
+        </table>
+        <div class="footer">
+            <div>Receiver Signature</div>
+            <div>Authorised Signatory</div>
+        </div>
+    </div>
+</body>
+
+</html>

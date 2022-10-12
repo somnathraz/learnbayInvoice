@@ -1,0 +1,177 @@
+.footer {
+  background-color: black;
+  padding: 40px 100px;
+}
+.firstFooter {
+  display: grid;
+  grid-template-columns: 18% 18% 18% 18%;
+}
+.sIcon {
+  display: grid;
+  grid-template-columns: 24% 24% 24%;
+}
+.iconWrapper h5 {
+  color: white;
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.FIcon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  margin-bottom: 5px;
+  color: #0487d9;
+  font-size: 35px;
+}
+.fPages h5,
+.FJoin h5,
+.FApp h5 {
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+.FApp p {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  align-items: center;
+  border: 1px solid white;
+  width: max-content;
+  padding: 10px 20px;
+}
+.fPages p:hover {
+  color: white;
+}
+.officeWrapper {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  gap: 10px;
+}
+.officeWrapper div p {
+  height: 100px;
+}
+.secondFooter h5,
+.thirdFooter h5 {
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.secondFooter {
+  margin-bottom: 20px;
+}
+.linksWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.linksWrap span {
+  color: #646464;
+  font-size: 16px;
+  width: max-content;
+  margin-right: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.linksWrap span:hover {
+  color: white;
+}
+.terms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.terms span {
+  color: #646464;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.terms span:hover {
+  color: white;
+}
+.thirdFooter p {
+  text-align: center;
+}
+@media (max-width: 1281px) {
+  .footer {
+    padding: 40px;
+  }
+}
+@media (max-width: 961px) {
+  .footer {
+    padding: 20px;
+  }
+  .firstFooter {
+    display: grid;
+    grid-template-columns: 22% 22% 22% 22%;
+  }
+  .officeWrapper {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    gap: 10px;
+  }
+}
+@media (max-width: 641px) {
+  .footer {
+    background-color: black;
+    padding: 40px 10px;
+  }
+  .firstFooter {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+  .officeWrapper {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    gap: 10px;
+  }
+  .terms {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 481px) {
+  .footer {
+    padding: 20px 10px;
+    width: 100vw;
+  }
+  .firstFooter {
+    grid-template-columns: 50% 25% 25%;
+  }
+  .fPages h5,
+  .FJoin h5,
+  .FApp h5 {
+    font-size: 16px;
+  }
+  .FApp p {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .FIcon {
+    font-size: 29px;
+  }
+  .officeWrapper {
+    display: flex;
+    flex-flow: column;
+  }
+  .FIcon {
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    margin-bottom: 5px;
+    color: #0487d9;
+  }
+  .terms {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

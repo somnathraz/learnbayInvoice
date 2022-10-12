@@ -1,0 +1,250 @@
+.Cta {
+  padding: 40px 100px;
+}
+.aboutUs {
+  margin-top: 70px;
+  padding: 40px 100px 0px 100px;
+  background-color: #f4fbff;
+}
+.aboutHeader {
+  display: grid;
+  grid-template-columns: 55% 39%;
+  gap: 40px;
+  position: relative;
+}
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5 {
+  position: absolute;
+}
+.circle1 {
+  height: 70px;
+  width: 70px;
+  top: 39%;
+  left: 34%;
+  z-index: 0;
+  background-color: #f4efe6;
+  border-radius: 50%;
+}
+.circle2 {
+  height: 60px;
+  width: 60px;
+  top: 38%;
+  left: 57%;
+  z-index: 0;
+  background-color: #d0eaf9;
+  border-radius: 50%;
+}
+.circle3 {
+  height: 50px;
+  width: 50px;
+  top: 44%;
+  left: 97%;
+  z-index: 0;
+  background-color: #7cc1ec;
+  border-radius: 50%;
+}
+.circle4 {
+  height: 20px;
+  width: 20px;
+  top: 0%;
+  left: 57%;
+  z-index: 0;
+  background-color: #0487d9;
+  border-radius: 50%;
+}
+.circle5 {
+  height: 20px;
+  width: 20px;
+  bottom: 10px;
+  left: 27%;
+  z-index: 0;
+  background-color: #f28705;
+  border-radius: 50%;
+}
+.leftAbout {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding-right: 00px;
+}
+.pTop {
+  color: #0487d9;
+  margin: 0;
+}
+.leftAbout h5 {
+  font-size: 58px;
+  margin: 0;
+  z-index: 1;
+}
+.leftAbout h5 span {
+  color: #f28705;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.Play {
+  font-size: 60px;
+  color: #0487d9;
+  cursor: pointer;
+}
+.values {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 30px 100px;
+  display: grid;
+  grid-template-columns: 48% 49%;
+  gap: 60px;
+}
+
+.leftValues {
+  display: flex;
+  align-items: center;
+}
+.rightValues {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.rightValues h5 {
+  font-size: 37px;
+  margin: 0;
+}
+.goal {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 30px 100px;
+}
+
+.goal h5 {
+  font-size: 37px;
+  margin: 0;
+}
+.goal p {
+  text-align: center;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+@media (max-width: 1281px) {
+  .aboutUs {
+    padding: 40px 40px 0px 40px;
+  }
+  .leftAbout h5 {
+    font-size: 37px;
+  }
+  .circle1 {
+    top: 27%;
+    left: 30%;
+  }
+  .values {
+    padding: 30px 40px;
+    gap: 40px;
+    margin-bottom: 0px;
+  }
+  .rightValues h5 {
+    font-size: 30px;
+  }
+  .goal {
+    margin-top: 0px;
+  }
+  .goal h5 {
+    font-size: 30px;
+  }
+  .Cta {
+    padding: 40px;
+  }
+}
+@media (max-width: 961px) {
+  .pTop {
+    font-size: 12px;
+  }
+  .leftAbout h5 {
+    font-size: 30px;
+  }
+  .circle1 {
+    top: 23%;
+    width: 50px;
+    height: 50px;
+  }
+  .Play {
+    font-size: 40px;
+  }
+  .values {
+    margin-top: 30px;
+    padding: 30px 20px;
+    gap: 10px;
+  }
+  .rightValues p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 801px) {
+  .aboutHeader {
+    display: flex;
+    flex-flow: column;
+  }
+  .rightAbout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .circle1 {
+    top: 9%;
+    left: 20%;
+  }
+  .circle2 {
+    top: 64%;
+    left: 10%;
+  }
+  .values {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+  .goal {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px 20px;
+  }
+  .goal p {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+@media (max-width: 481px) {
+  .aboutUs {
+    padding: 40px 10px 0px 10px;
+  }
+  .leftAbout h5 {
+    font-size: 27px;
+  }
+  .circle1 {
+    left: 52%;
+  }
+  .circle3 {
+    overflow: hidden;
+    left: 80%;
+  }
+  .circle4 {
+    top: -30px;
+  }
+  .circle2 {
+    top: 69%;
+    left: 13%;
+  }
+  .values h5 {
+    font-size: 24px;
+  }
+  .goal h5 {
+    font-size: 24px;
+    text-align: center;
+  }
+}

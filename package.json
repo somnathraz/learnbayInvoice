@@ -1,0 +1,49 @@
+{
+  "name": "skillslash",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": " next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
+    "aws-sdk": "^2.1217.0",
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.1",
+    "googleapis": "^108.0.0",
+    "handlebars": "^4.7.7",
+    "js-cookie": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.9.1",
+    "next": "^12.2.5",
+    "next-cookies": "^2.0.3",
+    "next-redux-wrapper": "^7.0.5",
+    "nodemailer": "^6.7.8",
+    "puppeteer": "^17.1.3",
+    "razorpay": "^2.8.3",
+    "react": "^18.2.0",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-phone-number-input": "^3.1.52",
+    "react-redux": "^8.0.2",
+    "react-use": "^17.4.0",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "sass": "^1.52.2",
+    "sharp": "^0.30.7",
+    "shortid": "^2.2.16",
+    "swiper": "^8.2.4",
+    "typed.js": "^2.0.12"
+  },
+  "devDependencies": {
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6"
+  }
+}

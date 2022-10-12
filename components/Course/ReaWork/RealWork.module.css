@@ -1,0 +1,146 @@
+.realWrapper {
+  display: grid;
+  grid-template-columns: 39% 59%;
+  padding: 30px 100px 0px 100px;
+}
+.left {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.left H4 {
+  margin-bottom: 20px;
+}
+.left span {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 15px;
+  font-size: 17px;
+  color: rgb(89, 89, 89);
+}
+.button {
+  width: fit-content;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 35px;
+  border-radius: 12px;
+}
+.button:hover {
+  background-color: #f28705;
+}
+.btnIcon {
+  color: white;
+}
+.right {
+  margin-left: -70px;
+  position: relative;
+}
+.vIcon {
+  font-size: 45px;
+  color: #0487d9;
+  cursor: pointer;
+}
+.vBlur {
+  background-color: #f28705;
+  border-radius: 50%;
+  backdrop-filter: blur(2px) saturate(180%);
+  -webkit-backdrop-filter: blur(2px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 71%;
+  height: 60px;
+  width: 60px;
+  left: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1281px) {
+  .realWrapper {
+    padding: 30px 20px;
+    grid-template-columns: 49% 49%;
+  }
+  .left h4 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .left p {
+    margin-bottom: 10px;
+  }
+  .vBlur {
+    top: 60%;
+    left: 16%;
+  }
+}
+@media (max-width: 961px) {
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .left h4 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 801px) {
+  .left button {
+    font-size: 14px;
+    padding: 15px;
+  }
+  .right {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media (max-width: 641px) {
+  .realWrapper {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+@media (max-width: 481px) {
+  .realWrapper {
+    display: block;
+    grid-template-columns: auto;
+    padding: 30px 10px 0px 10px;
+  }
+
+  .right {
+    margin-left: 0px;
+    position: relative;
+  }
+  .vIcon {
+    font-size: 35px;
+    color: #0487d9;
+    cursor: pointer;
+  }
+  .left {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .left button {
+    margin: auto;
+  }
+  .vBlur {
+    background-color: #f28705;
+    border-radius: 50%;
+    backdrop-filter: blur(2px) saturate(180%);
+    -webkit-backdrop-filter: blur(2px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 67%;
+    height: 40px;
+    width: 40px;
+    left: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
