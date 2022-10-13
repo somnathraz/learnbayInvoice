@@ -8,7 +8,7 @@ const nodemailer = require("nodemailer");
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
-  bucketName: "skillslash-cdn/payment-invoice",
+  bucketName: "learnbay-invoice/payment-invoice",
 };
 
 const transporter = nodemailer.createTransport({
@@ -50,7 +50,6 @@ export default async function pdfGenerate(req, res) {
     invoiceDate,
     paymentDate,
     customerEmail,
-
     DiscountPrice,
     TotalPrice,
     "generateInvoiceAPI"

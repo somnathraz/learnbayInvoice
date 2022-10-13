@@ -12,7 +12,7 @@ let emailSent = "";
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
-  bucketName: "skillslash-cdn/Refund-Invoice",
+  bucketName: "learnbay-invoice/Refund-Invoice",
 };
 
 const transporter = nodemailer.createTransport({

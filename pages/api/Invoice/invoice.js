@@ -12,7 +12,7 @@ let emailSent = "";
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
-  bucketName: "skillslash-cdn/generatead-invoice",
+  bucketName: "learnbay-invoice/generatead-invoice",
 };
 
 const transporter = nodemailer.createTransport({
@@ -106,9 +106,9 @@ export default async function pdfGenerate(req, res) {
     const fPdfName = pdfName.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, "-");
 
     const mailData = {
-      from: "admissions@skillslash.com",
+      from: "admissions@learnbay.co",
       to: customerEmail,
-      subject: `invoice From Skillslash`,
+      subject: `invoice From Learnbay`,
       attachments: [
         {
           filename: `${fPdfName}.pdf`,
@@ -116,7 +116,10 @@ export default async function pdfGenerate(req, res) {
           contentType: "application/pdf",
         },
       ],
-      html: `<div>Hi ${customerName},</div><p>Greetings from  Skillslash,</p> <p>We have attached Invoice along with this mail.</p><div>For any clarifications or doubts feel free to reach out to us on : <p><a href="mailto:admissions@skillslash.com">admissions@skillslash.com</a></p></div><p>Please find the attachments below. Your learning manager will reach out to you via email and call to help you with the next steps.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div>`,
+      html: `<div>Hi ${customerName},</div><p>Greetings from  Learnbay,</p> <p>We have attached Invoice along with this mail.</p><div>For any clarifications or doubts feel free to reach out to us on : <p><a href="mailto:contacts@learnbay.co">contacts@learnbay.co</a></p></div><p>Please find the attachments below. </P>
+      <div>Form Link:</div>
+      <p><a href="https://forms.zoho.in/support1151/form/AdmissionForm" target="_blank">https://forms.zoho.in/support1151/form/AdmissionForm</a></p>
+      <p> Once your filling the form then only your seat will get booked so Hurry up!!!</P> Your learning manager will reach out to you via email and call to help you with the next steps.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div>`,
     };
 
     // set our compiled html template as the pages content

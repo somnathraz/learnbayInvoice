@@ -43,27 +43,31 @@ const InvoiceForm = ({ refund, salesMan }) => {
     let id = Math.floor(1000 + Math.random() * 9000) + DateString;
     return id;
   };
+  useEffect(() => {
+    const verifyID = async () => {
+      let sendId = generateId();
 
-  const verifyID = async () => {
-    let sendId = generateId();
+      const data = await fetch("/api/uniqueId", {
+        method: "POST",
+        body: JSON.stringify({
+          sendId,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(data.status);
+      if (data.status === 200) {
+        const { id } = await data.json();
 
-    const data = await fetch("/api/uniqueId", {
-      method: "POST",
-      body: JSON.stringify({
-        sendId,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((t) => t.json());
-    if (data.response === 200) {
-      console.log(data.id);
-      setPId(data.id);
-    }
-    if (data.response === 409) {
-      verifyID();
-    }
-  };
+        setPId(id);
+      }
+      if (data.status === 409) {
+        verifyID();
+      }
+    };
+    verifyID();
+  }, []);
 
   const [value, setValue] = useState();
   const [query, setQuery] = useState({
@@ -75,15 +79,20 @@ const InvoiceForm = ({ refund, salesMan }) => {
     coursePrice: "",
     paymentMode: "",
     salesEmail: "",
-    InvoiceDate: new Date().toLocaleDateString,
+    InvoiceDate: `${dateT}/${monthT}/${yearT}`,
     salesMan: salesMan,
     invoiceId: pId,
   });
 
   useEffect(() => {
-    setQuery({ ...query, customerPhone: value, paymentDate: startDate });
-  }, [value, startDate]);
-
+    setQuery({
+      ...query,
+      customerPhone: value,
+      paymentDate: startDate,
+      invoiceId: pId,
+    });
+  }, [value, startDate, pId]);
+  console.log(query);
   // Update inputs value
   const handleParam = () => (e) => {
     const name = e.target.name;
@@ -118,7 +127,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
   //verify submit function
   const verifySubmit = async (e) => {
     e.preventDefault();
-    verifyID();
+
     setVerify(true);
   };
 
@@ -126,6 +135,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
+
     setLoading(true);
     try {
       const data = await fetch(
@@ -167,7 +177,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
         paymentMode: "",
         salesEmail: "",
         salesMan: "",
-        invoiceId: id,
+        invoiceId: "",
       });
       setValue("");
       setStartDate("");
