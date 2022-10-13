@@ -56,7 +56,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
           "Content-Type": "application/json",
         },
       });
-      console.log(data.status);
+
       if (data.status === 200) {
         const { id } = await data.json();
 
@@ -92,7 +92,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
       invoiceId: pId,
     });
   }, [value, startDate, pId]);
-  console.log(query);
+
   // Update inputs value
   const handleParam = () => (e) => {
     const name = e.target.name;
