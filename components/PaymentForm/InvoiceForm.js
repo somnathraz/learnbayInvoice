@@ -35,7 +35,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
   const [pId, setPId] = useState();
   let code;
   let dateT = new Date().getDate();
-  let monthT = new Date().getMonth();
+  let monthT = new Date().getMonth() + 1;
   let yearT = new Date().getFullYear();
   let DateString = `${dateT}${monthT}${yearT}`;
 

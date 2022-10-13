@@ -34,11 +34,9 @@
   height: max-content;
   align-items: center;
   padding: 20px 30px;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.315);
   border-radius: 4px;
   display: flex;
+
   flex-flow: column;
   justify-content: center;
 }
@@ -52,12 +50,14 @@
   position: absolute;
 }
 .infoD h2 {
-  color: white;
+  color: #0487d9;
+  z-index: 1;
+  border-bottom: 1px solid black;
 }
 .close {
   top: 5px;
   cursor: pointer;
-  color: white;
+  color: #0487d9;
   left: 50%;
   position: relative;
 }
@@ -241,20 +241,21 @@
   position: relative;
   margin-bottom: 10px;
 }
-.readOnlyDiv label {
+.readOnlyDiv span {
   font-size: 14px;
-  color: #646464;
+  font-weight: 600;
+  color: black;
 }
 .readOnlyDiv input {
-  background-color: white;
-  border: 1px solid #99daff;
   padding-left: 25px;
-  border-radius: 0px 5px 5px 0px;
+
   height: 40px;
   margin-left: -20px;
   width: 100%;
   z-index: 0;
-  border-left: 0px;
+  border: 0;
+  background-color: transparent;
+  color: #646464;
   outline: none;
 }
 .formIcon {
@@ -281,6 +282,7 @@
 }
 .readOnly button {
   width: 100px;
+  z-index: 1;
   transition: width 200ms ease-in-out;
 }
 .readOnly button:hover {
@@ -292,7 +294,15 @@
   display: flex;
 }
 .readOnlyCheck label {
-  color: white;
+  color: black;
+  z-index: 1;
+}
+.readOnlyCheck {
+  z-index: 1;
+}
+.readOnlyCheck input {
+  z-index: 1;
+  background-color: white;
 }
 .readOnlyDiv p {
   background-color: white;

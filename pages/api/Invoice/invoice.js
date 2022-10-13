@@ -116,10 +116,14 @@ export default async function pdfGenerate(req, res) {
           contentType: "application/pdf",
         },
       ],
-      html: `<div>Hi ${customerName},</div><p>Greetings from  Learnbay,</p> <p>We have attached Invoice along with this mail.</p><div>For any clarifications or doubts feel free to reach out to us on : <p><a href="mailto:contacts@learnbay.co">contacts@learnbay.co</a></p></div><p>Please find the attachments below. </P>
+      html: `<div>Hi ${customerName},</div><p>Greetings from  Learnbay,</p> <p>We have attached Invoice along with this mail.</p><div>For any clarifications or doubts feel free to reach out to us on : <p><a href="mailto:contacts@learnbay.co">contacts@learnbay.co</a>
+      <a href="tel:+916363558632" target="_blank">+91 6363 558 632</a></p></div><p>Please find the attachments below. </P>
       <div>Form Link:</div>
-      <p><a href="https://forms.zoho.in/support1151/form/AdmissionForm" target="_blank">https://forms.zoho.in/support1151/form/AdmissionForm</a></p>
-      <p> Once your filling the form then only your seat will get booked so Hurry up!!!</P> Your learning manager will reach out to you via email and call to help you with the next steps.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div>`,
+      <p><a href="https://forms.zoho.in/support1151/form/AdmissionForm" target="_blank">https://forms.zoho.in/support1151/form/AdmissionForm</a>
+     
+      
+      </p>
+      <p>Once your filling the form Your learning manager will reach out to you via email and call to help you with the next steps.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div>`,
     };
 
     // set our compiled html template as the pages content
@@ -168,6 +172,7 @@ export default async function pdfGenerate(req, res) {
                 paymentMode,
                 courseName,
                 salesMan,
+                fileUpload,
               ],
             ],
           },
