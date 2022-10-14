@@ -3,6 +3,7 @@ import styles from "../ContactusForm/ContactUsForm.module.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import DatePicker from "react-datepicker";
+import Image from "next/image";
 import {
   AiOutlineCloseCircle,
   AiOutlineUser,
@@ -18,7 +19,7 @@ import {
 import { MdOutlineAttachMoney, MdOutlinePayment } from "react-icons/md";
 import { TbMinusVertical } from "react-icons/tb";
 
-const InvoiceForm = ({ refund, salesMan }) => {
+const InvoiceForm = ({ refund, salesMan, team }) => {
   //offset to maintain time zone difference
 
   const [startDate, setStartDate] = useState();
@@ -78,10 +79,10 @@ const InvoiceForm = ({ refund, salesMan }) => {
     paymentDate: "",
     coursePrice: "",
     paymentMode: "",
-    salesEmail: "",
     InvoiceDate: `${dateT}/${monthT}/${yearT}`,
     salesMan: salesMan,
     invoiceId: pId,
+    paymentType: "",
   });
 
   useEffect(() => {
@@ -102,26 +103,29 @@ const InvoiceForm = ({ refund, salesMan }) => {
       [name]: value,
     }));
   };
-  if (query.courseName === "Adv Data Science and AI (Basic/Pro/ProMax)") {
-    code = "FAIML";
+  if (query.courseName === "Advanced Data science and AI Program") {
+    code = "ADSAP";
   }
-  if (query.courseName === "Full Stack Developer course with certification") {
-    code = "FSDC";
+  if (query.courseName === "Data Science and AI for managers and Leaders") {
+    code = "DSAIM";
   }
-  if (query.courseName === "Full Stack Developer course with certification") {
-    code = "FSDC";
+  if (query.courseName === "Advanced AI and ML Program") {
+    code = "AIML";
   }
-  if (query.courseName === "Business Analytics Program For Professionals") {
+  if (query.courseName === "Data science and AI Master Program") {
+    code = "DSAM";
+  }
+  if (query.courseName === "Data Analytics Program") {
+    code = "DAP";
+  }
+  if (query.courseName === "Business Analytics Program") {
     code = "BAP";
   }
-  if (query.courseName === "Blockchain program and certification") {
-    code = "BCP";
+  if (query.courseName === "Full Stack software development") {
+    code = "FSD";
   }
-  if (query.courseName === "Blockchain program and certification") {
-    code = "BCP";
-  }
-  if (query.courseName === "Data Structures and Algorithms + System Design") {
-    code = "DSAS";
+  if (query.courseName === "DSA and system design") {
+    code = "DSA";
   }
 
   //verify submit function
@@ -143,7 +147,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
         {
           method: "POST",
           body: JSON.stringify({
-            salesEmail: query.salesEmail,
+            salesEmail: query.salesMan,
             customerName: query.customerName,
             customerEmail: query.customerEmail,
             customerPhone: query.customerPhone,
@@ -153,6 +157,8 @@ const InvoiceForm = ({ refund, salesMan }) => {
             InvoiceDate: query.InvoiceDate,
             paymentMode: query.paymentMode,
             coursePrice: query.coursePrice,
+            paymentType: query.paymentType,
+            team: team,
             invoiceId: code + pId,
           }),
           headers: {
@@ -195,17 +201,6 @@ const InvoiceForm = ({ refund, salesMan }) => {
   return (
     <div className={styles.App}>
       <form onSubmit={verifySubmit}>
-        <div className={styles.formWrapper}>
-          <input
-            type="text"
-            name="salesEmail"
-            required
-            placeholder="Enter salesman Email*"
-            className={styles.EmailInput}
-            value={query.salesEmail}
-            onChange={handleParam()}
-          />
-        </div>
         <div className={styles.formWrapper}>
           <input
             type="text"
@@ -258,22 +253,29 @@ const InvoiceForm = ({ refund, salesMan }) => {
               Select a course*
             </option>
 
-            <option value="Adv Data Science and AI (Basic/Pro/ProMax)">
-              Adv Data Science and AI (Basic/Pro/ProMax)
+            <option value="Advanced Data science and AI Program">
+              Advanced Data science and AI Program
             </option>
-            <option value="Full Stack Developer course with certification">
-              Full Stack Developer course with certification
+            <option value="Data Science and AI for managers and Leaders">
+              Data Science and AI for managers and Leaders
             </option>
 
-            <option value="Blockchain program and certification">
-              Blockchain program and certification
+            <option value="Advanced AI and ML Program">
+              Advanced AI and ML Program
             </option>
-            <option value="Business Analytics Program For Professionals">
-              Business Analytics Program For Professionals
+            <option value="Data science and AI Master Program">
+              Data science and AI Master Program
             </option>
-            <option value="Data Structures and Algorithms + System Design">
-              Data Structures and Algorithms + System Design
+            <option value="Data Analytics Program">
+              Data Analytics Program
             </option>
+            <option value="Business Analytics Program">
+              Business Analytics Program
+            </option>
+            <option value="Full Stack software development">
+              Full Stack software development
+            </option>
+            <option value="DSA and system design">DSA and system design</option>
           </select>
         </div>
         <div className={styles.formWrapper}>
@@ -323,6 +325,23 @@ const InvoiceForm = ({ refund, salesMan }) => {
             onChange={handleParam()}
           />
         </div>
+
+        <div className={styles.formWrapper}>
+          <select
+            name="paymentType"
+            required
+            value={query.paymentType}
+            onChange={handleParam()}
+            placeholder="Select Payment Type*"
+          >
+            <option className={styles.option} value="">
+              Payment Type*
+            </option>
+
+            <option value="Full Payment">Full Payment</option>
+            <option value="Partial Payment">Partial Payment</option>
+          </select>
+        </div>
         <input type="hidden" id="salesMan" name="salesMan" value={salesMan} />
         {loading ? (
           <div className="center">
@@ -346,13 +365,11 @@ const InvoiceForm = ({ refund, salesMan }) => {
       {verify ? (
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
-            <div className={styles.circle} />
-            <div className={styles.circle1} />
-            <div className={styles.circle2} />
-            <div className={styles.circle3} />
-            <div className={styles.circle4} />
-            <div className={styles.circle5} />
-
+            <Image
+              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
+              layout="fill"
+              alt="review"
+            />
             <AiOutlineCloseCircle
               className={styles.close}
               onClick={() => {
@@ -362,18 +379,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
             <h2>Verify Details</h2>
             <form className={styles.readOnly} onSubmit={formSubmit}>
               <div className={styles.readOnlyDiv}>
-                <AiOutlineUser className={styles.formIcon} />
-                <TbMinusVertical className={styles.formLine} />
-                <input
-                  type="text"
-                  id="salesEmail"
-                  name="salesEmail"
-                  value={query.salesEmail}
-                  readOnly
-                />
-              </div>
-              <div className={styles.readOnlyDiv}>
-                <AiOutlineUser className={styles.formIcon} />
+                <span> Customer Name</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -384,7 +390,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <AiOutlineMail className={styles.formIcon} />
+                <span>Customer Email</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -395,7 +401,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <BsPhone className={styles.formIcon} />
+                <span>Customer phone</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="phone"
@@ -407,7 +413,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
               </div>
 
               <div className={styles.readOnlyDiv}>
-                <BsFillJournalBookmarkFill className={styles.formIcon} />
+                <span>Course Name</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -418,7 +424,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <MdOutlinePayment className={styles.formIcon} />
+                <span>Payment Mode</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -429,7 +435,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <BsCalendarDate className={styles.formIcon} />
+                <span>Payment Date</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -440,7 +446,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <MdOutlineAttachMoney className={styles.formIcon} />
+                <span>course price</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="number"
@@ -450,6 +456,18 @@ const InvoiceForm = ({ refund, salesMan }) => {
                   readOnly
                 />
               </div>
+              <div className={styles.readOnlyDiv}>
+                <span>Payment Type</span>
+                <TbMinusVertical className={styles.formLine} />
+                <input
+                  type="text"
+                  id="paymentType"
+                  name="paymentType"
+                  value={query.paymentType}
+                  readOnly
+                />
+              </div>
+
               <div className={styles.readOnlyCheck}>
                 <input
                   type="checkbox"
@@ -496,6 +514,11 @@ const InvoiceForm = ({ refund, salesMan }) => {
       {display ? (
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
+            <Image
+              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
+              layout="fill"
+              alt="review"
+            />
             <AiOutlineCloseCircle
               className={styles.close}
               onClick={() => {

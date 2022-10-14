@@ -96,6 +96,7 @@ const Dashboard = (props) => {
 
     return currentDate.getTime() < selectedDate.getTime();
   };
+  let username = props.token.token.split("@");
 
   return (
     <>
@@ -284,9 +285,7 @@ const Dashboard = (props) => {
         ""
       )}
       <div className={styles.header}>
-        <h2 style={{ textAlign: "center" }}>
-          Welcome {props.token.token.replace("@skillslash.com", "")}
-        </h2>
+        <h2 style={{ textAlign: "center" }}>Welcome {username[0]}</h2>
       </div>
       <div className={styles.dashboard}>
         {showItem.third ? (
@@ -355,7 +354,11 @@ const Dashboard = (props) => {
         {showItem.sixth ? (
           <div className={styles.loan}>
             <h2>Generate Invoice</h2>
-            <InvoiceForm refund salesMan={props.token.token} />
+            <InvoiceForm
+              refund
+              salesMan={props.token.token}
+              team={props.token.team}
+            />
           </div>
         ) : (
           ""
@@ -363,7 +366,7 @@ const Dashboard = (props) => {
         {showItem.second ? (
           <div className={styles.loan}>
             <h2>Generate Invoice</h2>
-            <InvoiceForm salesMan={props.token.token} />
+            <InvoiceForm salesMan={props.token.token} team={props.token.team} />
           </div>
         ) : (
           ""

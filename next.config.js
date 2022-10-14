@@ -26,7 +26,10 @@ module.exports = {
     ];
   },
   images: {
-    domains: ["learnbay-wb.s3.ap-south-1.amazonaws.com"],
+    domains: [
+      "learnbay-wb.s3.ap-south-1.amazonaws.com",
+      "skillslash-cdn.s3.ap-south-1.amazonaws.com",
+    ],
   },
 
   swcMinify: true,

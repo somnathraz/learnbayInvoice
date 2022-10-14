@@ -20,6 +20,7 @@ const AddUserFrom = () => {
     email: "",
     password: "",
     role: "",
+    team: "",
   });
 
   // Update inputs value
@@ -44,6 +45,7 @@ const AddUserFrom = () => {
           email: query.email,
           password: query.password,
           role: query.role,
+          team: query.team,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -54,6 +56,8 @@ const AddUserFrom = () => {
         setQuery({
           email: "",
           password: "",
+          role: "",
+          team: "",
         });
         setUser({ ...user, msg: data.message, success: true });
       } else {
@@ -133,6 +137,25 @@ const AddUserFrom = () => {
 
             <option value="Admin">Admin</option>
             <option value="Editor">Editor</option>
+          </select>
+        </div>
+        <div className={styles.formWrapper}>
+          <select
+            name="team"
+            required
+            value={query.team}
+            onChange={handleParam()}
+            placeholder="Select Team*"
+          >
+            <option className={styles.option} value="">
+              Select User Team*
+            </option>
+
+            <option value="Organic Team">Organic Team</option>
+            <option value="Google ads-1 (Irfan)">Google ads-1 (Irfan)</option>
+
+            <option value="Google ads-2 (Shah)">Google ads-2 (Shah)</option>
+            <option value="Full Stack">Full Stack</option>
           </select>
         </div>
         {loading ? (

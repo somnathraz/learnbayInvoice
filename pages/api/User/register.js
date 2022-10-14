@@ -4,8 +4,8 @@ import bcrypt from "bcrypt";
 const saltRounds = 12;
 
 export default async function handler(req, res) {
-  const { email, password, role } = req.body;
-  console.log(email, password, role);
+  const { email, password, role, team } = req.body;
+  console.log(email, password, role, team);
 
   if (req.method === "POST") {
     const { db } = await connectToDatabase();
@@ -24,6 +24,7 @@ export default async function handler(req, res) {
           email: email,
           password: passwordHash,
           role: role,
+          team: team,
         });
 
         // Send all-clear with _id as token
@@ -32,6 +33,7 @@ export default async function handler(req, res) {
           email,
           password,
           role,
+          team,
           message: "user created Successful",
         });
       }

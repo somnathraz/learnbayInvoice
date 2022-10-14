@@ -327,6 +327,10 @@
     margin-top: 80px;
     margin-left: 100px;
   }
+  .header h2 {
+    font-size: 24px;
+    color: #0487d9;
+  }
   .header {
     gap: 20px;
     display: flex;

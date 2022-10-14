@@ -21,7 +21,9 @@ export default async function handler(req, res) {
     } else {
       const passWordMatch = await bcrypt.compare(password, user.password);
       if (passWordMatch)
-        res.status(200).json({ token: user.email, role: user.role });
+        res
+          .status(200)
+          .json({ token: user.email, role: user.role, team: user.team });
       else res.status(401).json({ message: "password mismatch" });
     }
   } catch (err) {

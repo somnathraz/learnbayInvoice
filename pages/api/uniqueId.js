@@ -4,7 +4,6 @@ const saltRounds = 12;
 
 export default async function handler(req, res) {
   const { sendId } = req.body;
-  console.log(sendId);
 
   if (req.method === "POST") {
     const { db } = await connectToDatabase();

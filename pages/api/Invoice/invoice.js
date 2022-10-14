@@ -35,10 +35,12 @@ export default async function pdfGenerate(req, res) {
     customerPhone,
     coursePrice,
     invoiceId,
-    salesEmail,
     salesMan,
+    salesEmail,
     InvoiceDate,
     paymentMode,
+    paymentType,
+    team,
     paymentDate,
     customerEmail,
   } = req.body;
@@ -93,6 +95,7 @@ export default async function pdfGenerate(req, res) {
       invoiceId,
       InvoiceDate,
       paymentDate,
+      paymentType,
       customerEmail,
       OriginalCost,
       SGST,
@@ -104,6 +107,31 @@ export default async function pdfGenerate(req, res) {
     const page = await browser.newPage();
     const pdfName = customerName + new Date() + "-" + invoiceId;
     const fPdfName = pdfName.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, "-");
+    let link;
+    if (courseName === "Advanced Data science and AI Program") {
+      link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
+    }
+    if (courseName === "Data Science and AI for managers and Leaders") {
+      link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
+    }
+    if (courseName === "Advanced AI and ML Program") {
+      link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
+    }
+    if (courseName === "Data science and AI Master Program") {
+      link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
+    }
+    if (courseName === "Data Analytics Program") {
+      link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
+    }
+    if (courseName === "Business Analytics Program") {
+      link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
+    }
+    if (courseName === "Full Stack software development") {
+      link = "https://zfrmz.in/nOlE6J6FvLoZ0su8MxT8";
+    }
+    if (courseName === "DSA and system design") {
+      link = "https://zfrmz.in/nOlE6J6FvLoZ0su8MxT8";
+    }
 
     const mailData = {
       from: "admissions@learnbay.co",
@@ -119,9 +147,7 @@ export default async function pdfGenerate(req, res) {
       html: `<div>Hi ${customerName},</div><p>Greetings from  Learnbay,</p> <p>We have attached Invoice along with this mail.</p><div>For any clarifications or doubts feel free to reach out to us on : <p><a href="mailto:contacts@learnbay.co">contacts@learnbay.co</a>
       <a href="tel:+916363558632" target="_blank">+91 6363 558 632</a></p></div><p>Please find the attachments below. </P>
       <div>Form Link:</div>
-      <p><a href="https://forms.zoho.in/support1151/form/AdmissionForm" target="_blank">https://forms.zoho.in/support1151/form/AdmissionForm</a>
-     
-      
+      <p><a href="${link}" target="_blank">${link}</a>       
       </p>
       <p>Once your filling the form Your learning manager will reach out to you via email and call to help you with the next steps.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div>`,
     };
@@ -159,10 +185,11 @@ export default async function pdfGenerate(req, res) {
             values: [
               [
                 paymentDate,
-                InvoiceDate,
-                salesEmail,
+                salesMan,
+                team,
                 customerName,
                 parseInt(coursePrice),
+                paymentType,
                 customerEmail,
                 customerPhone,
                 "backendData",
@@ -171,7 +198,6 @@ export default async function pdfGenerate(req, res) {
                 invoiceId,
                 paymentMode,
                 courseName,
-                salesMan,
                 fileUpload,
               ],
             ],
@@ -190,6 +216,8 @@ export default async function pdfGenerate(req, res) {
           fileLink: fileUpload,
           emailInfo: emailSent,
           salesMan: salesMan,
+          team: team,
+          paymentType: paymentType,
           paymentMode: paymentMode,
         });
         res.status(200).json({
