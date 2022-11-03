@@ -6,17 +6,11 @@ import DatePicker from "react-datepicker";
 import Image from "next/image";
 import {
   AiOutlineCloseCircle,
-  AiOutlineUser,
   AiOutlineMail,
   AiOutlineDatabase,
 } from "react-icons/ai";
-import { BsPhone, BsArrowRightShort } from "react-icons/bs";
-import {
-  BsFillJournalBookmarkFill,
-  BsCalendarDate,
-  BsFileEarmarkPdf,
-} from "react-icons/bs";
-import { MdOutlineAttachMoney, MdOutlinePayment } from "react-icons/md";
+import { BsArrowRightShort } from "react-icons/bs";
+import { BsFileEarmarkPdf } from "react-icons/bs";
 import { TbMinusVertical } from "react-icons/tb";
 
 const InvoiceForm = ({ refund, salesMan, team }) => {
@@ -76,6 +70,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
     customerEmail: "",
     customerPhone: "",
     courseName: "",
+    counselorEmail: "",
     paymentDate: "",
     coursePrice: "",
     paymentMode: "",
@@ -139,7 +134,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(query.counselorEmail);
     setLoading(true);
     try {
       const data = await fetch(
@@ -151,8 +146,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             customerName: query.customerName,
             customerEmail: query.customerEmail,
             customerPhone: query.customerPhone,
+            counselorEmail: query.counselorEmail,
             courseName: query.courseName,
-            paymentDate: query.paymentDate.toLocaleDateString(),
+            paymentDate: query.paymentDate.toLocaleDateString("en-US"),
             salesMan: query.salesMan,
             InvoiceDate: query.InvoiceDate,
             paymentMode: query.paymentMode,
@@ -176,6 +172,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
       setQuery({
         customerName: "",
         customerEmail: "",
+        counselorEmail: "",
         customerPhone: "",
         courseName: "",
         paymentDate: "",
@@ -209,6 +206,17 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             required
             placeholder="Enter Customer Full Name*"
             value={query.customerName}
+            onChange={handleParam()}
+          />
+        </div>
+        <div className={styles.formWrapper}>
+          <input
+            type="text"
+            name="counselorEmail"
+            className={styles.NameInput}
+            required
+            placeholder="Enter Counselor Email*"
+            value={query.counselorEmail}
             onChange={handleParam()}
           />
         </div>
@@ -386,6 +394,17 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
                   id="CustomerName"
                   name="CustomerName"
                   value={query.customerName}
+                  readOnly
+                />
+              </div>
+              <div className={styles.readOnlyDiv}>
+                <span> Counselor Email</span>
+                <TbMinusVertical className={styles.formLine} />
+                <input
+                  type="text"
+                  id="CounselorEmail"
+                  name="CounselorEmail"
+                  value={query.counselorEmail}
                   readOnly
                 />
               </div>
