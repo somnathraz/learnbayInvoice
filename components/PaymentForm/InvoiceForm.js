@@ -181,6 +181,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
         salesEmail: "",
         salesMan: "",
         invoiceId: "",
+        paymentType: "",
       });
       setValue("");
       setStartDate("");

@@ -205,6 +205,118 @@ export default async function pdfGenerate(req, res) {
             ],
           },
         });
+        if (team === "Organic Team") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            range: "organic",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  paymentDate,
+                  salesMan,
+                  team,
+                  customerName,
+                  parseInt(coursePrice),
+                  paymentType,
+                  customerEmail,
+                  customerPhone,
+                  "backendData",
+                  "backendData",
+                  GST,
+                  invoiceId,
+                  paymentMode,
+                  courseName,
+                  fileUpload,
+                ],
+              ],
+            },
+          });
+        }
+        if (team === "Google ads-1 (Irfan)") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            range: "Google ads-1 (Irfan)",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  paymentDate,
+                  salesMan,
+                  team,
+                  customerName,
+                  parseInt(coursePrice),
+                  paymentType,
+                  customerEmail,
+                  customerPhone,
+                  "backendData",
+                  "backendData",
+                  GST,
+                  invoiceId,
+                  paymentMode,
+                  courseName,
+                  fileUpload,
+                ],
+              ],
+            },
+          });
+        }
+        if (team === "Google ads-2 (Shah)") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            range: "Google ads-2 (Shah)",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  paymentDate,
+                  salesMan,
+                  team,
+                  customerName,
+                  parseInt(coursePrice),
+                  paymentType,
+                  customerEmail,
+                  customerPhone,
+                  "backendData",
+                  "backendData",
+                  GST,
+                  invoiceId,
+                  paymentMode,
+                  courseName,
+                  fileUpload,
+                ],
+              ],
+            },
+          });
+        }
+        if (team === "Full Stack") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            range: "Full Stack",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  paymentDate,
+                  salesMan,
+                  team,
+                  customerName,
+                  parseInt(coursePrice),
+                  paymentType,
+                  customerEmail,
+                  customerPhone,
+                  "backendData",
+                  "backendData",
+                  GST,
+                  invoiceId,
+                  paymentMode,
+                  courseName,
+                  fileUpload,
+                ],
+              ],
+            },
+          });
+        }
 
         let myPost = await db.collection("generatedInvoice").insertOne({
           customerName: customerName,
