@@ -12,9 +12,11 @@ import {
 import { BsArrowRightShort } from "react-icons/bs";
 import { BsFileEarmarkPdf } from "react-icons/bs";
 import { TbMinusVertical } from "react-icons/tb";
-
+import jsCookie from "js-cookie";
 const InvoiceForm = ({ refund, salesMan, team }) => {
   //offset to maintain time zone difference
+  const sales = jsCookie.get("token");
+  const salesEmailId = JSON.parse(sales);
 
   const [startDate, setStartDate] = useState();
 
@@ -75,7 +77,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
     coursePrice: "",
     paymentMode: "",
     InvoiceDate: `${dateT}/${monthT}/${yearT}`,
-    salesMan: salesMan,
+    salesMan: salesEmailId.token,
     invoiceId: pId,
     paymentType: "",
   });
@@ -179,7 +181,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
         coursePrice: "",
         paymentMode: "",
         salesEmail: "",
-        salesMan: "",
+        salesMan: salesEmailId.token,
         invoiceId: "",
         paymentType: "",
       });
