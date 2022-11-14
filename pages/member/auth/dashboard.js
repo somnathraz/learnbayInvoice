@@ -4,6 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import styles from "../../../styles/dashboard.module.css";
 import InvoiceForm from "../../../components/PaymentForm/InvoiceForm";
+import CounsellingReportForm from "../../../components/CounsellingReportForm/CounsellingReportForm";
+
+
 import {
   AiOutlineUserAdd,
   AiOutlineUserSwitch,
@@ -11,11 +14,12 @@ import {
 } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
 import { RiCoupon2Line, RiHandCoinLine } from "react-icons/ri";
-import { TbFileInvoice } from "react-icons/tb";
+import { TbFileInvoice, TbReportAnalytics } from "react-icons/tb";
 import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
 import Image from "next/image";
 
 const Dashboard = (props) => {
+  
   const discountPercentRef = useRef();
   const couponLengthRef = useRef();
   const [showItem, setShowItem] = useState({
@@ -25,6 +29,7 @@ const Dashboard = (props) => {
     fourth: false,
     fifth: false,
     sixth: false,
+    seventh: false,
   });
   const [mobile, setMobile] = useState(false);
   const [startDate, setStartDate] = useState();
@@ -135,10 +140,12 @@ const Dashboard = (props) => {
               CLOSE
             </span> */}
           </div>
+
           <div className={styles.list}>
             <div className={styles.head}>
               <p className={styles.head}>Function</p>
             </div>
+
             <span
               className={showItem.first ? styles.spanActive : styles.span}
               onClick={() =>
@@ -150,6 +157,7 @@ const Dashboard = (props) => {
                   fourth: false,
                   fifth: false,
                   sixth: false,
+                  seventh: false,
                 })
               }
             >
@@ -161,6 +169,7 @@ const Dashboard = (props) => {
 
               <p className={styles.item}>Add Coupon</p>
             </span>
+
             <span
               className={showItem.second ? styles.spanActive : styles.span}
               onClick={() =>
@@ -172,6 +181,7 @@ const Dashboard = (props) => {
                   fourth: false,
                   fifth: false,
                   sixth: false,
+                  seventh: false,
                 })
               }
             >
@@ -183,6 +193,33 @@ const Dashboard = (props) => {
 
               <p className={styles.item}>Add Invoice</p>
             </span>
+
+
+            <span
+            className={showItem.seventh ? styles.spanActive : styles.span}
+            onClick={() =>
+              setShowItem({
+                ...showItem,
+                second: false,
+                first: false,
+                third: false,
+                fourth: false,
+                fifth: false,
+                sixth: false,
+                seventh: true,
+              })
+            }
+          >
+            <TbReportAnalytics
+              className={
+                showItem.seventh ? styles.barIconActive : styles.barIcon
+              }
+            />
+
+            <p className={styles.item}>Add Counselling Report</p>
+          </span>
+
+
             <span
               className={showItem.sixth ? styles.spanActive : styles.span}
               onClick={() =>
@@ -194,6 +231,7 @@ const Dashboard = (props) => {
                   fourth: false,
                   fifth: false,
                   sixth: true,
+                  seventh: false,
                 })
               }
             >
@@ -205,6 +243,7 @@ const Dashboard = (props) => {
 
               <p className={styles.item}>Refund Form</p>
             </span>
+
             {props.token.role === "Admin" ? (
               <div className={styles.list}>
                 <div className={styles.head}>
@@ -221,6 +260,7 @@ const Dashboard = (props) => {
                       fourth: false,
                       fifth: false,
                       sixth: false,
+                      seventh: false,
                     })
                   }
                 >
@@ -243,6 +283,7 @@ const Dashboard = (props) => {
                       fourth: true,
                       fifth: false,
                       sixth: false,
+                      seventh: false,
                     })
                   }
                 >
@@ -284,9 +325,16 @@ const Dashboard = (props) => {
       ) : (
         ""
       )}
+
+
+
+
       <div className={styles.header}>
         <h2 style={{ textAlign: "center" }}>Welcome {username[0]}</h2>
       </div>
+
+
+
       <div className={styles.dashboard}>
         {showItem.third ? (
           <div className={styles.loan}>
@@ -351,6 +399,7 @@ const Dashboard = (props) => {
         ) : (
           ""
         )}
+
         {showItem.sixth ? (
           <div className={styles.loan}>
             <h2>Generate Invoice</h2>
@@ -371,6 +420,17 @@ const Dashboard = (props) => {
         ) : (
           ""
         )}
+
+
+        {showItem.seventh ? (
+          <div className={styles.loan}>
+            <h2>Add Counselling Report</h2>
+            <CounsellingReportForm salesMan={props.token.token} team={props.token.team} />
+          </div>
+        ) : (
+          ""
+        )}
+
       </div>
     </>
   );

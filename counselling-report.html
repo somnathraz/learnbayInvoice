@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        .infoGrid {
+            display: grid;
+            width: 100%;
+            max-width: 100%;
+            grid-template-columns: 30% 70%;
+            justify-content: space-between;
+            gap: 40px;
+
+        }
+
+        .infoGrid1 {
+            display: grid;
+            width: 100%;
+            max-width: 100%;
+            grid-template-columns: 45% 55%;
+            justify-content: space-between;
+            gap: 40px;
+
+        }
+
+        .arrow {
+            display: grid;
+            width: 100%;
+            max-width: 100%;
+            grid-template-columns: 25% 10% 25% 10% 25%;
+            justify-content: space-between;
+        }
+
+
+        .cnotediv {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .cnote {
+            margin: 50px 0px;
+        }
+
+        .stp {
+            font-size: 28px;
+            line-height: 34px;
+            color: #12229D;
+            width: 25%;
+            display: flex;
+            align-items: center;
+        }
+
+        .box1 {
+            width: 25%;
+            background: #CAE8FF;
+            padding: 10px 20px 40px 20px;
+            border-radius: 30px;
+            color: black;
+        }
+
+        .box2 {
+            width: 25%;
+            background: #FFFBA6;
+            padding: 10px 20px 40px 20px;
+            border-radius: 30px;
+            color: black;
+        }
+
+        .boxn1 {
+            font-size: 40px;
+            color: #6FABD8;
+            padding: 10px 0px 24px 0px;
+            text-align: right;
+        }
+
+        .boxn2 {
+            font-size: 40px;
+            color: #EFCF50;
+            padding: 10px 0px 24px 0px;
+            text-align: right;
+        }
+
+
+
+        .infoRow {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-left: 30px;
+        }
+
+
+
+
+        .invoice-box {
+            width: 700px;
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /** RTL **/
+        .rtl {
+            direction: rtl;
+            font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .rtl table {
+            text-align: right;
+        }
+
+        .rtl table tr td:nth-child(2) {
+            text-align: left;
+        }
+
+        .invocieh {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .vl {
+            border-left: 2px solid;
+            height: auto;
+        }
+
+        ul.mixed {
+            list-style-type: none;
+            margin-left: -11px;
+        }
+
+        ul.mixed1 {
+            list-style-type: none;
+            margin-left: -34px;
+        }
+
+        ul.mixed1 li:before {
+            content: "\2022";
+            padding-right: 0.5em;
+        }
+
+        ul.mixed li:before {
+            content: "\2022";
+            padding-right: 0.5em;
+        }
+
+        li.l1:before {
+            color: yellow;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+
+        li.l2:before {
+            color: blue;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+        .arrowspan {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td class="title">
+                                <img src="https://learnbay-wb.s3.ap-south-1.amazonaws.com/main/Learnbay-Logo.webp"
+                                    alt="Learnbay" />
+                            </td>
+
+
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <h3>Personalized Career Counseling Report</h3>
+            <b>:: {{counselorName}}</b>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <tr class="information">
+            <td colspan="2">
+                <div class="infoGrid">
+                    <div>
+                        <b>Goal:</b>
+                        {{stdGoal}}
+                    </div>
+
+                    <div class="vl">
+                        <div class="infoRow">
+                            <b> Name: {{stdName}}</b>
+                        </div>
+                        <div class="infoRow">
+                            <b>Experience:{{stdExperience}} years</b>
+                        </div>
+
+                        <div class="infoRow">
+                            <b>Domain: {{stdDomain}}</b>
+
+                        </div>
+                        <div class="infoRow">
+                            <b>Company:{{stdCompany}}</b>
+
+                        </div>
+                        <div class="infoRow">
+                            <b>CTC:{{stdCTC}} LPA</b>
+
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+
+        <br>
+        <hr>
+        <br>
+        <div>
+
+            <b>Profile Analysis:</b>
+            <p> We have analyzed your profile as per industry trend and your current experience.</p>
+        </div>
+
+        <br>
+        <td colspan="2">
+            <div class="infoGrid">
+                <div>
+                    <b>Suggested Program:</b>
+                    {{suggestedProgram}}
+
+                </div>
+
+                <div class="vl">
+
+
+                    <ul class="mixed">
+                        <li class="l1"><span>Primary Domain: {{primaryDomain}}</span></li>
+                        <li class="l2">Transition Domain: {{transitionDomain}}</li>
+                        <li class="l1">Average Hike: {{averageHike}}%</li>
+                        <li class="l2">Average Timeline: {{averageTimeline}}</li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </td>
+
+        <br>
+        <hr>
+        <br>
+        <div>
+            <b>Learning Phase:</b>
+        </div>
+        <br>
+        <td colspan="2">
+            <div class="infoGrid1">
+                <div>
+                    <p>Essential Tools and Modules:</p>
+                    <ul class="mixed1">
+                        <li class="l1">Python</li>
+                        <li class="l2">Statistics</li>
+                        <li class="l1">Machine Learning</li>
+                        <li class="l2">SQL</li>
+                    </ul>
+                </div>
+                <div>
+                    <p>Advance Tools and Modules:</p>
+                    <ul class="mixed1">
+                        <li class="l1">Tableau</li>
+                        <li class="l2">PowerBI</li>
+                        <li class="l1">Big Data & Spark Analytics</li>
+                        <li class="l2">Time Series</li>
+                        <li class="l1">Deep Learning & NLP</li>
+                    </ul>
+                </div>
+
+            </div>
+            <p>Note: We have sent you detailed course curriculum over mail and whatsapp.</p>
+            <hr>
+
+        </td>
+
+        <br>
+        <br>
+        <div>
+            <b>Domain & Project Training:</b>
+        </div>
+        <br>
+
+        <div class="arrow">
+
+            <div><b>40</b> hours of dedicated Domain Expertise</div>
+            <span class="arrowspan">&#8594;</span>
+            <div><b>12 - 20</b> Realtime Industrial Projects</div>
+            <span class="arrowspan">&#8594;</span>
+            <div><b>2 - 4 </b> Capstone Projetcs</div>
+        </div>
+
+
+        <br>
+        <div>
+            <b>Domain-Specific Projects:</b>
+            <p>All the projects are covered end-to-end by Industrial Experts</p>
+        </div>
+
+        <br>
+        <td colspan="2">
+            <div class="infoGrid1">
+                <div>
+                    <ul class="mixed1">
+                        <li class="l1"><b>{{transitionDomain}}</b>
+                            <p>{{point1}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="mixed1">
+                        <li class="l1"><b>{{transitionDomain}}</b>
+                            <p>{{point2}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="infoGrid1">
+                <div>
+                    <ul class="mixed1">
+                        <li class="l2"><b>{{transitionDomain}}</b>
+                            <p>{{point3}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="mixed1">
+                        <li class="l2"><b>{{transitionDomain}}</b>
+                            <p>{{point4}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </td>
+
+        <br>
+        <hr>
+        <br>
+
+        <div>
+            <b>Conclusion:</b>
+            <p>As you senior career counselor I recommend you to follow a guided pipeline which
+                will ensure you a successful career transition</p>
+        </div>
+        <br>
+        <p><b>Counselor Note : </b>{{counselorNote}}</p>
+
+        <br>
+
+        <div class="cnote">
+            <div class="cnotediv">
+                <p class="stp">Smooth<br />Transition<br />Pipeline</p>
+                <div class="box1">
+                    <p class="boxn1">1</p>
+                    <p>Complete your basic + advance modules <b>Training</b></p>
+                </div>
+                <div class="box2">
+                    <p class="boxn2">2</p>
+                    <p>
+                        Perform real time Complete your basic + advance modules Training
+                        industrial projects and <b>Capstone Projects</b> by targeting your
+                        primary domain.
+                    </p>
+                </div>
+                <div class="box1">
+                    <p class="boxn1">3</p>
+                    <p>
+                        With our <b>Domain Specialized</b> Program make your previous exp. count
+                        without being considered as a fresher
+                    </p>
+                </div>
+                <div class="box2">
+                    <p class="boxn2">4</p>
+                    <p>
+                        Get an assured <b>Hike</b> by adding Capstone Certificate in your resume
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

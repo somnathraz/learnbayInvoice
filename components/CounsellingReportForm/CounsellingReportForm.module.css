@@ -1,0 +1,326 @@
+.App {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  width: 100%;
+}
+.formWrapper {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+.formWrapper input {
+  appearance: none;
+}
+.infoWrap {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.748);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+.infoD {
+  position: relative;
+  width: 50%;
+  height: max-content;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 4px;
+  display: flex;
+
+  flex-flow: column;
+  justify-content: center;
+}
+.circle {
+  height: 60px;
+  width: 60px;
+  background-color: #f28705;
+  border-radius: 100%;
+  top: -15px;
+  left: -15px;
+  position: absolute;
+}
+.infoD h2 {
+  color: #0487d9;
+  z-index: 1;
+  border-bottom: 1px solid black;
+}
+.close {
+  top: 5px;
+  cursor: pointer;
+  color: #0487d9;
+  left: 50%;
+  position: relative;
+}
+
+.NameInput {
+  border-radius: 2px;
+  border: 0;
+  width: 100%;
+  border: 1px solid #0487d9;
+  border-radius: 10px;
+
+  outline: none;
+  padding: 15px 10px;
+  background-color: rgba(255, 255, 255);
+  height: 45px;
+}
+
+.EmailInput {
+  border-radius: 2px;
+  border: 0;
+  width: 100%;
+  border: 1px solid #0487d9;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  background-color: rgba(255, 255, 255);
+  height: 45px;
+}
+
+.NameInput::placeholder,
+.EmailInput::placeholder {
+  color: rgb(168, 168, 168);
+  font-size: 16px;
+}
+
+.Phone input {
+  border: 0;
+  width: 100%;
+  outline: none;
+  background-color: rgba(255, 255, 255);
+}
+.Phone input::placeholder,
+.textarea::placeholder {
+  color: rgb(167, 167, 167);
+  font-size: 16px;
+}
+
+.formWrapper select {
+  height: 45px;
+  width: 100%;
+
+  border: 1px solid #0487d9;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  padding-left: 10px;
+  color: rgb(167, 167, 167);
+  outline: none;
+}
+.formWrapper select option {
+  color: black;
+  width: 100%;
+  border: 0;
+  background-color: #e7f4ff;
+}
+.FormText {
+  color: grey;
+  font-size: 8px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.formWrapper select::placeholder {
+  color: rgb(167, 167, 167);
+  font-size: 12px;
+}
+.textarea {
+  width: 100%;
+  height: 140px;
+  border: 1px solid #0487d9;
+  border-radius: 10px;
+  padding: 10px;
+}
+.textarea::placeholder {
+  font-family: Roboto;
+}
+.button {
+  width: 100%;
+  padding: 15px 25px;
+  display: flex;
+  font-size: 18px;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.App form {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+}
+.inner .date input {
+  border: 1px solid #0487d9;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  height: 45px;
+  color: rgb(167, 167, 167);
+  font-size: 17px;
+}
+
+.inner .time {
+  border: 1px solid #0487d9;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  color: rgb(167, 167, 167);
+  font-size: 18px;
+}
+.time:focus-visible,
+.date input:focus-visible {
+  outline: none;
+  border: 3px solid #0487d9;
+}
+.tme::-webkit-search-cancel-button,
+.time::-webkit-clear-button {
+  -webkit-appearance: none;
+
+  color: #0487d9;
+  cursor: pointer;
+  height: 1.5rem;
+  margin-right: 0;
+  width: 1.5rem;
+}
+
+.time::-webkit-time-picker-indicator {
+  color: #0487d9;
+  opacity: 1;
+
+  width: 23px;
+  height: 18px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.DateFormWrappers {
+  margin-bottom: 10px;
+  width: 80%;
+  height: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: column;
+}
+.inner {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 10px;
+  width: 100%;
+}
+.showBtn {
+  position: absolute;
+  font-size: 22px;
+  top: 29%;
+  cursor: pointer;
+  left: 94%;
+}
+.readOnly {
+  display: flex;
+  flex-flow: column;
+  width: 60%;
+}
+.readOnlyDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+.readOnlyDiv span {
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+  width: 140px;
+}
+.readOnlyDiv input {
+  padding-left: 25px;
+
+  height: 40px;
+  margin-left: -20px;
+  width: 100%;
+  z-index: 0;
+  border: 0;
+  background-color: transparent;
+  color: #646464;
+  outline: none;
+}
+.formIcon {
+  font-size: 28px;
+  border: 1px solid #99daff;
+  border-right: 0px;
+  height: 40px;
+  z-index: 1;
+  background-color: white;
+  color: #f28705;
+  padding-left: 5px;
+  margin-right: -4px;
+  border-radius: 5px 0px 0px 5px;
+}
+.formLine {
+  font-size: 17px;
+  color: #99daff;
+  z-index: 1;
+  margin-left: 4px;
+}
+.buttonIcon {
+  display: none;
+  transition: width 200ms ease-in-out;
+}
+.readOnly button {
+  width: 100px;
+  z-index: 1;
+  transition: width 200ms ease-in-out;
+}
+.readOnly button:hover {
+  width: 140px;
+  background-color: #f28705;
+  transition: width 800ms ease-in-out;
+}
+.readOnly button:hover > .buttonIcon {
+  display: flex;
+}
+.readOnlyCheck label {
+  color: black;
+  z-index: 1;
+}
+.readOnlyCheck {
+  z-index: 1;
+}
+.readOnlyCheck input {
+  z-index: 1;
+  background-color: white;
+}
+.readOnlyDiv p {
+  background-color: white;
+  border: 1px solid #99daff;
+  border-left: 0px;
+  height: 40px;
+  overflow-y: scroll;
+  border-radius: 0px 5px 5px 0px;
+  padding-left: 30px;
+  width: 70%;
+  margin-left: -20px;
+}
+@media (max-width: 481px) {
+  .readOnly {
+    width: 100%;
+  }
+  .infoD {
+    width: 90%;
+  }
+}
