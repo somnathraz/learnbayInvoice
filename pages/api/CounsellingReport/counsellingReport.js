@@ -297,38 +297,38 @@ export default async function counsellingReportPdfGenerate(req, res) {
         //     ],
         //   },
         // });
-        // if (team === "Organic Team") {
-        //   const response = await sheets.spreadsheets.values.append({
-        //     spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
-        //     range: "Sheet1",
-        //     valueInputOption: "USER_ENTERED",
-        //     requestBody: {
-        //       values: [
-        //         [
-        //           counselorName,
-        //           stdGoal,
-        //           stdEmail,
-        //           stdPhone,
-        //           stdName,
-        //           stdExperience,
-        //           stdDomain,
-        //           stdCompany,
-        //           stdCTC,
-        //           suggestedProgram,
-        //           primaryDomain,
-        //           transitionDomain,
-        //           averageHike,
-        //           averageTimeline,
-        //           counselorNote,
-        //           counsellingDate,
-        //           salesMan,
-        //           counsellingId,
-        //           team,
-        //         ],
-        //       ],
-        //     },
-        //   });
-        // }
+        if (team === "Organic Team") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
+            range: "Sheet1",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  counselorName,
+                  stdGoal,
+                  stdEmail,
+                  stdPhone,
+                  stdName,
+                  stdExperience,
+                  stdDomain,
+                  stdCompany,
+                  stdCTC,
+                  suggestedProgram,
+                  primaryDomain,
+                  transitionDomain,
+                  averageHike,
+                  averageTimeline,
+                  counselorNote,
+                  counsellingDate,
+                  salesMan,
+                  counsellingId,
+                  team,
+                ],
+              ],
+            },
+          });
+        }
         // if (team === "Google ads-1 (Irfan)") {
         //   const response = await sheets.spreadsheets.values.append({
         //     spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
