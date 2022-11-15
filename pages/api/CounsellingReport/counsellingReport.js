@@ -30,6 +30,10 @@ const transporter = nodemailer.createTransport({
 
 export default async function counsellingReportPdfGenerate(req, res) {
 
+  let counsellingDate = new Date();
+  counsellingDate = counsellingDate.toUTCString();
+
+
   const { db } = await connectToDatabase();
 
   // console.log(db)
@@ -51,7 +55,6 @@ export default async function counsellingReportPdfGenerate(req, res) {
     averageHike,
     averageTimeline,
     counselorNote,
-    counsellingDate,
     salesMan,
     counsellingId,
     team,
@@ -213,7 +216,7 @@ export default async function counsellingReportPdfGenerate(req, res) {
     // simulate a chrome browser with puppeteer and navigate to a new page
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    const pdfName = stdName + new Date() + "-" + counsellingId;
+    const pdfName = "[Personalized Career Counselling Report]" + stdName + new Date() + "-" + counsellingId;
     // console.log("pdfName",pdfName)
 
     const fPdfName = pdfName.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, "-");
@@ -223,7 +226,7 @@ export default async function counsellingReportPdfGenerate(req, res) {
     const mailData = {
       from: "admissions@learnbay.co",
       to: stdEmail,
-      subject: `Counselling Report From Learnbay`,
+      subject: `Personalized Career Report of ${stdName}`,
       attachments: [
         {
           filename: `${fPdfName}.pdf`,
@@ -231,9 +234,8 @@ export default async function counsellingReportPdfGenerate(req, res) {
           contentType: "application/pdf",
         },
       ],
-      html: `<div>Hi ${stdName},</div><p>Greetings from  Learnbay,</p> <p>We have attached Invoice along with this mail.</p><div>For any clarifications or doubts feel free to reach out to us on : <p><a href="mailto:contacts@learnbay.co">contacts@learnbay.co</a>
-      <a href="tel:+916363558632" target="_blank">+91 6363 558 632</a></p></div><p>Please find the attachments below. </P>
-      <p>Once your filling the form Your learning manager will reach out to you via email and call to help you with the next steps.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div><div>Note:-The amount will not be refundable after 15 days of joining</div>`,
+      html: `<div>Hi ${stdName},</div><p>I am ${counselorName} your senior counselor for ${suggestedProgram}.</p> <p>For a better understanding of your transitional experience, I have developed a customized career report for you, taking into consideration your professional background, goal, and requirement.</P>
+       <p>Please refer to the following attachment.</p><div>Regards,</div><div>Learnbay</div>`,
     };
 
 
@@ -266,37 +268,6 @@ export default async function counsellingReportPdfGenerate(req, res) {
       } else {
         emailSent = `email sent successfully. ${info.messageId}`;
 
-        // console.log(emailSent)
-        // const response = await sheets.spreadsheets.values.append({
-        //   spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
-        //   range: "Sheet1",
-        //   valueInputOption: "USER_ENTERED",
-        //   requestBody: {
-        //     values: [
-        //       [
-        //         counselorName,
-        //         stdGoal,
-        //         stdEmail,
-        //         stdPhone,
-        //         stdName,
-        //         stdExperience,
-        //         stdDomain,
-        //         stdCompany,
-        //         stdCTC,
-        //         suggestedProgram,
-        //         primaryDomain,
-        //         transitionDomain,
-        //         averageHike,
-        //         averageTimeline,
-        //         counselorNote,
-        //         counsellingDate,
-        //         salesMan,
-        //         counsellingId,
-        //         team,
-        //       ],
-        //     ],
-        //   },
-        // });
         if (team === "Organic Team") {
           const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
@@ -393,38 +364,7 @@ export default async function counsellingReportPdfGenerate(req, res) {
         //     },
         //   });
         // }
-        // if (team === "Full Stack") {
-        //   const response = await sheets.spreadsheets.values.append({
-        //     spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
-        //     range: "Full Stack",
-        //     valueInputOption: "USER_ENTERED",
-        //     requestBody: {
-        //       values: [
-        //         [
-        //           counselorName,
-        //           stdGoal,
-        //           stdEmail,
-        //           stdPhone,
-        //           stdName,
-        //           stdExperience,
-        //           stdDomain,
-        //           stdCompany,
-        //           stdCTC,
-        //           suggestedProgram,
-        //           primaryDomain,
-        //           transitionDomain,
-        //           averageHike,
-        //           averageTimeline,
-        //           counselorNote,
-        //           counsellingDate,
-        //           salesMan,
-        //           counsellingId,
-        //           team,
-        //         ],
-        //       ],
-        //     },
-        //   });
-        // }
+
 
         let myPost = await db.collection("counsellingReport").insertOne({
 

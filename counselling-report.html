@@ -16,6 +16,9 @@
         p {
             margin: 0;
         }
+        h3{
+            color: #12229D; 
+        }
 
         .infoGrid {
             display: grid;
@@ -28,6 +31,15 @@
         }
 
         .infoGrid1 {
+            display: grid;
+            width: 100%;
+            max-width: 100%;
+            grid-template-columns: 45% 55%;
+            justify-content: space-between;
+            gap: 40px;
+
+        }
+        .infoGrid2 {
             display: grid;
             width: 100%;
             max-width: 100%;
@@ -186,6 +198,56 @@
             }
         }
 
+        @media print {
+            div.box1 {
+                background-color: #CAE8FF !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            div.box2 {
+                background-color: #FFFBA6 !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+
+        @media print {
+            .box1 div {
+                color: white !important;
+            }
+
+            .box2 div {
+                color: white !important;
+            }
+        }
+
+        .footer {
+            display: flex;
+            width: 100%;
+
+            margin-bottom: 60px;
+            margin-top: 60px;
+            justify-content: space-between;
+        }
+
+        .sign {
+            border-top: 1px dotted rgb(172, 172, 172);
+            padding-top: 10px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+
+        }
+
+        .note {
+            color: rgb(172, 172, 172);
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /*!
+
         /** RTL **/
         .rtl {
             direction: rtl;
@@ -213,6 +275,7 @@
         ul.mixed {
             list-style-type: none;
             margin-left: -11px;
+            
         }
 
         ul.mixed1 {
@@ -223,6 +286,18 @@
         ul.mixed1 li:before {
             content: "\2022";
             padding-right: 0.5em;
+            
+        }
+
+        ul.mixed2 {
+            list-style-type: none;
+            margin-left: -34px;
+        }
+
+        ul.mixed2 li:before {
+            content: "\2022";
+            padding-right: 0.5em;
+            
         }
 
         ul.mixed li:before {
@@ -242,6 +317,28 @@
             font-size: 2rem;
             font-weight: bolder;
         }
+
+        li.l3:before {
+            color: yellow;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+        li.l4:before {
+            color: blue;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+        .infoGrid1  li {
+            display: flex;
+            align-items: center;
+        }
+        .vl li {
+            display: flex;
+            align-items: center;
+        }
+        
 
         .arrowspan {
             font-size: 30px;
@@ -272,7 +369,7 @@
         </table>
         <div>
             <h3>Personalized Career Counseling Report</h3>
-            <b>:: {{counselorName}}</b>
+            <b>:: by {{counselorName}}</b>
         </div>
         <br>
         <hr>
@@ -290,7 +387,7 @@
                             <b> Name: {{stdName}}</b>
                         </div>
                         <div class="infoRow">
-                            <b>Experience:{{stdExperience}} years</b>
+                            <b>Experience: {{stdExperience}} years</b>
                         </div>
 
                         <div class="infoRow">
@@ -298,11 +395,11 @@
 
                         </div>
                         <div class="infoRow">
-                            <b>Company:{{stdCompany}}</b>
+                            <b>Company: {{stdCompany}}</b>
 
                         </div>
                         <div class="infoRow">
-                            <b>CTC:{{stdCTC}} LPA</b>
+                            <b>CTC: {{stdCTC}} LPA</b>
 
                         </div>
                     </div>
@@ -330,8 +427,6 @@
                 </div>
 
                 <div class="vl">
-
-
                     <ul class="mixed">
                         <li class="l1"><span>Primary Domain: {{primaryDomain}}</span></li>
                         <li class="l2">Transition Domain: {{transitionDomain}}</li>
@@ -351,7 +446,7 @@
             <b>Learning Phase:</b>
         </div>
         <br>
-        <td colspan="2">
+        <td colspan="2" >
             <div class="infoGrid1">
                 <div>
                     <p>Essential Tools and Modules:</p>
@@ -397,41 +492,42 @@
 
 
         <br>
+        <br>
         <div>
             <b>Domain-Specific Projects:</b>
             <p>All the projects are covered end-to-end by Industrial Experts</p>
         </div>
 
         <br>
-        <td colspan="2">
-            <div class="infoGrid1">
+        <td colspan="2" class="DomainPoints">
+            <div class="infoGrid2">
                 <div>
-                    <ul class="mixed1">
-                        <li class="l1"><b>{{transitionDomain}}</b>
+                    <ul class="mixed2">
+                        <li class="l3"><b>{{transitionDomain}}</b>
                             <p>{{point1}}</p>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <ul class="mixed1">
-                        <li class="l1"><b>{{transitionDomain}}</b>
+                    <ul class="mixed2">
+                        <li class="l3"><b>{{transitionDomain}}</b>
                             <p>{{point2}}</p>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="infoGrid1">
+            <div class="infoGrid2">
                 <div>
-                    <ul class="mixed1">
-                        <li class="l2"><b>{{transitionDomain}}</b>
+                    <ul class="mixed2">
+                        <li class="l4"><b>{{transitionDomain}}</b>
                             <p>{{point3}}</p>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <ul class="mixed1">
-                        <li class="l2"><b>{{transitionDomain}}</b>
+                    <ul class="mixed2">
+                        <li class="l4"><b>{{transitionDomain}}</b>
                             <p>{{point4}}</p>
                         </li>
                     </ul>
@@ -441,17 +537,9 @@
 
         <br>
         <hr>
-        <br>
+        
 
-        <div>
-            <b>Conclusion:</b>
-            <p>As you senior career counselor I recommend you to follow a guided pipeline which
-                will ensure you a successful career transition</p>
-        </div>
-        <br>
-        <p><b>Counselor Note : </b>{{counselorNote}}</p>
 
-        <br>
 
         <div class="cnote">
             <div class="cnotediv">
@@ -482,6 +570,31 @@
                     </p>
                 </div>
             </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <div>
+            <b>Conclusion:</b>
+            <p>As you senior career counselor I recommend you to follow a guided pipeline which
+                will ensure you a successful career transition</p>
+        </div>
+
+        <br>
+        <p><b>Counselor Note : </b>{{counselorNote}}</p>
+
+        <br>
+
+        <div class="footer">
+            <div></div>
+
+            <div>Authorised Signatory</div>
+        </div>
+        <div class="sign">
+
+            <p class="note">*This is a personalized career counselling report</p>
         </div>
     </div>
 </body>

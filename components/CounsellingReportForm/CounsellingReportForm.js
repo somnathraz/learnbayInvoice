@@ -89,7 +89,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
     averageHike: "",
     averageTimeline: "",
     counselorNote: "",
-    counsellingDate: `${dateT}/${monthT}/${yearT}`,
     salesMan: salesMan,
     counsellingId: pId,
   });
@@ -98,10 +97,9 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
     setQuery({
       ...query,
       stdPhone: value,
-      counsellingDate: startDate,
       counsellingId: pId,
     });
-  }, [value, startDate, pId]);
+  }, [value, pId]);
 
   // Update inputs value
   const handleParam = () => (e) => {
@@ -174,7 +172,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             averageHike: query.averageHike,
             averageTimeline: query.averageTimeline,
             counselorNote: query.counselorNote,
-            counsellingDate: query.counsellingDate.toLocaleDateString("en-US"),
             salesMan: salesMan,
             counsellingId: code + pId,
             team: team,
@@ -208,7 +205,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
         averageHike: "",
         averageTimeline: "",
         counselorNote: "",
-        counsellingDate: "",
         salesMan: ""
       });
       setValue("");
@@ -411,21 +407,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
           </select>
         </div>
 
-        <div className={styles.inner} style={{ marginBottom: "10px" }}>
-          <DatePicker
-            selected={startDate}
-            name="counsellingDate"
-            id="dateTime"
-            onChange={(date) => {
-              setStartDate(date);
-            }}
-            wrapperClassName={styles.date}
-            className={styles.datePicker}
-            placeholderText="Enter Date"
-            dateFormat="MMMM d, yyyy"
-            required
-          />
-        </div>
+      
 
 
         <div className={styles.formWrapper}>
@@ -568,17 +550,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
                   readOnly
                 />
               </div>
-              <div className={styles.readOnlyDiv}>
-                <span>Counselling Date</span>
-                <TbMinusVertical className={styles.formLine} />
-                <input
-                  type="text"
-                  id="counsellingDate"
-                  name="counsellingDate"
-                  value={startDate}
-                  readOnly
-                />
-              </div>
+              
               <div className={styles.readOnlyDiv}>
                 <span>Student Company</span>
                 <TbMinusVertical className={styles.formLine} />
@@ -697,3 +669,35 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
 };
 
 export default CounsellingReportForm;
+
+
+
+
+  // <div className={styles.inner} style={{ marginBottom: "10px" }}>
+        //   <DatePicker
+        //     selected={startDate}
+        //     name="counsellingDate"
+        //     id="dateTime"
+        //     onChange={(date) => {
+        //       setStartDate(date);
+        //     }}
+        //     wrapperClassName={styles.date}
+        //     className={styles.datePicker}
+        //     placeholderText="Enter Date"
+        //     dateFormat="MMMM d, yyyy"
+        //     required
+        //   />
+        // </div>
+
+
+        // <div className={styles.readOnlyDiv}>
+        //         <span>Counselling Date</span>
+        //         <TbMinusVertical className={styles.formLine} />
+        //         <input
+        //           type="text"
+        //           id="counsellingDate"
+        //           name="counsellingDate"
+        //           value={startDate}
+        //           readOnly
+        //         />
+        //       </div>
