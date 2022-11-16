@@ -114,27 +114,27 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
 
   if (query.suggestedProgram === "Advanced Data science and AI Program") {
     code = "ADSAP";
-    query.averageTimeline = "7-10 Months";
+    query.averageTimeline = "7 to 10 Months";
   }
   if (query.suggestedProgram === "Data Science and AI for managers and Leaders") {
     code = "DSAIM";
-    query.averageTimeline = "11-14 Months";
+    query.averageTimeline = "11 to 14 Months";
   }
   if (query.suggestedProgram === "Advanced AI and ML Program") {
     code = "AIML";
-    query.averageTimeline = "9-12 Months";
+    query.averageTimeline = "9 to 12 Months";
   }
   if (query.suggestedProgram === "Data science and AI Master Program") {
     code = "DSAM";
-    query.averageTimeline = "13-15 Months";
+    query.averageTimeline = "13 to 15 Months";
   }
   if (query.suggestedProgram === "Data Analytics Program") {
     code = "DAP";
-    query.averageTimeline = "5-7 Months";
+    query.averageTimeline = "5 to 7 Months";
   }
   if (query.suggestedProgram === "Business Analytics Program") {
     code = "BAP";
-    query.averageTimeline = "5-7 Months";
+    query.averageTimeline = "5 to 7 Months";
   }
 
 
@@ -150,7 +150,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    console.log("Queary", query);
+    // console.log("Queary", query);
     setLoading(true);
     try {
       const data = await fetch(`${"/api/CounsellingReport/counsellingReport"}`,

@@ -234,8 +234,30 @@ export default async function counsellingReportPdfGenerate(req, res) {
           contentType: "application/pdf",
         },
       ],
-      html: `<div>Hi ${stdName},</div><p>I am ${counselorName} your senior counselor for ${suggestedProgram}.</p> <p>For a better understanding of your transitional experience, I have developed a customized career report for you, taking into consideration your professional background, goal, and requirement.</P>
-       <p>Please refer to the following attachment.</p><div>Regards,</div><div>Learnbay</div>`,
+
+      html: ` <div>Hi ${stdName},</div>
+      <div style="color: rgb(17,85,204); font-weight:bold"><p>I am ${counselorName} your senior counselor for ${suggestedProgram}.</p></div>      
+          <div ><p>With an experience of <b style="color: rgb(204,0,0);">${stdExperience} years</b> in <b  style="color: rgb(204,0,0);">${transitionDomain} domain</b>, it would take you <b style="color: rgb(204,0,0);">${averageTimeline}</b> for a successful career transition with an expected hike of <b style="color: rgb(204,0,0);">${averageHike}%</b></p></div>
+          <div>
+              <p style="color: rgb(17,85,204); font-weight:bold">To do so, you would need to follow certain steps:</p>
+              <ol>
+                  <li>Start learning basic tools and modules like <b style="color:#333">Python, Statistics, Machine Learning</b>, etc.</li>
+                  <li>Perform <b style="color:#333">2 - 4 real time projects in marketing domain</b>.</li>
+                  <li>Start learning <b style="color:#333">advanced tools and modules</b> guided by industry experts</li>
+                  <li>Attain <b style="color:#333">40 hours of dedicated training for Domain Specialization</b> to make your profile unique and remarkable.</li>
+
+                  <div style="background-color: rgb(255,255,255); color: #500050;"><p>[For a better understanding of your transitional experience, I have developed a customized career report for you, taking into consideration your professional background, goal, and requirement]</P></div>
+                  
+                  <li>… (Please refer to the following attachment for a detailed report).</li>
+              </ol>
+          </div>
+          <br>
+      <div>Regards,</div>
+      <br>
+      <div>Learnbay</div>`,
+
+      // html: `<div>Hi ${stdName},</div><p>I am ${counselorName} your senior counselor for ${suggestedProgram}.</p> <p>For a better understanding of your transitional experience, I have developed a customized career report for you, taking into consideration your professional background, goal, and requirement.</P>
+      //  <p>Please refer to the following attachment.</p><div>Regards,</div><div>Learnbay</div>`,
     };
 
 
