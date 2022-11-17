@@ -227,6 +227,7 @@ export default async function counsellingReportPdfGenerate(req, res) {
       from: "admissions@learnbay.co",
       to: stdEmail,
       subject: `Personalized Career Report of ${stdName}`,
+      cc: salesMan,
       attachments: [
         {
           filename: `${fPdfName}.pdf`,
@@ -246,7 +247,7 @@ export default async function counsellingReportPdfGenerate(req, res) {
                   <li>Start learning <b style="color:#333">advanced tools and modules</b> guided by industry experts</li>
                   <li>Attain <b style="color:#333">40 hours of dedicated training for Domain Specialization</b> to make your profile unique and remarkable.</li>
 
-                  <div style="background-color: rgb(255,255,255); color: #500050;"><p>[For a better understanding of your transitional experience, I have developed a customized career report for you, taking into consideration your professional background, goal, and requirement]</P></div>
+                  <div style="background-color: rgb(255,255,255); color: #500050;"><p><i>[For a better understanding of your transitional experience, I have developed a customized career report for you, taking into consideration your professional background, goal, and requirement]</i></P></div>
                   
                   <li>… (Please refer to the following attachment for a detailed report).</li>
               </ol>
@@ -303,20 +304,22 @@ export default async function counsellingReportPdfGenerate(req, res) {
                   stdEmail,
                   stdPhone,
                   stdName,
-                  stdExperience,
+                  stdExperience +" Years",
                   stdDomain,
                   stdCompany,
-                  stdCTC,
+                  stdCTC +" LPA",
                   suggestedProgram,
                   primaryDomain,
                   transitionDomain,
-                  averageHike,
+                  averageHike + " %",
                   averageTimeline,
                   counselorNote,
                   counsellingDate,
                   salesMan,
                   counsellingId,
                   team,
+                  fPdfName,
+                  fileUpload,
                 ],
               ],
             },
