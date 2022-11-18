@@ -322,6 +322,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             placeholder="Enter Student Company"
             value={query.stdCompany}
             onChange={handleParam()}
+            required
           />
         </div>
         <div className={styles.formWrapper}>
@@ -332,6 +333,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             placeholder="Enter Student CTC"
             value={query.stdCTC}
             onChange={handleParam()}
+            required
           />
         </div>
 
@@ -378,6 +380,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             placeholder="Enter Student Primary Domain"
             value={query.primaryDomain}
             onChange={handleParam()}
+            required
           />
         </div>
 
@@ -424,7 +427,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
 
         <div className={styles.formWrapper}>
           <input
-            type="text"
+            type="hidden"
             name="averageTimeline"
             required
             placeholder="Enter Average TimeLine*"
