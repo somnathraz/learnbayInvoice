@@ -124,6 +124,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "DSA and system design") {
     code = "DSA";
   }
+  if (query.courseName === "Data science and AI foundation program") {
+    code = "DSAF";
+  }
 
   //verify submit function
   const verifySubmit = async (e) => {
