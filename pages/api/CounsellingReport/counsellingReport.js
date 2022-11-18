@@ -243,7 +243,7 @@ export default async function counsellingReportPdfGenerate(req, res) {
               <p style="color: rgb(17,85,204); font-weight:bold">To do so, you would need to follow certain steps:</p>
               <ol>
                   <li>Start learning basic tools and modules like <b style="color:#333">Python, Statistics, Machine Learning</b>, etc.</li>
-                  <li>Perform <b style="color:#333">2 - 4 real time projects in marketing domain</b>.</li>
+                  <li>Perform <b style="color:#333">2 - 4 real time projects in ${transitionDomain} domain</b>.</li>
                   <li>Start learning <b style="color:#333">advanced tools and modules</b> guided by industry experts</li>
                   <li>Attain <b style="color:#333">40 hours of dedicated training for Domain Specialization</b> to make your profile unique and remarkable.</li>
 
