@@ -423,7 +423,7 @@ const Dashboard = (props) => {
 
 
         {showItem.seventh ? (
-          <div className={styles.loan}>
+          <div className={styles.loan1}>
             <h2>Add Counselling Report</h2>
             <CounsellingReportForm salesMan={props.token.token} team={props.token.team} />
           </div>

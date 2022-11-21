@@ -258,7 +258,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
           />
         </div>
 
-
         <div className={styles.formWrapper}>
           <PhoneInput
             style={{
@@ -322,6 +321,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             placeholder="Enter Student Company"
             value={query.stdCompany}
             onChange={handleParam()}
+            required
           />
         </div>
         <div className={styles.formWrapper}>
@@ -332,6 +332,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             placeholder="Enter Student CTC"
             value={query.stdCTC}
             onChange={handleParam()}
+            required
           />
         </div>
 
@@ -378,6 +379,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             placeholder="Enter Student Primary Domain"
             value={query.primaryDomain}
             onChange={handleParam()}
+            required
           />
         </div>
 
@@ -407,9 +409,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
           </select>
         </div>
 
-      
-
-
         <div className={styles.formWrapper}>
           <input
             type="number"
@@ -421,19 +420,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             onChange={handleParam()}
           />
         </div>
-
-        <div className={styles.formWrapper}>
-          <input
-            type="text"
-            name="averageTimeline"
-            required
-            placeholder="Enter Average TimeLine*"
-            className={styles.EmailInput}
-            value={query.averageTimeline}
-            onChange={handleParam()}
-          />
-        </div>
-
         <div className={styles.formWrapper}>
           <textarea
             type="textbox"
@@ -445,6 +431,8 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             onChange={handleParam()}
           />
         </div>
+
+       
 
         <input type="hidden" id="salesMan" name="salesMan" value={salesMan} />
         {loading ? (
@@ -465,6 +453,17 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             {btnText}
           </button>
         )}
+        <div className={styles.formWrapper}>
+        <input
+          type="hidden"
+          name="averageTimeline"
+          required
+          placeholder="Enter Average TimeLine*"
+          className={styles.EmailInput}
+          value={query.averageTimeline}
+          onChange={handleParam()}
+        />
+      </div>
       </form>
 
       {verify ? (
@@ -550,7 +549,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
                   readOnly
                 />
               </div>
-              
+
               <div className={styles.readOnlyDiv}>
                 <span>Student Company</span>
                 <TbMinusVertical className={styles.formLine} />
