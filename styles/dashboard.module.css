@@ -6,6 +6,16 @@
   justify-content: center;
   flex-flow: column;
 }
+
+.loan1 {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
 .header {
   width: 100vw;
   scroll-behavior: smooth;
