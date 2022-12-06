@@ -229,6 +229,32 @@ export default async function pdfGenerate(req, res) {
             },
           });
         }
+        if (team === "Redeem Team") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            range: "Redeem Team",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  paymentDate,
+                  salesMan,
+                  team,
+                  customerName,
+                  parseInt(coursePrice),
+                  paymentType,
+                  customerEmail,
+                  customerPhone,
+                  GST,
+                  invoiceId,
+                  paymentMode,
+                  courseName,
+                  fileUpload,
+                ],
+              ],
+            },
+          });
+        }
         if (team === "Google ads-1 (Irfan)") {
           const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID,
