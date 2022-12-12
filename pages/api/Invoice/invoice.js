@@ -333,6 +333,32 @@ export default async function pdfGenerate(req, res) {
             },
           });
         }
+        if (team === "Goal diggers") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            range: "Goal diggers",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  paymentDate,
+                  salesMan,
+                  team,
+                  customerName,
+                  parseInt(coursePrice),
+                  paymentType,
+                  customerEmail,
+                  customerPhone,
+                  GST,
+                  invoiceId,
+                  paymentMode,
+                  courseName,
+                  fileUpload,
+                ],
+              ],
+            },
+          });
+        }
 
         let myPost = await db.collection("generatedInvoice").insertOne({
           customerName: customerName,
