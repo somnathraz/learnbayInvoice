@@ -295,10 +295,81 @@ export default async function counsellingReportPdfGenerate(req, res) {
       } else {
         emailSent = `email sent successfully. ${info.messageId}`;
 
+        const response = await sheets.spreadsheets.values.append({
+          spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
+          range: "Sheet1",
+          valueInputOption: "USER_ENTERED",
+          requestBody: {
+            values: [
+              [
+                counselorName,
+                stdGoal,
+                stdEmail,
+                stdPhone,
+                stdName,
+                stdExperience +" Years",
+                stdDomain,
+                stdCompany,
+                stdCTC +" LPA",
+                suggestedProgram,
+                primaryDomain,
+                transitionDomain,
+                averageHike + " %",
+                averageTimeline,
+                counselorNote,
+                counsellingDate,
+                salesMan,
+                counsellingId,
+                team,
+                fPdfName,
+                fileUpload,
+                teamEmail,
+              ],
+            ],
+          },
+        });
+
+
+
         if (team === "Organic Team") {
           const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
-            range: "Sheet1",
+            range: "organic",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  counselorName,
+                  stdGoal,
+                  stdEmail,
+                  stdPhone,
+                  stdName,
+                  stdExperience +" Years",
+                  stdDomain,
+                  stdCompany,
+                  stdCTC +" LPA",
+                  suggestedProgram,
+                  primaryDomain,
+                  transitionDomain,
+                  averageHike + " %",
+                  averageTimeline,
+                  counselorNote,
+                  counsellingDate,
+                  salesMan,
+                  counsellingId,
+                  team,
+                  fPdfName,
+                  fileUpload,
+                  teamEmail,
+                ],
+              ],
+            },
+          });
+        }
+        if  (team === "Redeem Team") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
+            range: "Redeem Team",
             valueInputOption: "USER_ENTERED",
             requestBody: {
               values: [
@@ -365,10 +436,81 @@ export default async function counsellingReportPdfGenerate(req, res) {
             },
           });
         }
+
         if (team === "Google ads-2 (Shah)") {
           const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
             range: "Google ads-2 (Shah)",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  counselorName,
+                  stdGoal,
+                  stdEmail,
+                  stdPhone,
+                  stdName,
+                  stdExperience +" Years",
+                  stdDomain,
+                  stdCompany,
+                  stdCTC +" LPA",
+                  suggestedProgram,
+                  primaryDomain,
+                  transitionDomain,
+                  averageHike + " %",
+                  averageTimeline,
+                  counselorNote,
+                  counsellingDate,
+                  salesMan,
+                  counsellingId,
+                  team,
+                  fPdfName,
+                  fileUpload,
+                  teamEmail,
+                ],
+              ],
+            },
+          });
+        }
+        if (team === "Full Stack") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
+            range: "Full Stack",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  counselorName,
+                  stdGoal,
+                  stdEmail,
+                  stdPhone,
+                  stdName,
+                  stdExperience +" Years",
+                  stdDomain,
+                  stdCompany,
+                  stdCTC +" LPA",
+                  suggestedProgram,
+                  primaryDomain,
+                  transitionDomain,
+                  averageHike + " %",
+                  averageTimeline,
+                  counselorNote,
+                  counsellingDate,
+                  salesMan,
+                  counsellingId,
+                  team,
+                  fPdfName,
+                  fileUpload,
+                  teamEmail,
+                ],
+              ],
+            },
+          });
+        }
+        if (team === "Goal diggers") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
+            range: "Goal diggers",
             valueInputOption: "USER_ENTERED",
             requestBody: {
               values: [
