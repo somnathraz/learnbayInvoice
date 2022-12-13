@@ -80,6 +80,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
     salesMan: salesEmailId.token,
     invoiceId: pId,
     paymentType: "",
+    emiTenure: "",
   });
 
   useEffect(() => {
@@ -142,7 +143,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    console.log(query.counselorEmail);
+
     setLoading(true);
     try {
       const data = await fetch(
@@ -163,6 +164,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             coursePrice: query.coursePrice,
             paymentType: query.paymentType,
             team: team,
+            emiTenure: query.emiTenure,
             invoiceId: code + pId,
           }),
           headers: {
@@ -190,6 +192,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
         salesMan: salesEmailId.token,
         invoiceId: "",
         paymentType: "",
+        emiTenure: "",
       });
       setValue("");
       setStartDate("");
@@ -299,6 +302,25 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
               Full stack web development course
             </option>
             <option value="DSA and system design">DSA and system design</option>
+          </select>
+        </div>
+        <div className={styles.formWrapper}>
+          <select
+            name="emiTenure"
+            required
+            value={query.emiTenure}
+            onChange={handleParam()}
+            placeholder="Select a course*"
+          >
+            <option className={styles.option} value="">
+              Select a EMI Tenure*
+            </option>
+
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="9">9</option>
+
+            <option value="12">12</option>
           </select>
         </div>
         <div className={styles.formWrapper}>
@@ -454,6 +476,17 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
                   id="courseName"
                   name="courseName"
                   value={query.courseName}
+                  readOnly
+                />
+              </div>
+              <div className={styles.readOnlyDiv}>
+                <span>Emi Tenure</span>
+                <TbMinusVertical className={styles.formLine} />
+                <input
+                  type="text"
+                  id="emiTenure"
+                  name="emiTenure"
+                  value={query.emiTenure}
                   readOnly
                 />
               </div>
