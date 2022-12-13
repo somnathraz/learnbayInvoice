@@ -75,8 +75,9 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
 
   const [query, setQuery] = useState({
     counselorName: "",
-    stdGoal: "",
+    stdGoal: "Goal - Looking forward to learning analytics & Data Science and AI tools as there is a lot of scope as per the market trends and to drive better opportunities.",
     stdEmail: "",
+    teamEmail:"",
     stdPhone: "",
     stdName: "",
     stdExperience: "",
@@ -88,8 +89,10 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
     transitionDomain: "",
     averageHike: "",
     averageTimeline: "",
-    counselorNote: "",
+    counselorNote: "As per the discussion, suggesting opting for a data science course as we provide domain-based training. By doing so, you can understand the same from a domain perspective and the tools and projects that you have to learn for your career transition, which would provide you better job opportunities and the power of negotiation. Hope this information helps. Looking forward to hearing from you.",
     salesMan: salesMan,
+    team:team,
+    
     counsellingId: pId,
   });
 
@@ -175,6 +178,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             salesMan: salesMan,
             counsellingId: code + pId,
             team: team,
+            teamEmail:query.teamEmail,
           }),
           headers: {
             "Content-Type": "application/json",
@@ -191,7 +195,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
       // console.log("invoice Data!!!",invoiceData)
       setQuery({
         counselorName: "",
-        stdGoal: "",
+        teamEmail:"",
         stdEmail: "",
         stdPhone: "",
         stdName: "",
@@ -204,14 +208,14 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
         transitionDomain: "",
         averageHike: "",
         averageTimeline: "",
-        counselorNote: "",
-        salesMan: ""
+        
+      
       });
       setValue("");
       setStartDate("");
       setVerify(false);
     } catch (error) {
-      // console.log(error);
+      console.log(error);
       console.log("error@@@")
     }
     setLoading(false);
@@ -254,6 +258,18 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             placeholder="Enter Student Email*"
             className={styles.EmailInput}
             value={query.stdEmail}
+            onChange={handleParam()}
+          />
+        </div>
+
+        <div className={styles.formWrapper}>
+          <input
+            type="email"
+            name="teamEmail"
+            required
+            placeholder="Enter Team Leader Email*"
+            className={styles.EmailInput}
+            value={query.teamEmail}
             onChange={handleParam()}
           />
         </div>

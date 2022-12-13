@@ -58,10 +58,12 @@ export default async function counsellingReportPdfGenerate(req, res) {
     salesMan,
     counsellingId,
     team,
+    teamEmail,
 
   } = req.body;
 
   // console.log("body-", req.body);
+  console.log(teamEmail)
 
   const s3 = new AWS.S3({
     accessKeyId: AWSCredentials.accessKey,
@@ -209,9 +211,11 @@ export default async function counsellingReportPdfGenerate(req, res) {
       point2,
       point3,
       point4,
+
     });
 
 
+  
 
     // simulate a chrome browser with puppeteer and navigate to a new page
     const browser = await puppeteer.launch();
@@ -227,7 +231,7 @@ export default async function counsellingReportPdfGenerate(req, res) {
       from: "admissions@learnbay.co",
       to: stdEmail,
       subject: `Personalized Career Report of ${stdName}`,
-      cc: salesMan,
+      cc: [salesMan,teamEmail],
       attachments: [
         {
           filename: `${fPdfName}.pdf`,
@@ -320,75 +324,82 @@ export default async function counsellingReportPdfGenerate(req, res) {
                   team,
                   fPdfName,
                   fileUpload,
+                  teamEmail,
                 ],
               ],
             },
           });
         }
-        // if (team === "Google ads-1 (Irfan)") {
-        //   const response = await sheets.spreadsheets.values.append({
-        //     spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
-        //     range: "Google ads-1 (Irfan)",
-        //     valueInputOption: "USER_ENTERED",
-        //     requestBody: {
-        //       values: [
-        //         [
-        //           counselorName,
-        //           stdGoal,
-        //           stdEmail,
-        //           stdPhone,
-        //           stdName,
-        //           stdExperience,
-        //           stdDomain,
-        //           stdCompany,
-        //           stdCTC,
-        //           suggestedProgram,
-        //           primaryDomain,
-        //           transitionDomain,
-        //           averageHike,
-        //           averageTimeline,
-        //           counselorNote,
-        //           counsellingDate,
-        //           salesMan,
-        //           counsellingId,
-        //           team,
-        //         ],
-        //       ],
-        //     },
-        //   });
-        // }
-        // if (team === "Google ads-2 (Shah)") {
-        //   const response = await sheets.spreadsheets.values.append({
-        //     spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
-        //     range: "Google ads-2 (Shah)",
-        //     valueInputOption: "USER_ENTERED",
-        //     requestBody: {
-        //       values: [
-        //         [
-        //           counselorName,
-        //           stdGoal,
-        //           stdEmail,
-        //           stdPhone,
-        //           stdName,
-        //           stdExperience,
-        //           stdDomain,
-        //           stdCompany,
-        //           stdCTC,
-        //           suggestedProgram,
-        //           primaryDomain,
-        //           transitionDomain,
-        //           averageHike,
-        //           averageTimeline,
-        //           counselorNote,
-        //           counsellingDate,
-        //           salesMan,
-        //           counsellingId,
-        //           team,
-        //         ],
-        //       ],
-        //     },
-        //   });
-        // }
+        if (team === "Google ads-1 (Irfan)") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
+            range: "Google ads-1 (Irfan)",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  counselorName,
+                  stdGoal,
+                  stdEmail,
+                  stdPhone,
+                  stdName,
+                  stdExperience +" Years",
+                  stdDomain,
+                  stdCompany,
+                  stdCTC +" LPA",
+                  suggestedProgram,
+                  primaryDomain,
+                  transitionDomain,
+                  averageHike + " %",
+                  averageTimeline,
+                  counselorNote,
+                  counsellingDate,
+                  salesMan,
+                  counsellingId,
+                  team,
+                  fPdfName,
+                  fileUpload,
+                  teamEmail,
+                ],
+              ],
+            },
+          });
+        }
+        if (team === "Google ads-2 (Shah)") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
+            range: "Google ads-2 (Shah)",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  counselorName,
+                  stdGoal,
+                  stdEmail,
+                  stdPhone,
+                  stdName,
+                  stdExperience +" Years",
+                  stdDomain,
+                  stdCompany,
+                  stdCTC +" LPA",
+                  suggestedProgram,
+                  primaryDomain,
+                  transitionDomain,
+                  averageHike + " %",
+                  averageTimeline,
+                  counselorNote,
+                  counsellingDate,
+                  salesMan,
+                  counsellingId,
+                  team,
+                  fPdfName,
+                  fileUpload,
+                  teamEmail,
+                ],
+              ],
+            },
+          });
+        }
 
 
         let myPost = await db.collection("counsellingReport").insertOne({
@@ -415,6 +426,7 @@ export default async function counsellingReportPdfGenerate(req, res) {
           fileLink: fileUpload,
           emailInfo: emailSent,
           team: team,
+          teamEmail:teamEmail,
         });
 
         // console.log("@@@@",myPost)
