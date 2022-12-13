@@ -127,6 +127,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "Data science and AI foundation program") {
     code = "DSAF";
   }
+  if (query.courseName === "Full stack web development course") {
+    code = "FDC";
+  }
 
   //verify submit function
   const verifySubmit = async (e) => {
@@ -292,6 +295,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="Full Stack software development">
               Full Stack software development
             </option>
+            <option value="Full stack web development course">
+              Full stack web development course
+            </option>
             <option value="DSA and system design">DSA and system design</option>
           </select>
         </div>
@@ -309,7 +315,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
 
             <option value="Propelld">Propelld</option>
             <option value="Shopse">Shopse</option>
-
+            <option value="Bajaj">Bajaj</option>
             <option value="Razorpay">Razorpay</option>
             <option value="Liquiloans">Liquiloans</option>
             <option value="Direct Bank Transfer">Direct Bank Transfer</option>

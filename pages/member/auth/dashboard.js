@@ -5,8 +5,7 @@ import DatePicker from "react-datepicker";
 import styles from "../../../styles/dashboard.module.css";
 import InvoiceForm from "../../../components/PaymentForm/InvoiceForm";
 import CounsellingReportForm from "../../../components/CounsellingReportForm/CounsellingReportForm";
-
-
+import { HiOutlineDocumentReport } from "react-icons/hi";
 import {
   AiOutlineUserAdd,
   AiOutlineUserSwitch,
@@ -17,9 +16,9 @@ import { RiCoupon2Line, RiHandCoinLine } from "react-icons/ri";
 import { TbFileInvoice, TbReportAnalytics } from "react-icons/tb";
 import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
 import Image from "next/image";
+import GenerateReportForm from "../../../components/PaymentForm/GenerateReportForm";
 
 const Dashboard = (props) => {
-  
   const discountPercentRef = useRef();
   const couponLengthRef = useRef();
   const [showItem, setShowItem] = useState({
@@ -30,6 +29,7 @@ const Dashboard = (props) => {
     fifth: false,
     sixth: false,
     seventh: false,
+    eight: false,
   });
   const [mobile, setMobile] = useState(false);
   const [startDate, setStartDate] = useState();
@@ -158,6 +158,7 @@ const Dashboard = (props) => {
                   fifth: false,
                   sixth: false,
                   seventh: false,
+                  eight: false,
                 })
               }
             >
@@ -182,6 +183,7 @@ const Dashboard = (props) => {
                   fifth: false,
                   sixth: false,
                   seventh: false,
+                  eight: false,
                 })
               }
             >
@@ -194,31 +196,30 @@ const Dashboard = (props) => {
               <p className={styles.item}>Add Invoice</p>
             </span>
 
-
             <span
-            className={showItem.seventh ? styles.spanActive : styles.span}
-            onClick={() =>
-              setShowItem({
-                ...showItem,
-                second: false,
-                first: false,
-                third: false,
-                fourth: false,
-                fifth: false,
-                sixth: false,
-                seventh: true,
-              })
-            }
-          >
-            <TbReportAnalytics
-              className={
-                showItem.seventh ? styles.barIconActive : styles.barIcon
+              className={showItem.seventh ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  second: false,
+                  first: false,
+                  third: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: false,
+                  seventh: true,
+                  eight: false,
+                })
               }
-            />
+            >
+              <TbReportAnalytics
+                className={
+                  showItem.seventh ? styles.barIconActive : styles.barIcon
+                }
+              />
 
-            <p className={styles.item}>Add Counselling Report</p>
-          </span>
-
+              <p className={styles.item}>Add Counselling Report</p>
+            </span>
 
             <span
               className={showItem.sixth ? styles.spanActive : styles.span}
@@ -232,6 +233,7 @@ const Dashboard = (props) => {
                   fifth: false,
                   sixth: true,
                   seventh: false,
+                  eight: false,
                 })
               }
             >
@@ -242,6 +244,30 @@ const Dashboard = (props) => {
               />
 
               <p className={styles.item}>Refund Form</p>
+            </span>
+            <span
+              className={showItem.eight ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  second: false,
+                  first: false,
+                  third: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: false,
+                  seventh: false,
+                  eight: true,
+                })
+              }
+            >
+              <HiOutlineDocumentReport
+                className={
+                  showItem.eight ? styles.barIconActive : styles.barIcon
+                }
+              />
+
+              <p className={styles.item}>Monthly Report</p>
             </span>
 
             {props.token.role === "Admin" ? (
@@ -261,6 +287,7 @@ const Dashboard = (props) => {
                       fifth: false,
                       sixth: false,
                       seventh: false,
+                      eight: false,
                     })
                   }
                 >
@@ -284,6 +311,7 @@ const Dashboard = (props) => {
                       fifth: false,
                       sixth: false,
                       seventh: false,
+                      eight: false,
                     })
                   }
                 >
@@ -305,6 +333,9 @@ const Dashboard = (props) => {
                       second: false,
                       fourth: false,
                       fifth: true,
+                      sixth: false,
+                      seventh: false,
+                      eight: false,
                     })
                   }
                 >
@@ -326,14 +357,9 @@ const Dashboard = (props) => {
         ""
       )}
 
-
-
-
       <div className={styles.header}>
         <h2 style={{ textAlign: "center" }}>Welcome {username[0]}</h2>
       </div>
-
-
 
       <div className={styles.dashboard}>
         {showItem.third ? (
@@ -421,16 +447,25 @@ const Dashboard = (props) => {
           ""
         )}
 
-
         {showItem.seventh ? (
           <div className={styles.loan1}>
             <h2>Add Counselling Report</h2>
-            <CounsellingReportForm salesMan={props.token.token} team={props.token.team} />
+            <CounsellingReportForm
+              salesMan={props.token.token}
+              team={props.token.team}
+            />
           </div>
         ) : (
           ""
         )}
-
+        {showItem.eight ? (
+          <div className={styles.loan}>
+            <h2>Generate Monthly Report</h2>
+            <GenerateReportForm email={props.token.token} />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

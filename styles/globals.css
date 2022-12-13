@@ -30,6 +30,24 @@ h4 {
 * {
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #ecf8ff;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #0487d9;
+  border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f28705;
+}
 button {
   padding: 15px 20px;
   outline: none;

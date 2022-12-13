@@ -247,6 +247,9 @@
   color: black;
   width: 140px;
 }
+.generate {
+  margin-top: 30px;
+}
 .readOnlyDiv input {
   padding-left: 25px;
 

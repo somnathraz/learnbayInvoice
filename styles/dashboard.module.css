@@ -172,6 +172,7 @@
   gap: 20px;
   width: 90px;
   z-index: 1000;
+  overflow-y: scroll;
   height: 100vh;
   transition: width 2s ease-in-out;
   align-items: center;
@@ -182,6 +183,7 @@
 .menuBar .item {
   display: none;
 }
+
 .menuBarExpand {
   position: fixed;
   top: 0px;
@@ -192,6 +194,7 @@
   gap: 20px;
   width: 140px;
   z-index: 1000;
+  overflow: scroll;
   height: 100vh;
   transition: width 100ms ease-in-out;
   align-items: center;
