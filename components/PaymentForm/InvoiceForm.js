@@ -315,7 +315,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option className={styles.option} value="">
               Select a EMI Tenure*
             </option>
-            <option value="3">0</option>
+            <option value="0">0</option>
             <option value="3">3</option>
             <option value="6">6</option>
             <option value="9">9</option>
