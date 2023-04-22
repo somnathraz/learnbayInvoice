@@ -110,7 +110,13 @@ export default async function pdfGenerate(req, res) {
     const pdfName = customerName + new Date() + "-" + invoiceId;
     const fPdfName = pdfName.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, "-");
     let link;
-    if (courseName === "Advanced Data science and AI Program") {
+    if (
+      courseName === "Advanced Data science and AI Program" ||
+      courseName === "Data Science and AI for BFSI Professionals" ||
+      courseName === "HR Analytics Program" ||
+      courseName === "Marketing Analytics Program" ||
+      courseName === "Business Analytics Master Program"
+    ) {
       link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
     }
     if (courseName === "Data Science and AI for managers and Leaders") {
@@ -344,6 +350,61 @@ export default async function pdfGenerate(req, res) {
           const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID,
             range: "Goal diggers",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  paymentDate,
+                  salesMan,
+                  team,
+                  customerName,
+                  parseInt(coursePrice),
+                  paymentType,
+                  customerEmail,
+                  customerPhone,
+                  GST,
+                  invoiceId,
+                  paymentMode,
+                  courseName,
+                  fileUpload,
+                  emiTenure,
+                ],
+              ],
+            },
+          });
+        }
+        if (team === "Hustler") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            range: "Hustler",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  paymentDate,
+                  salesMan,
+                  team,
+                  customerName,
+                  parseInt(coursePrice),
+                  paymentType,
+                  customerEmail,
+                  customerPhone,
+                  GST,
+                  invoiceId,
+                  paymentMode,
+                  courseName,
+                  fileUpload,
+                  emiTenure,
+                ],
+              ],
+            },
+          });
+        }
+
+        if (team === "Team Sarathi") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            range: "Team Sarathi",
             valueInputOption: "USER_ENTERED",
             requestBody: {
               values: [

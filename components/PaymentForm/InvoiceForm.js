@@ -282,6 +282,16 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="Data science and AI foundation program">
               Data science and AI foundation program
             </option>
+            <option value="Data Science and AI for BFSI Professionals">
+              Data Science and AI for BFSI Professionals
+            </option>
+            <option value="HR Analytics Program">HR Analytics Program</option>
+            <option value="Marketing Analytics Program">
+              Marketing Analytics Program
+            </option>
+            <option value="Business Analytics Master Program">
+              Business Analytics Master Program
+            </option>
 
             <option value="Advanced AI and ML Program">
               Advanced AI and ML Program
