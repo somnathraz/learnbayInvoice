@@ -156,8 +156,8 @@ const AddUserFrom = () => {
 
             <option value="Google ads-2 (Shah)">Google ads-2 (Shah)</option>
             <option value="Goal diggers">Goal diggers</option>
-            <option value="Goal diggers">Team Sarathi</option>
-            <option value="Goal diggers">Hustler</option>
+            <option value="Team Sarathi">Team Sarathi</option>
+            <option value="Hustler">Hustler</option>
             <option value="Redeem Team">Redeem Team</option>
             <option value="Full Stack">Full Stack</option>
           </select>
