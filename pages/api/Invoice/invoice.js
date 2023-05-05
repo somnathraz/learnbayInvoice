@@ -37,6 +37,7 @@ export default async function pdfGenerate(req, res) {
     invoiceId,
     salesMan,
     counselorEmail,
+    counselorEmailCC,
     salesEmail,
     InvoiceDate,
     paymentMode,
@@ -145,7 +146,7 @@ export default async function pdfGenerate(req, res) {
       from: "admissions@learnbay.co",
       to: customerEmail,
       subject: `invoice From Learnbay`,
-      cc: counselorEmail,
+      cc: [counselorEmail, counselorEmailCC],
       attachments: [
         {
           filename: `${fPdfName}.pdf`,

@@ -73,6 +73,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
     customerPhone: "",
     courseName: "",
     counselorEmail: "",
+    counselorEmailCC: "",
     paymentDate: "",
     coursePrice: "",
     paymentMode: "",
@@ -223,12 +224,23 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
         </div>
         <div className={styles.formWrapper}>
           <input
-            type="text"
+            type="email"
             name="counselorEmail"
             className={styles.NameInput}
             required
             placeholder="Enter Counselor Email*"
             value={query.counselorEmail}
+            onChange={handleParam()}
+          />
+        </div>
+        <div className={styles.formWrapper}>
+          <input
+            type="email"
+            name="counselorEmailCC"
+            className={styles.NameInput}
+            required
+            placeholder="Enter CC Email*"
+            value={query.counselorEmailCC}
             onChange={handleParam()}
           />
         </div>
@@ -329,8 +341,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="3">3</option>
             <option value="6">6</option>
             <option value="9">9</option>
-
             <option value="12">12</option>
+            <option value="18">18</option>
+            <option value="24">24</option>
           </select>
         </div>
         <div className={styles.formWrapper}>
