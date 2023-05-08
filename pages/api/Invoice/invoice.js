@@ -47,7 +47,7 @@ export default async function pdfGenerate(req, res) {
     paymentDate,
     customerEmail,
   } = req.body;
-  console.log(invoiceId);
+  console.log(req.body);
   let GST =
     parseFloat(coursePrice) - parseFloat(coursePrice) * (100 / (100 + 18));
 
