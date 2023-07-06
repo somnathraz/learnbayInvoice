@@ -37,6 +37,7 @@ export default async function pdfGenerate(req, res) {
     invoiceId,
     salesMan,
     counselorEmail,
+    counselorEmailCC,
     salesEmail,
     InvoiceDate,
     paymentMode,
@@ -46,7 +47,7 @@ export default async function pdfGenerate(req, res) {
     paymentDate,
     customerEmail,
   } = req.body;
-  console.log(invoiceId);
+  console.log(req.body);
   let GST =
     parseFloat(coursePrice) - parseFloat(coursePrice) * (100 / (100 + 18));
 
@@ -145,7 +146,7 @@ export default async function pdfGenerate(req, res) {
       from: "admissions@learnbay.co",
       to: customerEmail,
       subject: `invoice From Learnbay`,
-      cc: counselorEmail,
+      cc: [counselorEmail, counselorEmailCC],
       attachments: [
         {
           filename: `${fPdfName}.pdf`,
@@ -158,7 +159,7 @@ export default async function pdfGenerate(req, res) {
       <div>Form Link:</div>
       <p><a href="${link}" target="_blank">${link}</a>       
       </p>
-      <p>Once your filling the form Your learning manager will reach out to you via email and call to help you with the next steps.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div><div>Note:-The amount will not be refundable after 15 days of joining</div>`,
+      <p>Once you fill out the form; your learning manager will reach out to you over phone and mail to help you out with further process.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div><div>Note:-The amount will not be refundable after 15 days of joining</div>`,
     };
 
     // set our compiled html template as the pages content
