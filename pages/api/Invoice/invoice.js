@@ -135,10 +135,17 @@ export default async function pdfGenerate(req, res) {
     if (courseName === "Business Analytics Program") {
       link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
     }
-    if (courseName === "Full Stack software development") {
+    if (
+      courseName === "Full Stack software development" ||
+      courseName === "Software development program for freshers"
+    ) {
       link = "https://zfrmz.in/nOlE6J6FvLoZ0su8MxT8";
     }
-    if (courseName === "DSA and system design") {
+    if (
+      courseName === "DSA and system design" ||
+      courseName === "Data structure and Algorithm" ||
+      courseName === "System designing"
+    ) {
       link = "https://zfrmz.in/nOlE6J6FvLoZ0su8MxT8";
     }
 

@@ -132,6 +132,15 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "Full stack web development course") {
     code = "FDC";
   }
+  if (query.courseName === "Data structure and Algorithm") {
+    code = "DSA";
+  }
+  if (query.courseName === "System designing") {
+    code = "SD";
+  }
+  if (query.courseName === "Software development program for freshers") {
+    code = "FSDF";
+  }
 
   //verify submit function
   const verifySubmit = async (e) => {
@@ -326,6 +335,13 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
               Full stack web development course
             </option>
             <option value="DSA and system design">DSA and system design</option>
+            <option value="Data structure and Algorithm">
+              Data structure and Algorithm
+            </option>
+            <option value="System designing">System designing</option>
+            <option value="Software development program for freshers">
+              Software development program for freshers
+            </option>
           </select>
         </div>
         <div className={styles.formWrapper}>
