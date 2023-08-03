@@ -11,7 +11,8 @@ import {
   AiOutlineUserSwitch,
   AiOutlineUserDelete,
 } from "react-icons/ai";
-import { BsThreeDots } from "react-icons/bs";
+import { BsCalendar2Plus, BsInfoCircle, BsThreeDots } from "react-icons/bs";
+import { BiCalendarEdit, FaCalendar } from "react-icons/bi";
 import { RiCoupon2Line, RiHandCoinLine } from "react-icons/ri";
 import { TbFileInvoice, TbReportAnalytics } from "react-icons/tb";
 import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
@@ -30,6 +31,8 @@ const Dashboard = (props) => {
     sixth: false,
     seventh: false,
     eight: false,
+    ninth: false,
+    tenth: false,
   });
   const [mobile, setMobile] = useState(false);
   const [startDate, setStartDate] = useState();
@@ -159,6 +162,8 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: false,
                   eight: false,
+                  ninth: false,
+                  tenth: false,
                 })
               }
             >
@@ -184,6 +189,8 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: false,
                   eight: false,
+                  ninth: false,
+                  tenth: false,
                 })
               }
             >
@@ -209,6 +216,8 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: true,
                   eight: false,
+                  ninth: false,
+                  tenth: false,
                 })
               }
             >
@@ -234,6 +243,8 @@ const Dashboard = (props) => {
                   sixth: true,
                   seventh: false,
                   eight: false,
+                  ninth: false,
+                  tenth: false,
                 })
               }
             >
@@ -270,6 +281,59 @@ const Dashboard = (props) => {
               <p className={styles.item}>Monthly Report</p>
             </span>
 
+            <span
+                  className={showItem.ninth ? styles.spanActive : styles.span}
+                  onClick={() =>
+                    setShowItem({
+                      ...showItem,
+                      third: false,
+                      first: false,
+                      second: false,
+                      fourth: false,
+                      fifth: false,
+                      sixth: false,
+                      seventh: false,
+                      eight: false,
+                      ninth: true,
+                      tenth: false,
+                    })
+                  }
+                >
+                  <BiCalendarEdit
+                    className={
+                      showItem.ninth ? styles.barIconActive : styles.barIcon
+                    }
+                  />
+
+                  <p className={styles.item}>Batch Details</p>
+                </span>
+                <span
+                  className={showItem.tenth ? styles.spanActive : styles.span}
+                  onClick={() =>
+                    setShowItem({
+                      ...showItem,
+                      third: false,
+                      first: false,
+                      second: false,
+                      fourth: false,
+                      fifth: false,
+                      sixth: false,
+                      seventh: false,
+                      eight: false,
+                      ninth: false,
+                      tenth: true,
+                    })
+                  }
+                >
+                  <BsInfoCircle
+                    className={
+                      showItem.tenth ? styles.barIconActive : styles.barIcon
+                    }
+                  />
+
+                  <p className={styles.item}>Popup Details</p>
+                </span>
+
             {props.token.role === "Admin" ? (
               <div className={styles.list}>
                 <div className={styles.head}>
@@ -288,6 +352,8 @@ const Dashboard = (props) => {
                       sixth: false,
                       seventh: false,
                       eight: false,
+                      ninth: false,
+                      tenth: false,
                     })
                   }
                 >
@@ -312,6 +378,8 @@ const Dashboard = (props) => {
                       sixth: false,
                       seventh: false,
                       eight: false,
+                      ninth: false,
+                      tenth: false,
                     })
                   }
                 >
@@ -336,6 +404,8 @@ const Dashboard = (props) => {
                       sixth: false,
                       seventh: false,
                       eight: false,
+                      ninth: false,
+                      tenth: false,
                     })
                   }
                 >
@@ -347,6 +417,7 @@ const Dashboard = (props) => {
 
                   <p className={styles.item}>Edit User</p>
                 </span>
+                
               </div>
             ) : (
               ""
@@ -462,6 +533,22 @@ const Dashboard = (props) => {
           <div className={styles.loan}>
             <h2>Generate Monthly Report</h2>
             <GenerateReportForm email={props.token.token} />
+          </div>
+        ) : (
+          ""
+        )}
+                {showItem.ninth ? (
+          <div className={styles.loan}>
+            <h2>Add Batch Details</h2>
+            {/* <GenerateReportForm email={props.token.token} /> */}
+          </div>
+        ) : (
+          ""
+        )}
+                {showItem.tenth ? (
+          <div className={styles.loan}>
+            <h2>Add Popup Details</h2>
+            {/* <GenerateReportForm email={props.token.token} /> */}
           </div>
         ) : (
           ""
