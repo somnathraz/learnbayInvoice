@@ -166,7 +166,7 @@ export default async function pdfGenerate(req, res) {
       <div>Form Link:</div>
       <p><a href="${link}" target="_blank">${link}</a>       
       </p>
-      <p>Once you fill out the form; your learning manager will reach out to you over phone and mail to help you out with further process.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div><div>Note:-The amount will not be refundable after 15 days of joining</div>`,
+      <p>Once you fill out the form; your learning manager will reach out to you over phone and mail to help you out with further process.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div><div>Note:-Refunds and loan cancellation are not applicable beyond the 15-day payment period,regardless of the payment method used, including loan EMIs, full payments, or credit card EMIs.</div>`,
     };
 
     // set our compiled html template as the pages content
