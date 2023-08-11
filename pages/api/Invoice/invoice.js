@@ -153,7 +153,7 @@ export default async function pdfGenerate(req, res) {
       from: "admissions@learnbay.co",
       to: customerEmail,
       subject: `invoice From Learnbay`,
-      cc: [counselorEmail, counselorEmailCC],
+      cc: [counselorEmail, counselorEmailCC, "support@learnbay.co"],
       attachments: [
         {
           filename: `${fPdfName}.pdf`,
