@@ -441,7 +441,6 @@ const Dashboard = (props) => {
         ) : (
           ""
         )}
-
         {showItem.first ? (
           <div className={styles.couponWrap}>
             <h2>Generate Coupon Code</h2>
@@ -496,7 +495,6 @@ const Dashboard = (props) => {
         ) : (
           ""
         )}
-
         {showItem.sixth ? (
           <div className={styles.loan}>
             <h2>Generate Invoice</h2>
@@ -517,7 +515,6 @@ const Dashboard = (props) => {
         ) : (
           ""
         )}
-
         {showItem.seventh ? (
           <div className={styles.loan1}>
             <h2>Add Counselling Report</h2>
@@ -540,11 +537,12 @@ const Dashboard = (props) => {
         {showItem.ninth ? (
           <div className={styles.loan}>
             <h2>Add Batch Details</h2>
-            {/* <GenerateReportForm email={props.token.token} /> */}
+            {/* <GenerateBatchDetailsForm email={props.token.token} /> */}
           </div>
         ) : (
           ""
         )}
+        E
         {showItem.tenth ? (
           <div className={styles.loan}>
             <h2>Popup Details</h2>

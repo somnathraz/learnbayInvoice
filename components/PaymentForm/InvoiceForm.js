@@ -427,6 +427,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
 
             <option value="Full Payment">Full Payment</option>
             <option value="Partial Payment">Partial Payment</option>
+            <option value="Loan EMI">Loan EMI</option>
           </select>
         </div>
         <input type="hidden" id="salesMan" name="salesMan" value={salesMan} />
