@@ -1,0 +1,147 @@
+.boxes {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.boxWrap {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 15px;
+}
+.box {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 10px;
+  width: 220px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(4, 135, 217, 0.1) 50px -0px 100px -1px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 0px;
+}
+.box:hover {
+  -webkit-box-shadow: -13px -1px 36px -14px rgba(229, 242, 255, 1);
+  -moz-box-shadow: -13px -1px 36px -14px rgba(229, 242, 255, 1);
+  box-shadow: -13px -1px 36px -14px rgba(229, 242, 255, 1);
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  position: relative;
+}
+.layers {
+  color: #0487d9;
+  font-size: 26px;
+}
+.mIcon {
+  background-color: #0487d9;
+  color: white;
+  border-radius: 50%;
+  font-size: 25px;
+  padding: 5px;
+  cursor: pointer;
+}
+.bodyBox h4 {
+  font-size: 18px;
+  line-height: 20px;
+}
+.bodyBox p {
+  margin: 5px;
+  color: #bababa;
+  font-size: 12px;
+}
+.bodyBox span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bodyBox span p {
+  margin: 0;
+  color: #f28705;
+}
+.MenuWrap {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  gap: 10px;
+  transition: width 2s ease-in-out;
+  justify-content: space-evenly;
+}
+.MenuWrap:hover {
+  transition: width 00ms ease-in-out;
+  width: 180px;
+}
+.dropMenu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-evenly;
+  width: max-content;
+}
+.warning {
+  color: #f28705;
+}
+.headDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menuIcon {
+  background-color: white;
+  color: #0487d9;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-size: 25px;
+  border-radius: 50%;
+  padding: 5px;
+}
+.popup {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.748);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+.innerPopup {
+  background-color: white;
+  width: 58%;
+  padding: 10px 70px;
+  position: relative;
+  overflow-y: scroll;
+  border-radius: 8px;
+}
+.innerPopup h4 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+}
+.close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+@media (max-width: 481px) {
+  .boxWrap {
+    display: flex;
+    flex-flow: column;
+
+    gap: 15px;
+  }
+  .box {
+    width: 250px;
+  }
+  .innerPopup {
+    width: 95%;
+    padding: 10px 20px;
+  }
+}
