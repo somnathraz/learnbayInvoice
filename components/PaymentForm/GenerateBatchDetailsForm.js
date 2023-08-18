@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "../ContactusForm/ContactUsForm.module.css";
-// import BatchDateBox from "../BatchDateBox/BatchDateBox";
+import BatchDateBox from "../BatchDateBox/BatchDateBox";
 
 const BatchDateForm = ({ id, setUpdateForm }) => {
+  const [passBatchData, setPassBatchData] = useState("");
+  const [display, setDisplay] = useState(true);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState({
     daysInfo: "",
@@ -18,7 +20,21 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
       [name]: value,
     }));
   };
-
+//get batch Details from api
+useEffect(() => {
+  console.log("inside useEffect");
+  const fetchBatchDetails = async () => {
+    const data = await fetch("/api/BatchDetails/getBatchDetails", {
+      method: "GET",
+    });
+    if (data.status === 200) {
+      const { batchDatesDetails } = await data.json();
+      setPassBatchData(batchDatesDetails);
+      console.log(batchDatesDetails);
+    }
+  };
+  fetchBatchDetails();
+}, []);
   // Form Submit function
 
   const formSubmit = async (e) => {
@@ -149,6 +165,18 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
           </button>
         )}
       </form>
+
+      {display ? (
+        passBatchData === "" ? (
+          ""
+        ) : (
+          <div>
+            <BatchDateBox PassBatchData={passBatchData} />
+          </div>
+        )
+      ) : (
+        ""
+      )}
     </div>
   );
 };

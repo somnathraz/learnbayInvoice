@@ -1,0 +1,44 @@
+.wrapper h2{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapperDiv{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapperContent{
+   
+    width: max-content;
+    padding: 20px;
+    
+    display: flex;
+    flex-flow: column;
+    
+}
+.wrapperContent h3 { 
+margin: 5px;
+}
+
+.wrapper p{
+    margin: 4px;
+}
+
+.delIcon{
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.innerBox{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(192, 219, 250, 0.65) 0px 4px 6px -1px, rgba(181, 233, 255, 0.08) 0px 1px 0px inset;
+    position: relative;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #c0e7ff;
+
+}
