@@ -19,6 +19,7 @@ import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
 import Image from "next/image";
 import GenerateReportForm from "../../../components/PaymentForm/GenerateReportForm";
 import PopupFrom from "../../../components/PaymentForm/PopupForm";
+import GenerateBatchDetailsForm from "../../../components/PaymentForm/GenerateBatchDetailsForm"
 
 const Dashboard = (props) => {
   const discountPercentRef = useRef();
@@ -537,7 +538,7 @@ const Dashboard = (props) => {
         {showItem.ninth ? (
           <div className={styles.loan}>
             <h2>Add Batch Details</h2>
-            {/* <GenerateBatchDetailsForm email={props.token.token} /> */}
+           <GenerateBatchDetailsForm email={props.token.token} />
           </div>
         ) : (
           ""
