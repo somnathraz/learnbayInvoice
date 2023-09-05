@@ -111,7 +111,7 @@ const CartPage = ({ isConnected }) => {
       order_id: data.id,
       description: `Thank you for Enrolling in our ${data.name}`,
       image:
-        "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico",
+        "https://learnbay-wb.s3.ap-south-1.amazonaws.com/main/Learnbay-Logo.png",
       handler: async function (response) {
         setSuccessHandel(true);
         setPayLoading(true);

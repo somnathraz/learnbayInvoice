@@ -16,7 +16,7 @@ export default function Document() {
         />
         <link
           rel="icon"
-          href="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/favicon.ico"
+          href="https://learnbay-wb.s3.ap-south-1.amazonaws.com/main/Learnbay-Favicon-L.png"
         />
 
         <meta
@@ -28,12 +28,12 @@ export default function Document() {
         <meta name="distribution" content="global" />
         <meta
           name="copyright"
-          content="Skillslash - Project Based Experiential Learning Platform."
+          content="Learnbay - Project Based Experiential Learning Platform."
         />
         <meta name="language" content="English" />
         <meta name="rating" content="general" />
         <meta name="revisit-after" content="Daily" />
-        <meta name="author" content="skillslash" />
+        <meta name="author" content="Learnbay" />
         <meta name="googlebot" content="index,follow" />
         <meta name="bingbot" content="index,follow" />
         <meta name="expires" content="never" />
