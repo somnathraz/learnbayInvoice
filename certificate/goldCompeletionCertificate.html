@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100&display=swap");
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      position: relative;
+    }
+
+    .certificate {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      background-image: url("https://learnbay-wb.s3.ap-south-1.amazonaws.com/Certificate/Gold-Certificate.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom center;
+    }
+
+    .bottomBlock {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 150px;
+      position: relative;
+      bottom: 150px;
+    }
+
+    .innerWrapper {
+      display: flex;
+      margin: auto;
+      width: 1122px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contentWrapper {
+      width: 100%;
+      position: relative;
+      margin-top: 500px;
+    }
+
+    .middleBlock {
+      width: 100%;
+      height: max-content;
+      padding: 10px 0;
+      position: relative;
+      bottom: 150px;
+    }
+
+    .middleBlock h2 {
+      color: #0072bb;
+      font-size: 60px;
+      width: fit-content;
+      text-align: center;
+      border-bottom: 1px solid #0072bb;
+      font-weight: 500;
+      margin: auto;
+      margin-bottom: 15px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .middleBlock p {
+      font-size: 25px;
+      margin: auto;
+      padding: 0px 150px;
+      text-align: center;
+      color: #0f2939;
+    }
+
+    .courseName {
+      font-size: 35px !important;
+      margin: 5px !important;
+      padding: 0px !important;
+      text-align: center !important;
+      color: #f99600 !important;
+      font-weight: bold;
+    }
+
+    .middleWrapper {
+      position: relative;
+    }
+  </style>
+
+  <body>
+    <div class="certificate">
+      <div class="contentWrapper">
+        <div class="middleWrapper">
+          <div class="middleBlock">
+            <p>This is certify that</p>
+            <h2>{{name}}</h2>
+            <p>has successfully completed the Certificate</p>
+            <p class="courseName">&nbsp;{{courseName}}&nbsp;</p>
+            <p>From Learnbay</p>
+          </div>
+        </div>
+        <div class="bottomBlock">
+          <div class="date">
+            <p>Issued Date : <b>{{date}}</b></p>
+            <p>Certificate ID : <b>{{id}}</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

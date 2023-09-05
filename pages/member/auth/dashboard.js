@@ -13,6 +13,7 @@ import {
 } from "react-icons/ai";
 import { BsInfoCircle, BsThreeDots } from "react-icons/bs";
 import { BiCalendarEdit } from "react-icons/bi";
+import { TbCertificate } from "react-icons/tb";
 import { RiCoupon2Line, RiHandCoinLine } from "react-icons/ri";
 import { TbFileInvoice, TbReportAnalytics } from "react-icons/tb";
 import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
@@ -20,6 +21,7 @@ import Image from "next/image";
 import GenerateReportForm from "../../../components/PaymentForm/GenerateReportForm";
 import PopupFrom from "../../../components/PaymentForm/PopupForm";
 import GenerateBatchDetailsForm from "../../../components/PaymentForm/GenerateBatchDetailsForm"
+import CertificateForm from "../../../components/PaymentForm/CertificateForm"
 
 const Dashboard = (props) => {
   const discountPercentRef = useRef();
@@ -34,6 +36,8 @@ const Dashboard = (props) => {
     seventh: false,
     eight: false,
     ninth: false,
+    tenth: false,
+    eleventh: false,
     tenth: false,
   });
   const [mobile, setMobile] = useState(false);
@@ -123,7 +127,7 @@ const Dashboard = (props) => {
             {sidebarExpand ? (
               <Image
                 src="https://learnbay-wb.s3.ap-south-1.amazonaws.com/main/Learnbay-Logo.webp"
-                alt="Skillslash"
+                alt="Learnbay"
                 quality={100}
                 objectFit="contain"
                 width={mobile ? "140px" : "90px"}
@@ -132,7 +136,7 @@ const Dashboard = (props) => {
             ) : (
               <Image
                 src="https://learnbay-wb.s3.ap-south-1.amazonaws.com/main/Learnbay-Favicon-L.png"
-                alt="Skillslash"
+                alt="Learnbay"
                 quality={100}
                 objectFit="contain"
                 width={mobile ? "140px" : "40px"}
@@ -166,6 +170,7 @@ const Dashboard = (props) => {
                   eight: false,
                   ninth: false,
                   tenth: false,
+                  eleventh: false,
                 })
               }
             >
@@ -193,6 +198,7 @@ const Dashboard = (props) => {
                   eight: false,
                   ninth: false,
                   tenth: false,
+                  eleventh: false,
                 })
               }
             >
@@ -220,6 +226,7 @@ const Dashboard = (props) => {
                   eight: false,
                   ninth: false,
                   tenth: false,
+                  eleventh: false,
                 })
               }
             >
@@ -247,6 +254,7 @@ const Dashboard = (props) => {
                   eight: false,
                   ninth: false,
                   tenth: false,
+                  eleventh: false,
                 })
               }
             >
@@ -298,6 +306,7 @@ const Dashboard = (props) => {
                   eight: false,
                   ninth: true,
                   tenth: false,
+                  eleventh: false,
                 })
               }
             >
@@ -309,6 +318,34 @@ const Dashboard = (props) => {
 
               <p className={styles.item}>Batch Details</p>
             </span>
+            <span
+              className={showItem.eleventh ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  third: false,
+                  first: false,
+                  second: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: false,
+                  seventh: false,
+                  eight: false,
+                  ninth: false,
+                  tenth: false,
+                  eleventh: true,
+                })
+              }
+            >
+              <TbCertificate
+                className={
+                  showItem.eleventh ? styles.barIconActive : styles.barIcon
+                }
+              />
+
+              <p className={styles.item}>Generate Certificate</p>
+            </span>
+
             <span
               className={showItem.tenth ? styles.spanActive : styles.span}
               onClick={() =>
@@ -323,6 +360,7 @@ const Dashboard = (props) => {
                   seventh: false,
                   eight: false,
                   ninth: false,
+                  eleventh: false,
                   tenth: true,
                 })
               }
@@ -356,6 +394,7 @@ const Dashboard = (props) => {
                       eight: false,
                       ninth: false,
                       tenth: false,
+                      eleventh: false,
                     })
                   }
                 >
@@ -382,6 +421,7 @@ const Dashboard = (props) => {
                       eight: false,
                       ninth: false,
                       tenth: false,
+                      eleventh: false,
                     })
                   }
                 >
@@ -408,6 +448,7 @@ const Dashboard = (props) => {
                       eight: false,
                       ninth: false,
                       tenth: false,
+                      eleventh: false,
                     })
                   }
                 >
@@ -543,11 +584,18 @@ const Dashboard = (props) => {
         ) : (
           ""
         )}
-        E
         {showItem.tenth ? (
           <div className={styles.loan}>
             <h2>Popup Details</h2>
             <PopupFrom team={props.token.token} />
+          </div>
+        ) : (
+          ""
+        )}
+        {showItem.eleventh ? (
+          <div className={styles.loan}>
+            <h2>Generate certificate</h2>
+            <CertificateForm team={props.token.token} />
           </div>
         ) : (
           ""
