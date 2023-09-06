@@ -120,7 +120,7 @@ export default async function handler(req, res) {
 
       await browser.close();
       let mailData;
-      if (certificateType === "course completion certificate") {
+      if (certificateType === "Module completion certificate") {
         mailData = {
           from: "certificates@learnbay.co",
           to: email,
@@ -133,12 +133,10 @@ export default async function handler(req, res) {
               contentType: "application/pdf",
             },
           ],
-          html: `<div>Hi ${name},</div><p>Congratulations!,</p> <p>Here is your certificate of completion of the ${courseName}</p></div><p> A Module by Learnbay Academy! Congratulations on receiving your certificate of completion! </p> <p>You can now download your certificate.</p><p>Please see the attached file for your certificate.</p><div>Thanks and Regards</div><div>Team Learnbay</div>`,
+          html: `<div>Hi, ${name}.</div><p>Greetings from Learnbay!</p> <p>We are thrilled to inform you that you have successfully completed the ${courseName} with Learnbay!</p></div><p> Please find your official certificate of course completion attached as our way of saying thank you for your diligence. This certificate acknowledges your achievement and can be a useful addition to your professional portfolio or resume.</p> <p>We wish to applaud you on this noteworthy accomplishment and look forward to helping you in your future educational efforts.</p><p>Please find your official certification in the attached file.</p><div>Regards and thanks</div><div> Learnbay!</div>`,
         };
       }
-      if (certificateType === "Module completion certificate" ||
-      certificateType === "Silver completion certificate" ||
-      certificateType === "Gold completion certificate") {
+      if (certificateType === "Silver completion certificate") {
         mailData = {
           from: "certificates@learnbay.co",
           to: email,
@@ -154,11 +152,7 @@ export default async function handler(req, res) {
           html: `<div>Hi ${name},</div><p>Congratulations!,</p> <p>Here is your certificate of completion of the ${courseName}</p></div><p> A course by Learnbay Academy! Congratulations on receiving your certificate of completion! </p> <p>You can now download your certificate.</p><p>Please see the attached file for your certificate.</p><div>Thanks and Regards</div><div>Team Learnbay</div>`,
         };
       }
-      if (
-        certificateType === "project experience certificate Theorax" ||
-        certificateType === "project experience certificate Caspian" ||
-        certificateType === "project experience certificate SingleDoor"
-      ) {
+      if (certificateType === "Gold completion certificate") {
         mailData = {
           from: "certificates@learnbay.co",
           to: email,
@@ -171,23 +165,7 @@ export default async function handler(req, res) {
               contentType: "application/pdf",
             },
           ],
-          html: `<div>Hi ${name},</div><p>Congratulations!,</p> <p>Here is your certificate of completion of the Project ${courseName}</p></div><p> Congratulations on receiving your certificate of completion! </p> <p>You can now download your certificate.</p><p>Please see the attached file for your certificate.</p><div>Thanks and Regards</div><div>Team Learnbay</div>`,
-        };
-      }
-      if (certificateType === "Workshop completion certificate") {
-        mailData = {
-          from: "certificates@learnbay.co",
-          to: email,
-          cc: "shanthi.agree@learnbay.co",
-          subject: `certificate From Learnbay`,
-          attachments: [
-            {
-              filename: `${fPdfName}.pdf`,
-              path: `./public/certificate/${fPdfName}.pdf`,
-              contentType: "application/pdf",
-            },
-          ],
-          html: `<div>Dear ${name},</div><p>Congratulations!,</p> <p>Here is your certificate for ${courseName} by Learnbay Academy !</p></div><p>Congratulations on receiving your ${courseName}! You can now download your certificate.</p> <p>Your certificate is available in an online format so that you can retrieve it anywhere at any time, and easily share the details of your achievement.</p><p>Having trouble with your certificate or you want to unsubscribe from email list? Contact us at info@Learnbay.com.</p>`,
+          html: `<div>Hi ${name},</div><p>Congratulations!,</p> <p>Here is your certificate of completion of the ${courseName}</p></div><p> A course by Learnbay Academy! Congratulations on receiving your certificate of completion! </p> <p>You can now download your certificate.</p><p>Please see the attached file for your certificate.</p><div>Thanks and Regards</div><div>Team Learnbay</div>`,
         };
       }
 
