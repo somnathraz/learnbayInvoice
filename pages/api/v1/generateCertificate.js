@@ -67,6 +67,7 @@ export default async function handler(req, res) {
         Body: fileContent,
         ContentDisposition: "inline",
         ContentType: "application/pdf",
+        ACL: "public-read",
       };
 
       // Uploading files to the bucket
