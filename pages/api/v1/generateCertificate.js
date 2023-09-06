@@ -67,6 +67,7 @@ export default async function handler(req, res) {
         Body: fileContent,
         ContentDisposition: "inline",
         ContentType: "application/pdf",
+        ACL: "public-read",
       };
 
       // Uploading files to the bucket
@@ -136,9 +137,11 @@ export default async function handler(req, res) {
           html: `<div>Hi ${name},</div><p>Congratulations!,</p> <p>Here is your certificate of completion of the ${courseName}</p></div><p> A Module by Learnbay Academy! Congratulations on receiving your certificate of completion! </p> <p>You can now download your certificate.</p><p>Please see the attached file for your certificate.</p><div>Thanks and Regards</div><div>Team Learnbay</div>`,
         };
       }
-      if (certificateType === "Module completion certificate" ||
-      certificateType === "Silver completion certificate" ||
-      certificateType === "Gold completion certificate") {
+      if (
+        certificateType === "Module completion certificate" ||
+        certificateType === "Silver completion certificate" ||
+        certificateType === "Gold completion certificate"
+      ) {
         mailData = {
           from: "certificates@learnbay.co",
           to: email,
