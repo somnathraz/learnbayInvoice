@@ -221,41 +221,43 @@ const CertificateForm = () => {
           />
         </div>
 
-        {query.certificateType === ""
-          ? ""
-          : query.certificateType !== "course completion certificate" &&
+        {query.certificateType === "" ? (
+          ""
+        ) : query.certificateType !== "course completion certificate" &&
           query.certificateType !== "Silver completion certificate" &&
           query.certificateType !== "Gold completion certificate" &&
-            query.certificateType !== "Module completion certificate"
-          ? <div className={styles.inners} style={{ marginBottom: "10px" }}>
-              <DatePicker
-                selected={programStartDate}
-                name="date"
-                id="date"
-                onChange={(date) => {
-                  setProgramStartDate(date);
-                }}
-                wrapperClassName={styles.date}
-                className={styles.datePicker}
-                placeholderText="Enter program start Date"
-                dateFormat="MMMM d, yyyy"
-                required
-              />
-              <DatePicker
-                selected={programEndDate}
-                name="date"
-                id="date"
-                onChange={(date) => {
-                  setProgramEndDate(date);
-                }}
-                wrapperClassName={styles.date}
-                className={styles.datePicker}
-                placeholderText="Enter program End Date"
-                dateFormat="MMMM d, yyyy"
-                required
-              />
-            </div>
-          : ""}
+          query.certificateType !== "Module completion certificate" ? (
+          <div className={styles.inners} style={{ marginBottom: "10px" }}>
+            <DatePicker
+              selected={programStartDate}
+              name="date"
+              id="date"
+              onChange={(date) => {
+                setProgramStartDate(date);
+              }}
+              wrapperClassName={styles.date}
+              className={styles.datePicker}
+              placeholderText="Enter program start Date"
+              dateFormat="MMMM d, yyyy"
+              required
+            />
+            <DatePicker
+              selected={programEndDate}
+              name="date"
+              id="date"
+              onChange={(date) => {
+                setProgramEndDate(date);
+              }}
+              wrapperClassName={styles.date}
+              className={styles.datePicker}
+              placeholderText="Enter program End Date"
+              dateFormat="MMMM d, yyyy"
+              required
+            />
+          </div>
+        ) : (
+          ""
+        )}
 
         {loading ? (
           <div className="center">

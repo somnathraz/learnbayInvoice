@@ -136,7 +136,7 @@ export default async function pdfGenerate(req, res) {
       link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
     }
     if (
-      courseName === "Full Stack software development" ||
+      courseName === "Software Development masters program" ||
       courseName === "Software development program for freshers"
     ) {
       link = "https://zfrmz.in/nOlE6J6FvLoZ0su8MxT8";

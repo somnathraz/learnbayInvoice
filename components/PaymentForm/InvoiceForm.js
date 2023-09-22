@@ -120,8 +120,8 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "Business Analytics Program") {
     code = "BAP";
   }
-  if (query.courseName === "Full Stack software development") {
-    code = "FSD";
+  if (query.courseName === "Software Development masters program") {
+    code = "SDMP";
   }
   if (query.courseName === "DSA and system design") {
     code = "DSA";
@@ -328,8 +328,8 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="Business Analytics Program">
               Business Analytics Program
             </option>
-            <option value="Full Stack software development">
-              Full Stack software development
+            <option value="Software Development masters program">
+              Software Development masters program
             </option>
             <option value="Full stack web development course">
               Full stack web development course
