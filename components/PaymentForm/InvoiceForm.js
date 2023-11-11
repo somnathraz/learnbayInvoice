@@ -102,6 +102,12 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
       [name]: value,
     }));
   };
+  if (query.courseName === "masters degree") {
+    code = "MD";
+  }
+  if (query.courseName === "Masters degree upgrade") {
+    code = "MAU";
+  }
   if (query.courseName === "Advanced Data science and AI Program") {
     code = "ADSAP";
   }
@@ -295,7 +301,10 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option className={styles.option} value="">
               Select a course*
             </option>
-
+            <option value="masters degree">masters degree</option>
+            <option value="Masters degree upgrade">
+              Masters degree upgrade
+            </option>
             <option value="Advanced Data science and AI Program">
               Advanced Data science and AI Program
             </option>

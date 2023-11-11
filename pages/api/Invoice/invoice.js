@@ -116,7 +116,9 @@ export default async function pdfGenerate(req, res) {
       courseName === "Data Science and AI for BFSI Professionals" ||
       courseName === "HR Analytics Program" ||
       courseName === "Marketing Analytics Program" ||
-      courseName === "Business Analytics Master Program"
+      courseName === "Business Analytics Master Program" ||
+      courseName === "masters degree" ||
+      courseName === "Masters degree upgrade"
     ) {
       link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
     }
