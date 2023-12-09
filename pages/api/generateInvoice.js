@@ -8,7 +8,7 @@ const nodemailer = require("nodemailer");
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
-  bucketName: "learnbay-invoice/payment-invoice",
+  bucketName: "invoice-lb/payment-invoice",
 };
 
 const transporter = nodemailer.createTransport({

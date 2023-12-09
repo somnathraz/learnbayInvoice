@@ -2,7 +2,7 @@ import { connectToDatabase } from "../../../lib/mongodb";
 export default async function generatePage(req, res) {
   const { db } = await connectToDatabase();
   if (req.method === "POST") {
-    const { heading, para1, para2, page } = req.body;
+    const { heading, para1, para2, page, subHeading, validText } = req.body;
 
     const idGenerate =
       heading.slice(0, 3) + Math.floor(Math.random() * 1000000);
@@ -15,6 +15,8 @@ export default async function generatePage(req, res) {
         para1,
         para2,
         page,
+        subHeading,
+        validText,
         // show: false,
         // expireAt: new Date(endDate),
       });
@@ -40,7 +42,17 @@ export default async function generatePage(req, res) {
   }
   if (req.method === "PATCH") {
     console.log("patch method");
-    let { id, heading, para1, para2, startDate, endDate, page } = req.body;
+    let {
+      id,
+      heading,
+      para1,
+      para2,
+      startDate,
+      endDate,
+      page,
+      subHeading,
+      validText,
+    } = req.body;
 
     console.log(page, "server page list");
     const findPopup = await db.collection("popup").findOne({
@@ -61,6 +73,8 @@ export default async function generatePage(req, res) {
             startDate,
             endDate,
             page,
+            subHeading,
+            validText,
             // expireAt: new Date(endDate),
           },
         }

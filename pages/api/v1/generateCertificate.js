@@ -12,7 +12,7 @@ let emailSent = "";
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
-  bucketName: "learnbay-wb/Certificate",
+  bucketName: "invoice-lb/certificate",
 };
 const transporter = nodemailer.createTransport({
   port: 465,

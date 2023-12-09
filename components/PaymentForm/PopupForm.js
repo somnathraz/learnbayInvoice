@@ -7,6 +7,8 @@ const AddPopupFrom = () => {
   const [display, setDisplay] = useState(false);
   const [query, setQuery] = useState({
     heading: "",
+    subHeading: "",
+    validText: "",
     para1: "",
     para2: "",
     page: [],
@@ -74,6 +76,8 @@ const AddPopupFrom = () => {
       if (data.status === 200) {
         setQuery({
           heading: "",
+          subHeading: "",
+          validText: "",
           para1: "",
           para2: "",
           page: [],
@@ -105,6 +109,30 @@ const AddPopupFrom = () => {
             placeholder="Enter Popup Heading*"
             className={styles.EmailInput}
             value={query.heading}
+            onChange={handleParam()}
+          />
+        </div>
+        <div className={styles.formWrapper}>
+          <input
+            id="subHeading"
+            type="text"
+            name="subHeading"
+            required
+            placeholder="Enter Popup Sub Heading*"
+            className={styles.EmailInput}
+            value={query.subHeading}
+            onChange={handleParam()}
+          />
+        </div>
+        <div className={styles.formWrapper}>
+          <input
+            id="validText"
+            type="text"
+            name="validText"
+            required
+            placeholder="Enter Popup Valid Time*"
+            className={styles.EmailInput}
+            value={query.validText}
             onChange={handleParam()}
           />
         </div>
@@ -148,6 +176,30 @@ const AddPopupFrom = () => {
             <input
               type="checkbox"
               name="pages"
+              value="Adv AI and ML Certification"
+              id="flexCheckDefault"
+              onChange={handleChange}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Adv AI and ML Certification
+            </label>
+          </div>
+          <div className={styles.checkBoxDiv}>
+            <input
+              type="checkbox"
+              name="pages"
+              value="Master in Cs"
+              id="flexCheckDefault"
+              onChange={handleChange}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Master in Cs
+            </label>
+          </div>
+          <div className={styles.checkBoxDiv}>
+            <input
+              type="checkbox"
+              name="pages"
               value="Full Stack Developer course"
               id="flexCheckDefault"
               onChange={handleChange}
@@ -167,6 +219,18 @@ const AddPopupFrom = () => {
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
               Business Analytics Program
+            </label>
+          </div>
+          <div className={styles.checkBoxDiv}>
+            <input
+              type="checkbox"
+              name="pages"
+              value="Data Analytics Program"
+              id="flexCheckDefault"
+              onChange={handleChange}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Data Analytics Program
             </label>
           </div>
         </div>

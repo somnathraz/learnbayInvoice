@@ -9,6 +9,8 @@ const UpdatePopupFrom = ({ id, setUpdateForm }) => {
   const [query, setQuery] = useState({
     id: id,
     heading: "",
+    subHeading: "",
+    validText: "",
     para1: "",
     para2: "",
     page: [],
@@ -31,6 +33,8 @@ const UpdatePopupFrom = ({ id, setUpdateForm }) => {
           heading: myPost.heading,
           para1: myPost.para1,
           para2: myPost.para2,
+          validText: myPost.validText,
+          subHeading: myPost.subHeading,
           page: [],
         });
         showList(myPost.page);
@@ -104,6 +108,8 @@ const UpdatePopupFrom = ({ id, setUpdateForm }) => {
       if (data.status === 200) {
         setQuery({
           heading: "",
+          subHeading: "",
+          validText: "",
           para1: "",
           para2: "",
           page: [],
@@ -139,11 +145,34 @@ const UpdatePopupFrom = ({ id, setUpdateForm }) => {
             onChange={handleParam()}
           />
         </div>
-
+        <div className={styles.formWrapper}>
+          <input
+            id="subHeading"
+            type="text"
+            name="subHeading"
+            required
+            placeholder="Enter Popup Sub Heading*"
+            className={styles.EmailInput}
+            value={query.subHeading}
+            onChange={handleParam()}
+          />
+        </div>
+        <div className={styles.formWrapper}>
+          <input
+            id="validText"
+            type="text"
+            name="validText"
+            required
+            placeholder="Enter Popup Valid Time*"
+            className={styles.EmailInput}
+            value={query.validText}
+            onChange={handleParam()}
+          />
+        </div>
         <div className={styles.formWrapper}>
           <textarea
             type="text"
-            name="para2"
+            name="para1"
             placeholder="Weekday/Weekend Evening/Morning : 11th Aug, 8 PM to 10 PM"
             className={styles.EmailInput}
             value={query.para1}
@@ -161,7 +190,7 @@ const UpdatePopupFrom = ({ id, setUpdateForm }) => {
           />
         </div>
         <div className={styles.formWrapper}>
-          <label>Select courses You want to display popup</label>
+          <label>Select courses : To display popup</label>
           <div className={styles.checkBoxDiv}>
             <input
               type="checkbox"
@@ -172,6 +201,30 @@ const UpdatePopupFrom = ({ id, setUpdateForm }) => {
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
               Adv Data Science and AI
+            </label>
+          </div>
+          <div className={styles.checkBoxDiv}>
+            <input
+              type="checkbox"
+              name="pages"
+              value="Adv AI and ML Certification"
+              id="flexCheckDefault"
+              onChange={handleChange}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Adv AI and ML Certification
+            </label>
+          </div>
+          <div className={styles.checkBoxDiv}>
+            <input
+              type="checkbox"
+              name="pages"
+              value="Master in Cs"
+              id="flexCheckDefault"
+              onChange={handleChange}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Master in Cs
             </label>
           </div>
           <div className={styles.checkBoxDiv}>
@@ -197,6 +250,18 @@ const UpdatePopupFrom = ({ id, setUpdateForm }) => {
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
               Business Analytics Program
+            </label>
+          </div>
+          <div className={styles.checkBoxDiv}>
+            <input
+              type="checkbox"
+              name="pages"
+              value="Data Analytics Program"
+              id="flexCheckDefault"
+              onChange={handleChange}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Data Analytics Program
             </label>
           </div>
         </div>
