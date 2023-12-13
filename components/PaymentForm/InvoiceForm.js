@@ -351,6 +351,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="Software development program for freshers">
               Software development program for freshers
             </option>
+            <option value="Advance Cloud Computing & DevOps Certification Program">
+              Advance Cloud Computing & DevOps Certification Program
+            </option>
           </select>
         </div>
         <div className={styles.formWrapper}>

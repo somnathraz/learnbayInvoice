@@ -129,7 +129,7 @@ const AddPopupFrom = () => {
             id="validText"
             type="text"
             name="validText"
-            required
+            // required
             placeholder="Enter Popup Valid Time*"
             className={styles.EmailInput}
             value={query.validText}
