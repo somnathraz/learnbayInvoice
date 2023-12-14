@@ -147,6 +147,12 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "Software development program for freshers") {
     code = "FSDF";
   }
+  if (
+    query.courseName ===
+    "Advance Cloud Computing & DevOps Certification Program"
+  ) {
+    code = "ACDC";
+  }
 
   //verify submit function
   const verifySubmit = async (e) => {
