@@ -5,7 +5,6 @@ import handlers from "handlebars";
 const nodemailer = require("nodemailer");
 import { connectToDatabase } from "../../../lib/mongodb";
 import { authentication } from "../../../lib/googleSheet";
-import { log } from "console";
 
 let fileUpload = "";
 let emailSent = "";
@@ -42,7 +41,6 @@ export default async function handler(req, res) {
     } = req.body;
 
     console.log(req.body);
-    console.log(process.env.GOOGLE_SHEET_ID1, "somnath fans gaya");
 
     let path = "";
     if (certificateType === "Gold completion certificate") {
@@ -75,7 +73,7 @@ export default async function handler(req, res) {
         if (err) {
           throw err;
         }
-
+        console.log(data.Location, "s3");
         fileUpload = data.Location;
       });
     };
@@ -183,7 +181,7 @@ export default async function handler(req, res) {
         } else {
           emailSent = `email sent successfully. ${info.messageId}`;
 
-          const downloadFile = `https://learnbay-wb.s3.ap-south-1.amazonaws.com/Certificate/${fPdfName}.pdf`;
+          const downloadFile = `https://invoice-lb.s3.us-east-2.amazonaws.com/certificate/${fPdfName}.pdf`;
           const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID1,
             range: "Sheet1",

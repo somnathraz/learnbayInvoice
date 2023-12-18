@@ -200,6 +200,18 @@ const AddPopupFrom = () => {
             <input
               type="checkbox"
               name="pages"
+              value="Advance Cloud Computing & DevOps Certification Program"
+              id="flexCheckDefault"
+              onChange={handleChange}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Advance Cloud Computing & DevOps Certification Program
+            </label>
+          </div>
+          <div className={styles.checkBoxDiv}>
+            <input
+              type="checkbox"
+              name="pages"
               value="Full Stack Developer course"
               id="flexCheckDefault"
               onChange={handleChange}
