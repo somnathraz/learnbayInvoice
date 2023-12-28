@@ -52,6 +52,9 @@ export default async function handler(req, res) {
     if (certificateType === "Module completion certificate") {
       path = "./certificate/moduleCompeletionCertificate.html";
     }
+    if (certificateType === "Project completion certificate") {
+      path = "./certificate/projectCompeletionCertificate.html";
+    }
 
     const uploadToS3 = async (fileName) => {
       // Read content from the file
@@ -132,7 +135,23 @@ export default async function handler(req, res) {
               contentType: "application/pdf",
             },
           ],
-          html: `<div>Hi, <b>${name}</b>.</div><p>Greetings from Learnbay!</p> <p>We are thrilled to inform you that you have successfully completed the <b>${courseName}</b> with Learnbay!</p></div><p> Please find your official <b>certificate of completion</b> attached as our way of saying thank you for your diligence. This certificate acknowledges your achievement and can be a useful addition to your professional portfolio or resume.</p> <p>We wish to applaud you on this noteworthy accomplishment and look forward to helping you in your future educational efforts.</p><p>Please check the veracity of the certificate at the URL indicated below. <a href="https://www.learnbay.co/verify-certificate" target="_blank">https://www.learnbay.co/verify-certificate</a></p><p>Please find your official certification in the attached file.</p><div>Regards and thanks</div><div> Learnbay!</div>`,
+          html: `<div>Hi, <b>${name}</b>.</div><p>Greetings from Learnbay!</p> <p>We are thrilled to inform you that you have successfully completed the <b>${courseName}</b> with Learnbay!</p></div><p> Please find your official <b>certificate of completion</b> attached as our way of saying thank you for your diligence. This certificate acknowledges your achievement and can be a useful addition to your professional portfolio or resume.</p> <p>We wish to applaud you on this noteworthy accomplishment and look forward to helping you in your future educational efforts.</p><p>Please find your official certification in the attached file.</p><div>Regards and thanks</div><div> Learnbay!</div>`,
+        };
+      }
+      if (certificateType === "Project completion certificate") {
+        mailData = {
+          from: "certificates@learnbay.co",
+          to: email,
+          cc: "shanthi.agree@learnbay.co",
+          subject: `certificate From learnbay`,
+          attachments: [
+            {
+              filename: `${fPdfName}.pdf`,
+              path: `./public/certificate/${fPdfName}.pdf`,
+              contentType: "application/pdf",
+            },
+          ],
+          html: `<div>Hi, <b>${name}</b>.</div><p>Greetings from Learnbay!</p> <p>We are thrilled to inform you that you have successfully completed the <b>${courseName}</b> with Learnbay!</p></div><p> Please find your official <b>Project completion certificate</b> attached as our way of saying thank you for your diligence. This certificate acknowledges your achievement and can be a useful addition to your professional portfolio or resume.</p> <p>We wish to applaud you on this noteworthy accomplishment and look forward to helping you in your future educational efforts.</p><p>Please find your official certification in the attached file.</p><div>Regards and thanks</div><div> Learnbay!</div>`,
         };
       }
       if (certificateType === "Silver completion certificate") {
@@ -148,7 +167,7 @@ export default async function handler(req, res) {
               contentType: "application/pdf",
             },
           ],
-          html: `<div>Dear <b>${name}</b>,</div><p>Greetings from Learnbay!!</p><p>Hope this mail finds you well!</p><p>We are writing to let you know that Learnbay has officially awarded you with a <b>Silver certificate</b> in recognition of your excellent performance and commitment during your <b>${courseName}</b>.</p></div><p>Your extraordinary performance and dedication to excellence are recognized by this certificate.</p> <p>Please check the veracity of the certificate at the URL indicated below. <a href="https://www.learnbay.co/verify-certificate" target="_blank">https://www.learnbay.co/verify-certificate</a></p><div>Warm regards,</div><div>Learnbay Team.</div>`,
+          html: `<div>Dear <b>${name}</b>,</div><p>Greetings from Learnbay!!</p><p>Hope this mail finds you well!</p><p>We are writing to let you know that Learnbay has officially awarded you with a <b>Silver certificate</b> in recognition of your excellent performance and commitment during your <b>${courseName}</b>.</p></div><p>Your extraordinary performance and dedication to excellence are recognized by this certificate.</p> <div>Warm regards,</div><div>Learnbay Team.</div>`,
         };
       }
       if (certificateType === "Gold completion certificate") {
@@ -164,7 +183,7 @@ export default async function handler(req, res) {
               contentType: "application/pdf",
             },
           ],
-          html: `<div>Dear <b>${name}</b>,</div><p>Greetings from Learnbay!!</p><p>Hope this mail finds you well!</p><p>We are writing to let you know that Learnbay has officially awarded you with a <b>Gold certificate</b> in recognition of your excellent performance and commitment during your <b>${courseName}</b>.</p></div><p>Your extraordinary performance and dedication to excellence are recognized by this certificate.</p> <p>Please check the veracity of the certificate at the URL indicated below. <a href="https://www.learnbay.co/verify-certificate" target="_blank">https://www.learnbay.co/verify-certificate</a></p><div>Warm regards,</div><div>Learnbay Team.</div>`,
+          html: `<div>Dear <b>${name}</b>,</div><p>Greetings from Learnbay!!</p><p>Hope this mail finds you well!</p><p>We are writing to let you know that Learnbay has officially awarded you with a <b>Gold certificate</b> in recognition of your excellent performance and commitment during your <b>${courseName}</b>.</p></div><p>Your extraordinary performance and dedication to excellence are recognized by this certificate.</p><div>Warm regards,</div><div>Learnbay Team.</div>`,
         };
       }
 

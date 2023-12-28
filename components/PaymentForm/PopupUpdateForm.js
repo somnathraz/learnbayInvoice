@@ -239,7 +239,18 @@ const UpdatePopupFrom = ({ id, setUpdateForm }) => {
               Full Stack Developer course
             </label>
           </div>
-
+          <div className={styles.checkBoxDiv}>
+            <input
+              type="checkbox"
+              name="pages"
+              value="Advance Cloud Computing & DevOps Certification Program"
+              id="flexCheckDefault"
+              onChange={handleChange}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Advance Cloud Computing & DevOps Certification Program
+            </label>
+          </div>
           <div className={styles.checkBoxDiv}>
             <input
               type="checkbox"
