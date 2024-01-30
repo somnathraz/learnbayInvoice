@@ -136,6 +136,13 @@
             font-weight: bold;
         }
 
+        .imgAuthority {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
         @media only screen and (max-width: 600px) {
             .invoice-box table tr.top table td {
                 width: 100%;
@@ -267,9 +274,9 @@
                 </td>
 
                 <td>
-                    Amount:{{OriginalCost}}<br />
-                    SGST(9%):₹{{SGST}}<br />
-                    CGST(9%):₹{{CGST}}<br />
+                    Amount: ₹{{OriginalCost}}<br />
+                    SGST(9%): ₹{{SGST}}<br />
+                    CGST(9%): ₹{{CGST}}<br />
                     Total Amount: ₹{{coursePrice}}<br />
 
 
@@ -277,9 +284,13 @@
             </tr>
         </table>
         <div class="footer">
-            <div></div>
-
-            <div>Authorised Signatory</div>
+            <div>
+                
+            </div>
+            
+            <div class="imgAuthority">
+                <img src="https://learnbay-wb.s3.ap-south-1.amazonaws.com/main/sign.jpeg" width="70px"
+            alt="Learnbay" />Authorised Signatory</div>
         </div>
         <div class="sign">
             <p class="note1">Refunds and loan cancellation are not applicable beyond the 15-day payment
