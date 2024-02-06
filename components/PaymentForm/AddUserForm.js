@@ -160,6 +160,7 @@ const AddUserFrom = () => {
             <option value="Hustler">Hustler</option>
             <option value="Redeem Team">Redeem Team</option>
             <option value="Full Stack">Full Stack</option>
+            <option value="Operations">Operations</option>
           </select>
         </div>
         {loading ? (
