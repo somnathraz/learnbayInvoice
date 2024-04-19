@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100&display=swap");
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      position: relative;
+    }
+
+    .certificate {
+      width: 100vw;
+      height: 100vh;
+      background-image: url("https://learnbay-s3.s3.us-east-2.amazonaws.com/web/s3_main/gold-certificate-degree.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .courseName {
+      font-size: 30px !important;
+      margin: 10px 0px !important;
+      padding: 0px !important;
+      text-align: center !important;
+      color: #0072bc !important;
+      font-weight: bold;
+    }
+
+    .DateId {
+      display: flex;
+      justify-content: space-between;
+      padding: 42px 50px 0px 60px;
+    }
+    .newContainer p {
+      margin: 0;
+    }
+    .newContainer h2 {
+      margin: 0;
+    }
+    .newContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 200px;
+    }
+    .pTop {
+      font-size: 24px;
+      color: #334166;
+      margin-top: 10px;
+    }
+    .pBot {
+      font-size: 20px;
+      color: #334166;
+    }
+    .htop {
+      font-size: 50px;
+      color: #a68836;
+      margin: 14px 0px;
+    }
+    .pBot2 {
+      font-size: 20px;
+      color: #000;
+    }
+  </style>
+
+  <body>
+    <div class="certificate">
+      <div class="DateId">
+        <p>Certificate ID : <b>{{id}}</b></p>
+        <p>Issued Date : <b>{{date}}</b></p>
+      </div>
+      <div class="newContainer">
+        <p class="pTop">IS PRESENTED TO</p>
+        <h2 class="htop">{{name}}</h2>
+        <p class="pBot">For Successfully Completing the</p>
+        <p class="courseName">&nbsp;{{courseName}}&nbsp;</p>
+        <p class="pBot2">from <b>Learnbay</b></p>
+      </div>
+    </div>
+  </body>
+</html>
