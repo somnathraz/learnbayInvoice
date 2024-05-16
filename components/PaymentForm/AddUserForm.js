@@ -153,14 +153,29 @@ const AddUserFrom = () => {
 
             <option value="Organic Team">Organic Team</option>
             <option value="Google ads-1 (Irfan)">Google ads-1 (Irfan)</option>
-
             <option value="Google ads-2 (Shah)">Google ads-2 (Shah)</option>
             <option value="Goal diggers">Goal diggers</option>
             <option value="Team Sarathi">Team Sarathi</option>
-            <option value="Hustler">Hustler</option>
             <option value="Redeem Team">Redeem Team</option>
             <option value="Full Stack">Full Stack</option>
+            <option value="Fighters">Fighters</option>
+            <option value="Visionaries United">Visionaries United</option>
+            <option value="Justice League">Justice League</option>
+            <option value="Trailblazers">Trailblazers</option>
+            <option value="Hustlers">Hustlers</option>
+            <option value="FS Phoenix">FS Phoenix</option>
+            <option value="Champions">Champions</option>
+            <option value="Gangsta's Paradise">Gangsta's Paradise</option>
+            <option value="UnderGod's">UnderGod's</option>
+            <option value="Upgrade - Masters">Upgrade - Masters</option>
+            <option value="Falcon">Falcon</option>
+            <option value="Team Legends">Team Legends</option>
+            <option value="Upholders">Upholders</option>
+            <option value="Gen Z">Gen Z</option>
+            <option value="Avengers">Avengers</option>
+            <option value="Alpha Squad">Alpha Squad</option>
             <option value="Operations">Operations</option>
+
           </select>
         </div>
         {loading ? (
