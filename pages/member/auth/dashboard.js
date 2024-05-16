@@ -130,8 +130,8 @@ const Dashboard = (props) => {
                 alt="Learnbay"
                 quality={100}
                 objectFit="contain"
-                width={mobile ? "140px" : "90px"}
-                height="90px"
+                width={mobile ? "140" : "90"}
+                height="90"
               />
             ) : (
               <Image
@@ -139,8 +139,8 @@ const Dashboard = (props) => {
                 alt="Learnbay"
                 quality={100}
                 objectFit="contain"
-                width={mobile ? "140px" : "40px"}
-                height="40px"
+                width={mobile ? "140" : "40"}
+                height="40"
               />
             )}
 
