@@ -55,6 +55,9 @@ export default async function handler(req, res) {
     if (certificateType === "Degree Silver Completion Certificate") {
       path = "./certificate/silverCompeletionCertificateDegree.html";
     }
+    if (certificateType === "Capstone Completion Certificate") {
+      path = "./certificate/capstoneCompeletionCertificate.html";
+    }
     if (certificateType === "Module completion certificate") {
       path = "./certificate/moduleCompeletionCertificate.html";
     }
@@ -190,6 +193,22 @@ export default async function handler(req, res) {
             },
           ],
           html: `<div>Dear <b>${name}</b>,</div><p>Greetings from Learnbay!!</p><p>Hope this mail finds you well!</p><p>We are writing to let you know that Learnbay has officially awarded you with a <b>Silver Certificate</b> in recognition of your excellent performance and commitment during your <b>${courseName}</b>.</p></div><p>Your extraordinary performance and dedication to excellence are recognized by this certificate.</p> <div>Warm regards,</div><div>Learnbay Team.</div>`,
+        };
+      }
+      if (certificateType === "Capstone Completion Certificate") {
+        mailData = {
+          from: "certificates@learnbay.co",
+          to: email,
+          cc: "shanthi.agree@learnbay.co",
+          subject: `Certificate from Learnbay`,
+          attachments: [
+            {
+              filename: `${fPdfName}.pdf`,
+              path: `./public/certificate/${fPdfName}.pdf`,
+              contentType: "application/pdf",
+            },
+          ],
+          html: `<div>Dear <b>${name}</b>,</div><p>Greetings from Learnbay!!</p><p>Hope this mail finds you well!</p><p>We are writing to let you know that Learnbay has officially awarded you with a <b>Capstone Completion Certificate</b> in recognition of your excellent performance and commitment during your <b>${courseName}</b>.</p></div><p>Your extraordinary performance and dedication to excellence are recognized by this certificate.</p> <div>Warm regards,</div><div>Learnbay Team.</div>`,
         };
       }
       if (certificateType === "Degree Gold Completion Certificate") {
