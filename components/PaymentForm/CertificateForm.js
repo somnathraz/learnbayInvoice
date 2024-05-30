@@ -214,6 +214,9 @@ const CertificateForm = () => {
             <option value="Degree Silver Completion Certificate">
               Degree Silver Completion Certificate
             </option>
+            <option value="Capstone Completion Certificate">
+              Capstone Completion Certificate
+            </option>
           </select>
         </div>
         {}
@@ -235,6 +238,7 @@ const CertificateForm = () => {
         ) : query.certificateType !== "course completion certificate" &&
           query.certificateType !== "Silver completion certificate" &&
           query.certificateType !== "Degree Silver Completion Certificate" &&
+          query.certificateType !== "Capstone Completion Certificate" &&
           query.certificateType !== "Degree Gold Completion Certificate" &&
           query.certificateType !== "Gold completion certificate" &&
           query.certificateType !== "Project completion certificate" &&
