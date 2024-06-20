@@ -153,6 +153,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   ) {
     code = "ACDC";
   }
+  if (query.courseName === "AWS Cloud & Devops Certification") {
+    code = "Acdc";
+  }
 
   //verify submit function
   const verifySubmit = async (e) => {
@@ -359,6 +362,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             </option>
             <option value="Advance Cloud Computing & DevOps Certification Program">
               Advance Cloud Computing & DevOps Certification Program
+            </option>
+            <option value="AWS Cloud & Devops Certification">
+            AWS Cloud & Devops Certification
             </option>
           </select>
         </div>

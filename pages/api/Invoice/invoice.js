@@ -119,7 +119,8 @@ export default async function pdfGenerate(req, res) {
       courseName === "Business Analytics Master Program" ||
       courseName === "masters degree" ||
       courseName === "Masters degree upgrade" ||
-      courseName === "Advance Cloud Computing & DevOps Certification Program"
+      courseName === "Advance Cloud Computing & DevOps Certification Program"||
+      courseName === "AWS Cloud & Devops Certification"
     ) {
       link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
     }
