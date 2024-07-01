@@ -156,6 +156,12 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "AWS Cloud & Devops Certification") {
     code = "Acdc";
   }
+  if (query.courseName === "Executive program in Data Science and AI from IIT Guwahati") {
+    code = "exda";
+  }
+  if (query.courseName === "Advance Data Analytics Program from IIT Guwahati") {
+    code = "Adaiit";
+  }
 
   //verify submit function
   const verifySubmit = async (e) => {
@@ -365,6 +371,12 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             </option>
             <option value="AWS Cloud & Devops Certification">
             AWS Cloud & Devops Certification
+            </option>
+            <option value="Executive program in Data Science and AI from IIT Guwahati">
+            Executive program in Data Science and AI from IIT Guwahati
+            </option>
+            <option value="Advance Data Analytics Program from IIT Guwahati">
+            Advance Data Analytics Program from IIT Guwahati
             </option>
           </select>
         </div>
