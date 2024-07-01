@@ -119,7 +119,7 @@ export default async function pdfGenerate(req, res) {
       courseName === "Business Analytics Master Program" ||
       courseName === "masters degree" ||
       courseName === "Masters degree upgrade" ||
-      courseName === "Advance Cloud Computing & DevOps Certification Program"||
+      courseName === "Advance Cloud Computing & DevOps Certification Program" ||
       courseName === "AWS Cloud & Devops Certification"
     ) {
       link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
@@ -151,6 +151,13 @@ export default async function pdfGenerate(req, res) {
       courseName === "System designing"
     ) {
       link = "https://zfrmz.in/nOlE6J6FvLoZ0su8MxT8";
+    }
+    if (courseName === "Advance Data Analytics Program from IIT Guwahati") {
+      link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
+    }
+    if (
+      courseName === "Executive program in Data Science and AI from IIT Guwahati"  ) {
+      link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
     }
 
     const mailData = {
