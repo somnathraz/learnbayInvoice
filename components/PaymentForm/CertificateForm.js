@@ -217,6 +217,13 @@ const CertificateForm = () => {
             <option value="Capstone Completion Certificate">
               Capstone Completion Certificate
             </option>
+
+            <option value="IIT Gold Completion Certificate">
+              IIT Gold Completion Certificate
+            </option>
+            <option value="IIT Silver Completion Certificate">
+              IIT Silver Completion Certificate
+            </option>
           </select>
         </div>
         {}
@@ -241,6 +248,8 @@ const CertificateForm = () => {
           query.certificateType !== "Capstone Completion Certificate" &&
           query.certificateType !== "Degree Gold Completion Certificate" &&
           query.certificateType !== "Gold completion certificate" &&
+          query.certificateType !== "IIT Silver Completion Certificate" &&
+          query.certificateType !== "IIT Gold Completion Certificate" &&
           query.certificateType !== "Project completion certificate" &&
           query.certificateType !== "Module completion certificate" ? (
           <div className={styles.inners} style={{ marginBottom: "10px" }}>
