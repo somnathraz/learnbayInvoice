@@ -44,7 +44,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
 
   let averageTimeline;
 
-
   useEffect(() => {
     const verifyID = async () => {
       let sendId = generateId();
@@ -75,9 +74,10 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
 
   const [query, setQuery] = useState({
     counselorName: "",
-    stdGoal: "Goal - Looking forward to learning analytics & Data Science and AI tools as there is a lot of scope as per the market trends and to drive better opportunities.",
+    stdGoal:
+      "Goal - Looking forward to learning analytics & Data Science and AI tools as there is a lot of scope as per the market trends and to drive better opportunities.",
     stdEmail: "",
-    teamEmail:"",
+    teamEmail: "",
     stdPhone: "",
     stdName: "",
     stdExperience: "",
@@ -89,10 +89,11 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
     transitionDomain: "",
     averageHike: "",
     averageTimeline: "",
-    counselorNote: "As per the discussion, suggesting opting for a data science course as we provide domain-based training. By doing so, you can understand the same from a domain perspective and the tools and projects that you have to learn for your career transition, which would provide you better job opportunities and the power of negotiation. Hope this information helps. Looking forward to hearing from you.",
+    counselorNote:
+      "As per the discussion, suggesting opting for a data science course as we provide domain-based training. By doing so, you can understand the same from a domain perspective and the tools and projects that you have to learn for your career transition, which would provide you better job opportunities and the power of negotiation. Hope this information helps. Looking forward to hearing from you.",
     salesMan: salesMan,
-    team:team,
-    
+    team: team,
+
     counsellingId: pId,
   });
 
@@ -114,12 +115,13 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
     }));
   };
 
-
   if (query.suggestedProgram === "Advanced Data science and AI Program") {
     code = "ADSAP";
     query.averageTimeline = "7 to 10 Months";
   }
-  if (query.suggestedProgram === "Data Science and AI for managers and Leaders") {
+  if (
+    query.suggestedProgram === "Data Science and AI for managers and Leaders"
+  ) {
     code = "DSAIM";
     query.averageTimeline = "11 to 14 Months";
   }
@@ -140,8 +142,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
     query.averageTimeline = "5 to 7 Months";
   }
 
-
-
   //verify submit function
   const verifySubmit = async (e) => {
     e.preventDefault();
@@ -156,7 +156,8 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
     // console.log("Queary", query);
     setLoading(true);
     try {
-      const data = await fetch(`${"/api/CounsellingReport/counsellingReport"}`,
+      const data = await fetch(
+        `${"/api/CounsellingReport/counsellingReport"}`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -178,7 +179,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             salesMan: salesMan,
             counsellingId: code + pId,
             team: team,
-            teamEmail:query.teamEmail,
+            teamEmail: query.teamEmail,
           }),
           headers: {
             "Content-Type": "application/json",
@@ -195,7 +196,7 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
       // console.log("invoice Data!!!",invoiceData)
       setQuery({
         counselorName: "",
-        teamEmail:"",
+        teamEmail: "",
         stdEmail: "",
         stdPhone: "",
         stdName: "",
@@ -208,15 +209,13 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
         transitionDomain: "",
         averageHike: "",
         averageTimeline: "",
-        
-      
       });
       setValue("");
       setStartDate("");
       setVerify(false);
     } catch (error) {
       console.log(error);
-      console.log("error@@@")
+      console.log("error@@@");
     }
     setLoading(false);
     setDisplay(true);
@@ -383,7 +382,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
             <option value="Business Analytics Program">
               Business Analytics Program
             </option>
-
           </select>
         </div>
 
@@ -448,8 +446,6 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
           />
         </div>
 
-       
-
         <input type="hidden" id="salesMan" name="salesMan" value={salesMan} />
         {loading ? (
           <div className="center">
@@ -470,26 +466,21 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
           </button>
         )}
         <div className={styles.formWrapper}>
-        <input
-          type="hidden"
-          name="averageTimeline"
-          required
-          placeholder="Enter Average TimeLine*"
-          className={styles.EmailInput}
-          value={query.averageTimeline}
-          onChange={handleParam()}
-        />
-      </div>
+          <input
+            type="hidden"
+            name="averageTimeline"
+            required
+            placeholder="Enter Average TimeLine*"
+            className={styles.EmailInput}
+            value={query.averageTimeline}
+            onChange={handleParam()}
+          />
+        </div>
       </form>
 
       {verify ? (
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
-            <Image
-              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
-              layout="fill"
-              alt="review"
-            />
             <AiOutlineCloseCircle
               className={styles.close}
               onClick={() => {
@@ -633,15 +624,9 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
         ""
       )}
 
-
       {display ? (
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
-            <Image
-              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
-              layout="fill"
-              alt="review"
-            />
             <AiOutlineCloseCircle
               className={styles.close}
               onClick={() => {
@@ -685,34 +670,30 @@ const CounsellingReportForm = ({ refund, salesMan, team }) => {
 
 export default CounsellingReportForm;
 
+// <div className={styles.inner} style={{ marginBottom: "10px" }}>
+//   <DatePicker
+//     selected={startDate}
+//     name="counsellingDate"
+//     id="dateTime"
+//     onChange={(date) => {
+//       setStartDate(date);
+//     }}
+//     wrapperClassName={styles.date}
+//     className={styles.datePicker}
+//     placeholderText="Enter Date"
+//     dateFormat="MMMM d, yyyy"
+//     required
+//   />
+// </div>
 
-
-
-  // <div className={styles.inner} style={{ marginBottom: "10px" }}>
-        //   <DatePicker
-        //     selected={startDate}
-        //     name="counsellingDate"
-        //     id="dateTime"
-        //     onChange={(date) => {
-        //       setStartDate(date);
-        //     }}
-        //     wrapperClassName={styles.date}
-        //     className={styles.datePicker}
-        //     placeholderText="Enter Date"
-        //     dateFormat="MMMM d, yyyy"
-        //     required
-        //   />
-        // </div>
-
-
-        // <div className={styles.readOnlyDiv}>
-        //         <span>Counselling Date</span>
-        //         <TbMinusVertical className={styles.formLine} />
-        //         <input
-        //           type="text"
-        //           id="counsellingDate"
-        //           name="counsellingDate"
-        //           value={startDate}
-        //           readOnly
-        //         />
-        //       </div>
+// <div className={styles.readOnlyDiv}>
+//         <span>Counselling Date</span>
+//         <TbMinusVertical className={styles.formLine} />
+//         <input
+//           type="text"
+//           id="counsellingDate"
+//           name="counsellingDate"
+//           value={startDate}
+//           readOnly
+//         />
+//       </div>

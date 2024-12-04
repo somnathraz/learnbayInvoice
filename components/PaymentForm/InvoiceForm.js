@@ -156,7 +156,10 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "AWS Cloud & Devops Certification") {
     code = "Acdc";
   }
-  if (query.courseName === "Executive program in Data Science and AI from IIT Guwahati") {
+  if (
+    query.courseName ===
+    "Executive program in Data Science and AI from IIT Guwahati"
+  ) {
     code = "exda";
   }
   if (query.courseName === "Advance Data Analytics Program from IIT Guwahati") {
@@ -370,13 +373,13 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
               Advance Cloud Computing & DevOps Certification Program
             </option>
             <option value="AWS Cloud & Devops Certification">
-            AWS Cloud & Devops Certification
+              AWS Cloud & Devops Certification
             </option>
             <option value="Executive program in Data Science and AI from IIT Guwahati">
-            Executive program in Data Science and AI from IIT Guwahati
+              Executive program in Data Science and AI from IIT Guwahati
             </option>
             <option value="Advance Data Analytics Program from IIT Guwahati">
-            Advance Data Analytics Program from IIT Guwahati
+              Advance Data Analytics Program from IIT Guwahati
             </option>
           </select>
         </div>
@@ -489,11 +492,6 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
       {verify ? (
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
-            <Image
-              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
-              layout="fill"
-              alt="review"
-            />
             <AiOutlineCloseCircle
               className={styles.close}
               onClick={() => {
@@ -660,11 +658,6 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
       {display ? (
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
-            <Image
-              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
-              layout="fill"
-              alt="review"
-            />
             <AiOutlineCloseCircle
               className={styles.close}
               onClick={() => {

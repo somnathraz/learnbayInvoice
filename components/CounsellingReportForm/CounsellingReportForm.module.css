@@ -31,6 +31,7 @@
 .infoD {
   position: relative;
   width: 50%;
+  background-color: white;
   height: max-content;
   align-items: center;
   padding: 20px 30px;
