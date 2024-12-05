@@ -120,7 +120,11 @@ export default async function pdfGenerate(req, res) {
       courseName === "masters degree" ||
       courseName === "Masters degree upgrade" ||
       courseName === "Advance Cloud Computing & DevOps Certification Program" ||
-      courseName === "AWS Cloud & Devops Certification"
+      courseName === "AWS Cloud & Devops Certification" ||
+      courseName === "Master's in Computer Science: Data Science and AI" ||
+      courseName === "GenAI Developer Certification for Professionals" ||
+      courseName === "GenAI Certification for Managers & Tech Leaders" 
+
     ) {
       link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
     }

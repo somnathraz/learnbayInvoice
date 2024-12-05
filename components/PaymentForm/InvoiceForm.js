@@ -108,6 +108,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "Masters degree upgrade") {
     code = "MAU";
   }
+  if (query.courseName === "Master's in Computer Science: Data Science and AI") {
+    code = "MCSD";
+  }
   if (query.courseName === "Advanced Data science and AI Program") {
     code = "ADSAP";
   }
@@ -118,6 +121,8 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
     code = "AIML";
   }
   if (query.courseName === "Data science and AI Master Program") {
+
+
     code = "DSAM";
   }
   if (query.courseName === "Data Analytics Program") {
@@ -164,6 +169,13 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   }
   if (query.courseName === "Advance Data Analytics Program from IIT Guwahati") {
     code = "Adaiit";
+  }
+
+  if (query.courseName === "GenAI Developer Certification for Professionals") {
+    code = "GENAIPRO";
+  }
+  if (query.courseName === "GenAI Certification for Managers & Tech Leaders") {
+    code = "GENAIMTL";
   }
 
   //verify submit function
@@ -323,6 +335,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="Masters degree upgrade">
               Masters degree upgrade
             </option>
+            <option value="Master's in Computer Science: Data Science and AI">
+              Master's in Computer Science: Data Science and AI
+            </option>
             <option value="Advanced Data science and AI Program">
               Advanced Data science and AI Program
             </option>
@@ -380,6 +395,14 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             </option>
             <option value="Advance Data Analytics Program from IIT Guwahati">
               Advance Data Analytics Program from IIT Guwahati
+            </option>
+
+            <option value="GenAI Developer Certification for Professionals">
+              GenAI Developer Certification for Professionals
+            </option>
+
+            <option value="GenAI Certification for Managers & Tech Leaders">
+              GenAI Certification for Managers & Tech Leaders
             </option>
           </select>
         </div>
