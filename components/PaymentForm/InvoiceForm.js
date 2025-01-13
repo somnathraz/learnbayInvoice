@@ -177,6 +177,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "GenAI Certification for Managers & Tech Leaders") {
     code = "GENAIMTL";
   }
+  if (query.courseName === "Executive Certification in Cyber Security & Ethical Hacking") {
+    code = "ECCSEH";
+  }
 
   //verify submit function
   const verifySubmit = async (e) => {
@@ -403,6 +406,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
 
             <option value="GenAI Certification for Managers & Tech Leaders">
               GenAI Certification for Managers & Tech Leaders
+            </option>
+            <option value="Executive Certification in Cyber Security & Ethical Hacking">
+              Executive Certification in Cyber Security & Ethical Hacking
             </option>
           </select>
         </div>
