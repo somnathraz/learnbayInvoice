@@ -124,7 +124,8 @@ export default async function pdfGenerate(req, res) {
       courseName === "Master's in Computer Science: Data Science and AI" ||
       courseName === "GenAI Developer Certification for Professionals" ||
       courseName === "GenAI Certification for Managers & Tech Leaders" ||
-      courseName === "Executive Certification in Cyber Security & Ethical Hacking"
+      courseName === "Executive Certification in Cyber Security & Ethical Hacking"||
+      courseName === "Executive Certification in Cloud and Devops in Collaboration With E&ICT IIT Guwahati"
 
     ) {
       link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
@@ -165,6 +166,11 @@ export default async function pdfGenerate(req, res) {
       courseName === "Executive program in Data Science and AI from IIT Guwahati"  ) {
       link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn";
     }
+    if(
+      courseName === "Executive Certification in Cloud and Devops in Collaboration With E&ICT IIT Guwahati"    ){
+        link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn"
+      }
+
 
     const mailData = {
       from: "admissions@learnbay.co",
