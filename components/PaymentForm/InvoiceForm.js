@@ -184,6 +184,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
     code = "ECECITG"
   }
 
+  if(query.courseName === "Advanced Certification in Cyber Security & Ethical Hacking"){
+    code = "ACICEH"
+  }
   //verify submit function
   const verifySubmit = async (e) => {
     e.preventDefault();
@@ -416,6 +419,10 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
 
             <option value="Executive Certification in Cloud and Devops in Collaboration With E&ICT IIT Guwahati">
             Executive Certification in Cloud and Devops in Collaboration With E&ICT IIT Guwahati
+            </option>
+
+            <option value="Advanced Certification in Cyber Security & Ethical Hacking">
+            Advanced Certification in Cyber Security & Ethical Hacking
             </option>
           </select>
         </div>

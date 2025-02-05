@@ -170,6 +170,11 @@ export default async function pdfGenerate(req, res) {
       courseName === "Executive Certification in Cloud and Devops in Collaboration With E&ICT IIT Guwahati"    ){
         link = "https://zfrmz.in/f2TOL2P2XmiKBCBScVxn"
       }
+      if(
+        courseName === "Advanced Certification in Cyber Security & Ethical Hacking"    ){
+          link = "https://zfrmz.in/nOlE6J6FvLoZ0su8MxT8"
+        }
+  
 
 
     const mailData = {
