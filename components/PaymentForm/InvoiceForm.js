@@ -108,7 +108,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "Masters degree upgrade") {
     code = "MAU";
   }
-  if (query.courseName === "Master's in Computer Science: Data Science and AI") {
+  if (
+    query.courseName === "Master's in Computer Science: Data Science and AI"
+  ) {
     code = "MCSD";
   }
   if (query.courseName === "Advanced Data science and AI Program") {
@@ -121,8 +123,6 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
     code = "AIML";
   }
   if (query.courseName === "Data science and AI Master Program") {
-
-
     code = "DSAM";
   }
   if (query.courseName === "Data Analytics Program") {
@@ -177,15 +177,24 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "GenAI Certification for Managers & Tech Leaders") {
     code = "GENAIMTL";
   }
-  if (query.courseName === "Executive Certification in Cyber Security & Ethical Hacking") {
+  if (
+    query.courseName ===
+    "Executive Certification in Cyber Security & Ethical Hacking"
+  ) {
     code = "ECCSEH";
   }
-  if(query.courseName === "Executive Certification in Cloud and Devops in Collaboration With E&ICT IIT Guwahati"){
-    code = "ECECITG"
+  if (
+    query.courseName ===
+    "Executive Certification in Cloud and Devops in Collaboration With E&ICT IIT Guwahati"
+  ) {
+    code = "ECECITG";
   }
 
-  if(query.courseName === "Advanced Certification in Cyber Security & Ethical Hacking"){
-    code = "ACICEH"
+  if (
+    query.courseName ===
+    "Advanced Certification in Cyber Security & Ethical Hacking"
+  ) {
+    code = "ACICEH";
   }
   //verify submit function
   const verifySubmit = async (e) => {
@@ -418,11 +427,12 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             </option>
 
             <option value="Executive Certification in Cloud and Devops in Collaboration With E&ICT IIT Guwahati">
-            Executive Certification in Cloud and Devops in Collaboration With E&ICT IIT Guwahati
+              Executive Certification in Cloud and Devops in Collaboration With
+              E&ICT IIT Guwahati
             </option>
 
             <option value="Advanced Certification in Cyber Security & Ethical Hacking">
-            Advanced Certification in Cyber Security & Ethical Hacking
+              Advanced Certification in Cyber Security & Ethical Hacking
             </option>
           </select>
         </div>
@@ -442,6 +452,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="6">6</option>
             <option value="9">9</option>
             <option value="12">12</option>
+            <option value="15">15</option>
             <option value="18">18</option>
             <option value="24">24</option>
           </select>
