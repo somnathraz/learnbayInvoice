@@ -2,8 +2,8 @@ import { useState, useRef } from "react";
 
 import classes from "./auth-form.module.css";
 import { login } from "../../lib/auth";
-import { useRouter } from "next/router";
 import jsCookie from "js-cookie";
+import { useRouter } from "next/router";
 
 function AuthForm() {
   const router = useRouter();
@@ -32,7 +32,19 @@ function AuthForm() {
       });
       if (response.status === 200) {
         const { token, role, team } = await response.json();
-        login({ token, role, team }, true);
+        const data = {
+          token: token,
+          role: role,
+          team: team,
+        };
+
+        jsCookie.set("token", JSON.stringify(data), {
+          expires: 1,
+          secure: false,
+        });
+
+        router.push("/member/auth/dashboard");
+        // login({ token, role, team }, true);
       } else if (response.status === 404) {
         const { message } = await response.json();
         setError({ ...error, user: true });

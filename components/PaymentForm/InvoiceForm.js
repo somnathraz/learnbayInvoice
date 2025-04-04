@@ -475,6 +475,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="Razorpay">Razorpay</option>
             <option value="FIBE">FIBE</option>
             <option value="Liquiloans">Liquiloans</option>
+            <option value="Cashfree">Cashfree</option>
             <option value="Direct Bank Transfer">Direct Bank Transfer</option>
             <option value="Cash payment">Cash payment</option>
           </select>
