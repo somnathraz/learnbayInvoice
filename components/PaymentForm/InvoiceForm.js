@@ -177,6 +177,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   if (query.courseName === "GenAI Certification for Managers & Tech Leaders") {
     code = "GENAIMTL";
   }
+  if (query.courseName === "Gen-AI program | Learnbay") {
+    code = "GAIPL";
+  }
   if (
     query.courseName ===
     "Executive Certification in Cyber Security & Ethical Hacking"
@@ -196,6 +199,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
   ) {
     code = "ACICEH";
   }
+
   //verify submit function
   const verifySubmit = async (e) => {
     e.preventDefault();
@@ -422,6 +426,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="GenAI Certification for Managers & Tech Leaders">
               GenAI Certification for Managers & Tech Leaders
             </option>
+            <option value="Gen-AI program | Learnbay">
+              Gen-AI program | Learnbay
+            </option>
             <option value="Executive Certification in Cyber Security & Ethical Hacking">
               Executive Certification in Cyber Security & Ethical Hacking
             </option>
@@ -434,6 +441,8 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="Advanced Certification in Cyber Security & Ethical Hacking">
               Advanced Certification in Cyber Security & Ethical Hacking
             </option>
+
+            
           </select>
         </div>
         <div className={styles.formWrapper}>
