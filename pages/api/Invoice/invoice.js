@@ -196,12 +196,14 @@ export default async function pdfGenerate(req, res) {
           contentType: "application/pdf",
         },
       ],
-      html: `<div>Hi ${customerName},</div><p>Greetings from  Learnbay,</p> <p>We have attached Invoice along with this mail.</p><div>For any clarifications or doubts feel free to reach out to us on : <p><a href="mailto:contacts@learnbay.co">contacts@learnbay.co</a>
-      <a href="tel:+916363558632" target="_blank">+91 6363 558 632</a></p></div><p>Please find the attachments below. </P>
+      html: `<div>Hi ${customerName},</div><p>Greetings from  Learnbay,</p> <p>Please find the invoice attached with this email for your reference.</p><div>If you have any questions or need any assistance, feel free to reach out to us at:<p><a href="mailto:contacts@learnbay.co">contacts@learnbay.co</a><br/>
+      <a href="tel:+918951359121" target="_blank">+91 8951 359 121</a></p></div><p>Additionally, we request you to kindly fill out the following form: </P>
       <div>Form Link:</div>
       <p><a href="${link}" target="_blank">${link}</a>       
       </p>
-      <p>Once you fill out the form; your learning manager will reach out to you over phone and mail to help you out with further process.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div><div>Note:-Refunds and loan cancellation are not applicable beyond the 10-day payment period,regardless of the payment method used, including loan EMIs, full payments, or credit card EMIs.</div>`,
+
+      <p>Once you fill out the form; your learning manager will reach out to you over phone and mail to help you out with further process.</p> <p>We wish you all the very Best 👍</p>        <p>Thank you for choosing Learnbay. We’re excited to be part of your learning journey!</p><div>Thanks and Regards</div><div>Admissions Team</div><div>Note:-Refunds and loan cancellation are not applicable beyond the 10-day payment period,regardless of the payment method used, including loan EMIs, full payments, or credit card EMIs.</div>
+     `,
     };
 
     // set our compiled html template as the pages content
