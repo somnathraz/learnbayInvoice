@@ -486,6 +486,7 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
             <option value="Liquiloans">Liquiloans</option>
             <option value="Cashfree">Cashfree</option>
             <option value="Direct Bank Transfer">Direct Bank Transfer</option>
+            <option value="Finz">FinZ</option>
             <option value="Cash payment">Cash payment</option>
           </select>
         </div>
