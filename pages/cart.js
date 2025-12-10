@@ -28,7 +28,7 @@ const CartPage = ({ isConnected }) => {
   const [loading, setLoading] = useState(false);
   const [payLoading, setPayLoading] = useState(false);
   const [copy, setCopy] = useState({ copy1: false, copy2: false });
-  const couponDataCode = "";
+  let couponDataCode = "";
   const [successHandel, setSuccessHandel] = useState(false);
   const [showPayDetails, setShowPayDetails] = useState({
     paymentId: "",

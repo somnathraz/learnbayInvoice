@@ -484,6 +484,9 @@ const InvoiceForm = ({ refund, salesMan, team }) => {
               [Master Track] Data Analytics and Business Analytics Master
               Certification Program
             </option>
+            <option value="Applied AI Practitioner Program by IIT Patna">
+              Applied AI Practitioner Program by IIT Patna
+            </option>
             {/* new courses */}
           </select>
         </div>
